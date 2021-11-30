@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
 
@@ -29,4 +30,87 @@
 
 #objective3::-webkit-scrollbar {
     display: none;
+}
+
+#loginButton {
+    box-shadow: 0 4px 8px 0 rgba( 31, 38, 135, 0.37 ) !important;
+}
+
+#loginButton:hover {
+    background: rgba(53, 53, 53, 0.6) !important;
+    box-shadow: 0 2px 4px 0 rgba(92, 92, 92, 0.37) !important;
+    backdrop-filter: blur( 12px ) !important;
+    -webkit-backdrop-filter: blur( 12px ) !important;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
+
+.glassBox {
+    background: rgba( 255, 255, 255, 0.25 ) !important;
+    box-shadow: 0 8px 32px 0 rgba(92, 92, 92, 0.37) !important;
+    backdrop-filter: blur( 9px ) !important;
+    -webkit-backdrop-filter: blur( 9px ) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
+
+.inputGlass {
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 4px 8px 0 rgba(92, 92, 92, 0.37);
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.objBox {
+    background: rgba(255, 255, 255, 0.925) !important;
+    box-shadow: 0 10px 10px 0 rgba(117, 117, 117, 0.37) !important;
+    backdrop-filter: blur( 6.5px ) !important;
+    -webkit-backdrop-filter: blur( 6.5px ) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
+
+.objBox:hover {
+    background: rgba(255, 255, 255, 0.925) !important;
+    box-shadow: 0 3px 3px 0 rgba(117, 117, 117, 0.37) !important;
+    backdrop-filter: blur( 6.5px ) !important;
+    -webkit-backdrop-filter: blur( 6.5px ) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
+
+.word-line {
+    display: flex;
+    flex-direction: row;
+}
+.word-line:before, .word-line:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+}
+.word-line:before {
+    margin-right: 10px
+}
+.word-line:after {
+    margin-left: 10px
+}
+
+.glassButton {
+    background: rgba( 255, 255, 255, 0.8 );
+    box-shadow: 0 4px 8px 0 rgba(119, 119, 119, 0.37);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glassButton:hover {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 12px 0 rgba(119, 119, 119, 0.37);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

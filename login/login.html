@@ -8,13 +8,122 @@
     <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
     <title>Skill Bootcamp | Login</title>
 </head>
-<body>
+<body x-data="main">
 
-    <!-- Navbar -->
+<!-- Navbar -->
+    <nav class="navbar py-1 px-2 has-background-grey-dark">
+        <div class="container">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
+                </div>
+                <div class="navbar-burger has-text-light" x-on:click="displayMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu has-background-grey-dark">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <button class="button is-light is-outlined poppins" onclick="location.href='#'">LOGIN</button>
+                    </div>
+                    <div class="navbar-item">
+                        <button class="button is-light poppins" onclick="location.href='../signup/signup.html'">SIGN UP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Login form -->
+<!-- Login form -->
+    <section class="section has-background-grey-lighter">
+        <div class="container my-6">
+            <div class="columns">
+                <div class="column is-three-fifths-tablet is-offset-one-fifth-tablet is-6-widescreen is-offset-3-widescreen is-10-mobile is-offset-1-mobile">
+                    <div class="box glassBox">
+                        <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Login</strong></h2>
+                        <form class="container is-fluid my-6">
+                            <div class="field mb-5">
+                                <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Username</p></label>
+                                <div class="control">
+                                    <input id="username" class="input poppins inputGlass" type="text" placeholder="👤">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Password</p></label>
+                                <div class="control">
+                                    <input id="password" class="input poppins inputGlass" type="password" placeholder="🔑">
+                                </div>
+                            </div>
+                            <p class="has-text-right mb-5"><a class="subtitle is-6 has-text-grey is-underlined poppins" href="#">Forgot password</a></p>
+                            <div class="field mb-5">
+                                <div class="control has-text-centered">
+                                    <button id="loginButton" x-on:click="submitLogin" class="button is-rounded has-background-dark poppins is-medium px-6">
+                                        <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Log in</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="has-text-centered subtitle is-6 has-text-grey poppins my-4">Don't have an account? <a class="has-text-grey-dark is-underlined" href="#"><strong>Sign up</strong></a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
+<!-- Footer -->
+    <section class="section has-background-grey-dark">
+        <div class="container">
+            <div class="footer-main">
+                <div class="columns">
+                <div class="column">
+                    <h4 class="title is-4 poppins has-text-light">Skill Bootcamp</h4>
+                    <p class="poppins has-text-grey-light">
+                    Lorem ipsum dolor sit amet consec tetur adipi sicing elit. Eveniet duci mus ex maiores! Corporis et autem pariatur deserunt suscipit prae sentium doloremque perferendis odio?
+                    </p><br class="is-hidden-desktop">
+                </div>
+                <div class="column poppins">
+                    <h4 class="title is-4 poppins has-text-light">Social Networks</h4>
+                    
+                    <p class="is-size-4">
+                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://facebook.com"><i class="bi bi-facebook"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://twitter.com"><i class="bi bi-twitter"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://instagram.com"><i class="bi bi-instagram"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://youtube.com"><i class="bi bi-youtube"></i></a></span>&nbsp;&nbsp;
+                    </p>
+                    <br class="is-hidden-desktop">
+                </div>
+                <div class="column">
+                    <h4 class="title is-4 poppins"><span class="has-text-light">▶️</span>&nbsp;<a class="has-text-light">Courses</a></h4>
+                    <h4 class="title is-4 poppins"><span class="has-text-light">▶️</span>&nbsp;<a class="has-text-light">Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><span class="has-text-light">▶️</span>&nbsp;<a class="has-text-light">Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><span class="has-text-light">▶️</span>&nbsp;<a class="has-text-light">About Us</a></h4><br class="is-hidden-desktop">
+                </div>
+                <div class="column">
+                    <h4 class="title is-4 poppins has-text-light">Categories</h4>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Information Technology</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Art & Design</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ History</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Philosophy</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Mathematics</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Engineering</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Literature & Language</a></p>
+                    <p class="poppins"><a class="has-text-grey-light">▶ Religion Study</a></p><br class="is-hidden-desktop">
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="has-background-grey-dark">
+        <div class="content has-text-centered">
+            <p>
+                <hr class="has-background-grey">
+                <p class="subtitle is-size-7 has-text-grey has-text-centered poppins">Copyright &#169; 2021 Skill Bootcamp. All Right Reserved.</p>
+            </p>
+        </div>
+        </footer>
+    </section>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
