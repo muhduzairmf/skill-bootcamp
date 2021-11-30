@@ -1,0 +1,32 @@
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+.poppins {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+#feedback1::-webkit-scrollbar {
+    display: none;
+}
+
+#feedback2::-webkit-scrollbar {
+    display: none;
+}
+
+#feedback3::-webkit-scrollbar {
+    display: none;
+}
+
+#objective1::-webkit-scrollbar {
+    display: none;
+}
+
+#objective2::-webkit-scrollbar {
+    display: none;
+}
+
+#objective3::-webkit-scrollbar {
+    display: none;
+}
