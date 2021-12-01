@@ -2,7 +2,7 @@
 AOS.init();
 
 new Typewriter('#typewriter', {
-    strings: ['Information Technology', 'Religion Study', 'Mathematics', 'Literature & Languages', 'Philosophy', 'Engineering', 'Art & Design', 'History'],
+    strings: ['Technology', 'Religion Study', 'Mathematics', 'Languages', 'Philosophy', 'Engineering', 'Art & Design', 'History'],
     autoStart: true,
     loop: true,
 });
