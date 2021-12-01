@@ -4,7 +4,8 @@
   "description": "Skill Bootcamp is a website for a student and lecturer to learn, explore and share about the courses that exists in university silibus. Student can learn and explore more to gain their skill and knowledge. Lecturer can also share their knowledge to the students through this website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
