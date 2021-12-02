@@ -11,6 +11,114 @@
 <body x-data="main">
 
 <!-- Navbar and header -->
+    <nav class="navbar py-2">
+        <div class="container">
+            <div class="navbar-brand">
+                <div class="navbar-item mr-4">
+                    <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
+                </div>
+                <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="navbar-menu has-background-grey-dark" id="navMenu">
+                <div class="navbar-start">
+                    <div class="navbar-item ml-4-desktop">
+                        <br class="is-hidden-desktop">
+                        <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                            <div class="control">
+                                <a class="button searchBox searchBtn poppins">
+                                    <i class="bi bi-search"></i>
+                                </a>
+                            </div>
+                            <div class="control is-expanded">
+                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                            </div>
+                        </div>
+                        <br class="is-hidden-desktop">
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                    </div>
+                    <div class="navbar-item is-hidden-desktop-only">
+                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                    </div>
+                    <div class="navbar-item is-hidden-desktop-only">
+                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                    </div>
+                    <div class="navbar-item is-hidden-desktop-only">
+                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                    </div>
+                    <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
+                        <div class="dropdown is-right is-hoverable">
+                            <div class="dropdown-trigger">
+                            <button class="button has-background-grey-dark is-rounded notActive">
+                                <span class="has-text-light poppins">MENU</span>
+                                <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            </div>
+                            <div class="dropdown-menu" role="menu">
+                            <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                COURSES
+                                </a>
+                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                QUIZZES
+                                </a>
+                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                DASHBOARD
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-item is-hidden-touch">
+                        <div class="dropdown is-right is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-grey-dark is-rounded notActive">
+                                    <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
+                                    <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" role="menu">
+                                <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
+                                    <span class="image is-32x32 mb-2">
+                                        <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                    </span>
+                                    Tim Carlton<br>
+                                    STUDENT
+                                </p>
+                                <a href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2" x-on:click="logout">
+                                    Log out
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hidden-desktop">
+                        <div class="navbar-dropdown">
+                            <hr style="background-color: hsl(0, 0%, 96%) !important;">
+                            <p href="#" class="navbar-item has-text-light poppins py-2 my-2">
+                                <span class="image is-32x32 mb-2">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                </span>
+                            Tim Carlton<br>
+                            STUDENT
+                            </p>
+                            <div class="navbar-item">
+                                <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">
@@ -35,21 +143,21 @@
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Religion Study</a></p><br class="is-hidden-desktop">
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>

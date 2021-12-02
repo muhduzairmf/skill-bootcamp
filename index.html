@@ -11,6 +11,14 @@
 </head>
 <body x-data="main">
 
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <!-- Navbar and header -->
     <section class="hero has-background-grey-dark is-medium">
         <div class="hero-head">
@@ -32,10 +40,10 @@
                         </div>
                         <div class="navbar-end">
                             <div class="navbar-item">
-                                <button class="button is-light is-outlined poppins" onclick="location.href='/skill-bootcamp/login/login.html'">LOGIN</button>
+                                <button class="button is-light is-outlined poppins" x-on:click="loginPage">LOGIN</button>
                             </div>
                             <div class="navbar-item">
-                                <button class="button is-light poppins" onclick="location.href='/skill-bootcamp/signup/signup.html'">SIGN UP</button>
+                                <button class="button is-light poppins" x-on:click="signupPage">SIGN UP</button>
                             </div>
                         </div>
                     </div>
@@ -44,9 +52,9 @@
         </div>
         <div class="hero-body">
             <div class="container my-4">
-                <br class="is-hidden-desktop"><br class="is-hidden-desktop"><h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins" data-aos="fade-down" data-aos-duration="2000"><strong>Learn from anywhere</strong></h1>
-                <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins" data-aos="fade-right" data-aos-duration="2000">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
-                <button class="button is-light poppins">Sign up free</button><br class="is-hidden-desktop"><br class="is-hidden-desktop" onclick="location.href='/skill-bootcamp/signup/signup.html'">
+                <br class="is-hidden-desktop"><br class="is-hidden-desktop"><h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins" data-aos="fade-down" data-aos-duration="2000"><strong>Learn from <br class="is-hidden-desktop"> anywhere</strong></h1>
+                <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins" data-aos="fade-right" data-aos-duration="2000" style="width: 70%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
+                <button class="button is-light poppins"  x-on:click="signupPage">Sign up free</button><br class="is-hidden-desktop"><br class="is-hidden-desktop">
             </div>
         </div>
     </section>
@@ -185,10 +193,10 @@
                         <p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis pariatur eius necessitatibus autem inventore provident, amet ipsa quas praesentium enim nihil, tenetur nemo magnam cupiditate. Eveniet ipsa doloribus aperiam optio.</p>
                         <p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3">Lorem ipsum dolor sit.</p>
                         <ul>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp;Lorem ipsum dolor sit amet consectetur.</li>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp;Lorem ipsum dolor sit amet consectetur.</li>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp;Lorem ipsum dolor sit amet consectetur.</li>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp;Lorem ipsum dolor sit amet consectetur.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
                         </ul>
                     </div>
                 </div>
@@ -439,9 +447,9 @@
                                 <div class="content">
                                     <h5 class="poppins"><strong>Students</strong><br></h5>
                                     <dl>
-                                        <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                        <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                        <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
+                                        <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                        <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                        <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
                                     </dl>
                                 </div>
                             </div>
@@ -450,9 +458,9 @@
                             <div class="content">
                                 <h5 class="poppins"><strong>Students</strong><br></h5>
                                 <dl>
-                                    <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                    <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                    <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
+                                    <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                    <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                    <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
                                 </dl>
                             </div>
                         </div>
@@ -470,9 +478,9 @@
                                     <div class="content">
                                         <h5 class="poppins"><strong>Lecturers</strong><br></h5>
                                         <dl>
-                                            <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                            <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                            <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
+                                            <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                            <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                            <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
                                         </dl>
                                     </div>
                                 </div>
@@ -481,9 +489,9 @@
                                 <div class="content">
                                     <h5 class="poppins"><strong>Lecturers</strong><br></h5>
                                     <dl>
-                                        <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                        <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
-                                        <dt class="poppins">✔️ Lorem ipsum dolor sit amet consectetur.</dt>
+                                        <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                        <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
+                                        <dt class="poppins"><i class="bi bi-check-circle"></i> Lorem ipsum dolor sit amet consectetur.</dt>
                                     </dl>
                                 </div>
                             </div>
@@ -862,21 +870,21 @@
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Religion Study</a></p><br class="is-hidden-desktop">
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>
@@ -895,6 +903,7 @@
     
     <script src="src/lib/aos.min.js"></script>
     <script src="src/lib/typewriter.min.js"></script>
+    <script src="src/lib/loading.min.js"></script>
     <script src="src/scripts/index.js"></script>
 </body>
 </html>

@@ -11,6 +11,14 @@
 </head>
 <body x-data="main">
 
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <!-- Navbar -->
     <nav class="navbar py-1 px-2 has-background-grey-dark">
         <div class="container">
@@ -27,7 +35,7 @@
             <div id="navMenu" class="navbar-menu has-background-grey-dark animate__animated animate__fadeIn">
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button class="button is-light is-outlined poppins" onclick="location.href='../login/login.html'">LOGIN</button>
+                        <button class="button is-light is-outlined poppins" x-on:click="loginPage">LOGIN</button>
                     </div>
                     <div class="navbar-item">
                         <button class="button is-light poppins" onclick="location.href='#'">SIGN UP</button>
@@ -48,7 +56,7 @@
                             <div class="field mb-5">
                                 <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Full name</p></label>
                                 <div class="control">
-                                    <input class="input poppins inputGlass" type="text" placeholder="👤">
+                                    <input class="input poppins inputGlass" type="text" placeholder="📝">
                                 </div>
                             </div>
                            <div class="columns mb-5">
@@ -64,7 +72,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Email</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="email" placeholder="👤">
+                                            <input class="input poppins inputGlass" type="email" placeholder="📧">
                                         </div>
                                     </div>
                                </div>
@@ -74,7 +82,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Password</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="password" placeholder="👤">
+                                            <input class="input poppins inputGlass" type="new-password" placeholder="🔑">
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +90,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Confirm Password</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="password" placeholder="👤">
+                                            <input class="input poppins inputGlass" type="new-password" placeholder="🔐">
                                         </div>
                                     </div>
                                 </div>
@@ -91,12 +99,12 @@
                                 <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark has-text-centered poppins">Register as</p></label>
                                 <div class="has-text-centered my-4">
                                     <label class="radio mr-4">
-                                        <input type="radio" name="typeOfUser" value="Student" style="width: 17px !important; height: 17px !important;" x-model="typeOfUser" id="asStudent">
-                                        <span class="poppins">Student</span>
+                                        <input type="radio" name="typeOfUser" value="Student" style="width: 17px !important; height: 17px !important;">
+                                        <span class="poppins">Student 👨‍🎓️</span>
                                     </label>
                                     <label class="radio ml-4">
-                                        <input type="radio" name="typeOfUser" value="Lecturer" style="width: 17px !important; height: 17px !important;" x-model="typeOfUser" id="asLecturer">
-                                        <span class="poppins">Lecturer</span>
+                                        <input type="radio" name="typeOfUser" value="Lecturer" style="width: 17px !important; height: 17px !important;">
+                                        <span class="poppins">Lecturer 👨‍🏫️</span>
                                     </label>
                                 </div>
                             </div>
@@ -114,7 +122,7 @@
                             </div><br>
                             <div class="field mb-5">
                                 <div class="control has-text-centered">
-                                    <button id="loginButton" type="submit" class="button is-rounded has-background-dark poppins is-medium px-6">
+                                    <button type="submit" class="button is-rounded has-background-dark poppins is-medium px-6 goodButton">
                                         <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Sign up</p>
                                     </button>
                                 </div>
@@ -150,21 +158,21 @@
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Religion Study</a></p><br class="is-hidden-desktop">
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>
@@ -182,6 +190,7 @@
     
     <script src="../src/lib/aos.min.js"></script>
     <script src="../src/lib/typewriter.min.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
     <script src="../src/scripts/signup.js"></script>
 </body>
 </html>

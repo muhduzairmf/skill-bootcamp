@@ -11,6 +11,14 @@
 </head>
 <body x-data="main">
 
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <!-- Navbar and header -->
 <header class="hero has-background-grey-dark is-medium">
     <!-- Navbar -->
@@ -94,7 +102,7 @@
                                           <span class="image is-32x32 mb-2">
                                               <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
                                           </span>
-                                        Tim Carlton
+                                        Tim Carlton<br>
                                         STUDENT
                                       </p>
                                       <a href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2" x-on:click="logout">
@@ -111,7 +119,7 @@
                                     <span class="image is-32x32 mb-2">
                                         <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
                                     </span>
-                                  Tim Carlton
+                                  Tim Carlton<br>
                                   STUDENT
                                 </p>
                                 <div class="navbar-item">
@@ -126,19 +134,51 @@
     </div>
     <div class="hero-body">
         <div class="container my-4">
-            <br><br>
-            <h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins"><strong>Inovative Solutions for Education</strong></h1>
-            <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
+            <br>
+            <h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins"><strong>Inovative Solutions <br> for Education</strong></h1>
+            <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins" style="width: 70%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
         </div>
     </div>
 </header>
+
+<!-- Success sign up -->
+    <div x-show="showModalGreet" class="modal is-active is-clipped">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-content">
+                  <div class="container">
+                      <div class="columns is-centered is-vcentered">
+                          <div class="column is-4">
+                            <figure class="image is-128x128">
+                                <img src="../src/svg/Greeting.svg" alt="">
+                            </figure>
+                          </div>
+                          <div class="column is-6">
+                            <h2 class="title is-size-5-desktop is-size-6-touch poppins"><strong>Hi User,</strong></h2>
+                            <h4 class="title is-size-5-desktop is-size-6-touch poppins"><strong>Welcome to Skill Bootcamp!</strong></h4>
+                          </div>
+                      </div>
+                      <div class="block">
+                          <p class="is-size-6-desktop is-size-7-touch has-text-centered subtitle poppins">You have successfully signed up.</p>
+                      </div>
+                      <div class="has-text-centered">
+                        <button class="button is-rounded has-background-dark poppins px-4 goodButton" x-on:click="closeModalGreet">
+                            <p class="has-text-light is-size-6-desktop is-size-7-touch mx-4 my-2">Close</p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" x-on:click="closeModalGreet"></button>
+    </div>
 
 <!-- Course categories -->
     <section class="section">
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Course Categories</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Course Categories</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -146,7 +186,7 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -162,7 +202,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -178,7 +218,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -196,7 +236,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -216,7 +256,7 @@
             </div>
             <div class="columns is-centered">
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -234,7 +274,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -252,7 +292,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -270,7 +310,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
@@ -288,7 +328,7 @@
             </div>
         </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <!-- New released course -->
@@ -296,7 +336,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">New Released Course</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">New Released Course</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -366,7 +406,7 @@
             </div>
         </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <!-- Popular lecturer -->
@@ -374,7 +414,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Lecturer</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Lecturer</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -382,7 +422,7 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-widescreen is-6-mobile">
                                 <figure class="image is-1by1">
@@ -401,7 +441,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-widescreen is-6-mobile">
                                 <figure class="image is-1by1">
@@ -420,7 +460,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-widescreen is-6-mobile">
                                 <figure class="image is-1by1">
@@ -443,7 +483,7 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-widescreen is-6-mobile">
                                 <figure class="image is-1by1">
@@ -462,7 +502,7 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
-                    <div class="box objBox">
+                    <div class="box objBox is-clickable">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-widescreen is-6-mobile">
                                 <figure class="image is-1by1">
@@ -483,7 +523,7 @@
             </div>
         </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <!-- Popular open quizzes -->
@@ -491,7 +531,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Open Quizzes</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Open Quizzes</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -560,7 +600,7 @@
                 </div>
             </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <br>
@@ -587,21 +627,21 @@
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Religion Study</a></p><br class="is-hidden-desktop">
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>
@@ -618,7 +658,8 @@
     </section>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <script src="../src/lib/typewriter.min.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
     <script src="../src/scripts/timelines.js"></script>
 </body>
 </html>

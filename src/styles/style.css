@@ -2,6 +2,7 @@
 @import "../lib/bootstrap-icons.css";
 @import "../lib/animate.min.css";
 @import "../lib/aos.min.css";
+@import "../lib/loading.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .poppins {
@@ -32,11 +33,11 @@
     display: none;
 }
 
-#loginButton {
+.goodButton {
     box-shadow: 0 4px 8px 0 rgba( 31, 38, 135, 0.37 ) !important;
 }
 
-#loginButton:hover {
+.goodButton:hover {
     background: rgba(53, 53, 53, 0.6) !important;
     box-shadow: 0 2px 4px 0 rgba(92, 92, 92, 0.37) !important;
     backdrop-filter: blur( 12px ) !important;
@@ -180,4 +181,16 @@ input.searchBox.poppins {
 
 .shadowObjBox:hover {
     box-shadow: 0 3px 3px 0 rgba(117, 117, 117, 0.37) !important;
+}
+
+.stayTop {
+    overflow: hidden !important;
+    position: fixed !important; /* Set the navbar to fixed position */
+    top: 0 !important; /* Position the navbar at the top of the page */
+}
+
+
+
+.modal-content::-webkit-scrollbar {
+    display: none;
 }

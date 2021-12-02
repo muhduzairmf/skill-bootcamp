@@ -11,6 +11,14 @@
 </head>
 <body x-data="main">
 
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <!-- Navbar -->
     <nav class="navbar py-1 px-2 has-background-grey-dark">
         <div class="container">
@@ -30,7 +38,7 @@
                         <button class="button is-light is-outlined poppins" onclick="location.href='#'">LOGIN</button>
                     </div>
                     <div class="navbar-item">
-                        <button class="button is-light poppins" onclick="location.href='../signup/signup.html'">SIGN UP</button>
+                        <button class="button is-light poppins" x-on:click="signupPage">SIGN UP</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +68,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Password</p></label>
                                         <div class="control">
-                                            <input id="password" class="input poppins inputGlass" type="password" placeholder="🔑">
+                                            <input id="password" class="input poppins inputGlass" type="current-password" placeholder="🔑">
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +76,7 @@
                             <p class="has-text-right mb-5"><a class="subtitle is-6 has-text-grey is-underlined poppins" href="#">Forgot password</a></p>
                             <div class="field mb-5">
                                 <div class="control has-text-centered">
-                                    <button id="loginButton" type="submit" class="button is-rounded has-background-dark poppins is-medium px-6">
+                                    <button type="submit" class="button is-rounded has-background-dark poppins is-medium px-6 goodButton">
                                         <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Log in</p>
                                     </button>
                                 </div>
@@ -104,21 +112,21 @@
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop">▶️</span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light">▶ Religion Study</a></p><br class="is-hidden-desktop">
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
+                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>
@@ -136,6 +144,7 @@
     
     <script src="../src/lib/aos.min.js"></script>
     <script src="../src/lib/typewriter.min.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
     <script src="../src/scripts/login.js"></script>
 </body>
 </html>
