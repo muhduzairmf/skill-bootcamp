@@ -14,12 +14,12 @@ document.addEventListener('alpine:init', () => {
             document.querySelector('#burgerBtn').classList.toggle('is-active');
         },
         loginPage() {
-            //window.location.href = '/skill-bootcamp/login/login.html'
-            window.location.href = '../../login/login.html';
+            window.location.href = '/skill-bootcamp/login/login.html'
+            //window.location.href = '../../login/login.html';
         },
         signupPage() {
-            //window.location.href = '/skill-bootcamp/signup/signup.html'
-            window.location.href = '../../signup/signup.html';
+            window.location.href = '/skill-bootcamp/signup/signup.html'
+            //window.location.href = '../../signup/signup.html';
         }
     }));
 });

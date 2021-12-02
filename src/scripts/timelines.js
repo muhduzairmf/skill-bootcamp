@@ -1,4 +1,9 @@
 
+if (localStorage.getItem("isAuthorized") != "true") {
+    window.location.replace('../../skill-bootcamp/');
+    //window.location.replace('../../');
+}
+
 var isSignUp = false;
 
 if (localStorage.getItem("isSignUp") == "true") {
@@ -17,8 +22,10 @@ document.addEventListener('alpine:init', () => {
             document.querySelector('#burgerBtn').classList.toggle('is-active');
         },
         logout() {
-            //window.location.href = '../../skill-bootcamp/index.html';
-            window.location.href = '../../index.html';
+            localStorage.setItem("isAuthorized", "false");
+
+            window.location.href = '../../skill-bootcamp/';
+            //window.location.href = '../../';
         },
         showModalGreet: isSignUp,
         closeModalGreet() {
