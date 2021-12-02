@@ -9,6 +9,8 @@
     font-family:  'Poppins', 'Lucida Sans', 'Segoe UI', Tahoma, Helvetica, Verdana, sans-serif;
 }
 
+[x-cloak] { display: none !important; }
+
 #feedback1::-webkit-scrollbar {
     display: none;
 }
