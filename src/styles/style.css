@@ -114,3 +114,70 @@
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
+.searchBox {
+    background: rgba( 255, 255, 255, 0.85 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: rgb(0, 0, 0) !important;
+}
+
+.searchBtn:hover {
+    background: rgba(255, 255, 255, 0.651);
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+input.searchBox.poppins {
+    width: 100% !important;
+}
+
+.activeBtn {
+    border: 1px solid hsl(0, 0%, 4%);
+}
+
+.activeBtn:hover {
+    background: hsl(0, 0%, 29%) !important;
+    box-shadow: 0 5px 10px 0 black;
+    border: 1px solid hsl(0, 0%, 29%) !important;
+}
+
+.notActive {
+    border: 1px solid hsl(0, 0%, 29%);
+}
+
+.notActive:hover {
+    background: hsl(0, 0%, 4%) !important;
+    border: 1px solid hsl(0, 0%, 4%) !important;
+}
+
+.padMega {
+    padding-right: 100px !important;
+}
+
+#dropCont1 {
+    box-shadow: 0 5px 10px 0 black !important;
+}
+
+.seeMore {
+    background-color: hsl(0, 0%, 29%) !important;
+    color: hsl(0, 0%, 96%) !important;
+}
+
+.seeMore:hover {
+    background-color: white !important;
+    color: hsl(0, 0%, 29%) !important;
+    border: 0px;
+}
+
+.shadowObjBox {
+    box-shadow: 0 10px 10px 0 rgba(117, 117, 117, 0.37) !important;
+}
+
+.shadowObjBox:hover {
+    box-shadow: 0 3px 3px 0 rgba(117, 117, 117, 0.37) !important;
+}

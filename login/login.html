@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
     <script src="../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Login</title>
@@ -43,7 +44,7 @@
                 <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-widescreen is-offset-3-widescreen">
                     <div class="box glassBox">
                         <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Login</strong></h2>
-                        <form class="container my-6">
+                        <form x-on:submit.prevent="submitLogin" class="container my-6">
                             <div class="columns is-centered">
                                 <div class="column is-12-mobile is-10-tablet is-8-widescreen">
                                     <div class="field mb-5">
@@ -67,7 +68,7 @@
                             <p class="has-text-right mb-5"><a class="subtitle is-6 has-text-grey is-underlined poppins" href="#">Forgot password</a></p>
                             <div class="field mb-5">
                                 <div class="control has-text-centered">
-                                    <button id="loginButton" x-on:click="submitLogin" class="button is-rounded has-background-dark poppins is-medium px-6">
+                                    <button id="loginButton" type="submit" class="button is-rounded has-background-dark poppins is-medium px-6">
                                         <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Log in</p>
                                     </button>
                                 </div>

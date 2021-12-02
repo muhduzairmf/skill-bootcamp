@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
     <script src="../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Sign Up</title>
@@ -43,7 +44,7 @@
                 <div class="column is-12-mobile is-10-tablet is-offset-1-tablet is-8-widescreen is-offset-2-widescreen is-three-fifths-fullhd is-offset-one-fifth-fullhd">
                     <div class="box glassBox">
                         <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Sign up</strong></h2>
-                        <form class="container my-6">
+                        <form x-on:submit.prevent="submitSignup" class="container my-6">
                             <div class="field mb-5">
                                 <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark poppins">Full name</p></label>
                                 <div class="control">
@@ -90,7 +91,7 @@
                                 <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-dark has-text-centered poppins">Register as</p></label>
                                 <div class="has-text-centered my-4">
                                     <label class="radio mr-4">
-                                        <input type="radio" name="typeOfUser" value="Student" style="width: 17px !important; height: 17px !important;" x-model="typeOfUser" id="asStudent" required>
+                                        <input type="radio" name="typeOfUser" value="Student" style="width: 17px !important; height: 17px !important;" x-model="typeOfUser" id="asStudent">
                                         <span class="poppins">Student</span>
                                     </label>
                                     <label class="radio ml-4">
@@ -103,7 +104,7 @@
                             <div class="has-text-centered">
                                 <button class="button glassButton">
                                     <figure class="image is-16x16">
-                                        <img src="src/svg/Google.svg" alt="">
+                                        <img src="../src/svg/Google.svg" alt="">
                                     </figure>
                                     <p class="poppins">&nbsp;&nbsp;Sign up with Google</p>
                                 </button>
@@ -113,7 +114,7 @@
                             </div><br>
                             <div class="field mb-5">
                                 <div class="control has-text-centered">
-                                    <button id="loginButton" x-on:click="submitLogin" class="button is-rounded has-background-dark poppins is-medium px-6">
+                                    <button id="loginButton" type="submit" class="button is-rounded has-background-dark poppins is-medium px-6">
                                         <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Sign up</p>
                                     </button>
                                 </div>

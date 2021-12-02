@@ -4,22 +4,566 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
     <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
     <title>Skill Bootcamp | Timelines</title>
 </head>
 <body x-data="main">
 
-    <!-- Navbar and header -->
+<!-- Navbar and header -->
+<header class="hero has-background-grey-dark is-medium">
+    <!-- Navbar -->
+    <div class="hero-head">
+        <nav class="navbar py-2">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="navbar-item mr-4">
+                        <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
+                    </div>
+                    <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="navbar-menu has-background-grey-dark" id="navMenu">
+                    <div class="navbar-start">
+                        <div class="navbar-item ml-4-desktop">
+                            <br class="is-hidden-desktop">
+                            <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                                <div class="control">
+                                    <a class="button searchBox searchBtn poppins">
+                                        <i class="bi bi-search"></i>
+                                    </a>
+                                  </div>
+                                <div class="control is-expanded">
+                                  <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                                </div>
+                            </div>
+                            <br class="is-hidden-desktop">
+                        </div>
+                    </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                        </div>
+                        <div class="navbar-item is-hidden-desktop-only">
+                            <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                        </div>
+                        <div class="navbar-item is-hidden-desktop-only">
+                            <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                        </div>
+                        <div class="navbar-item is-hidden-desktop-only">
+                            <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                        </div>
+                        <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
+                            <div class="dropdown is-right is-hoverable">
+                                <div class="dropdown-trigger">
+                                  <button class="button has-background-grey-dark is-rounded notActive">
+                                    <span class="has-text-light poppins">MENU</span>
+                                    <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-menu" role="menu">
+                                  <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                    <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                      COURSES
+                                    </a>
+                                      <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                      QUIZZES
+                                    </a>
+                                      <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                      DASHBOARD
+                                    </a>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navbar-item is-hidden-touch">
+                            <div class="dropdown is-right is-hoverable">
+                                <div class="dropdown-trigger">
+                                    <button class="button has-background-grey-dark is-rounded notActive">
+                                        <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
+                                        <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" role="menu">
+                                    <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                      <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
+                                          <span class="image is-32x32 mb-2">
+                                              <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                          </span>
+                                        Tim Carlton
+                                        STUDENT
+                                      </p>
+                                      <a href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2" x-on:click="logout">
+                                        Log out
+                                      </a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hidden-desktop">
+                            <div class="navbar-dropdown">
+                                <hr style="background-color: hsl(0, 0%, 96%) !important;">
+                                <p href="#" class="navbar-item has-text-light poppins py-2 my-2">
+                                    <span class="image is-32x32 mb-2">
+                                        <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                    </span>
+                                  Tim Carlton
+                                  STUDENT
+                                </p>
+                                <div class="navbar-item">
+                                    <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container my-4">
+            <br><br>
+            <h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins"><strong>Inovative Solutions for Education</strong></h1>
+            <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
+        </div>
+    </div>
+</header>
 
-    <!-- Course categories -->
+<!-- Course categories -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Course Categories</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>Information Technology</strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>Art & Design</strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>
+                                History
+                                </strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>
+                                Philosophy
+                                </strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>
+                                Mathematics
+                                </strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>
+                                Engineering
+                                </strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>
+                                Literature & Language
+                                </strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-5-mobile">
+                                <figure class="image is-1by1">
+                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                <strong>Religion Study</strong>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+    </section>
 
-    <!-- New released course -->
+<!-- New released course -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">New Released Course</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="columns is-centered is-multiline">
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>Fundamental of Networking</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>Fundamental of Networking</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>Fundamental of Networking</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>Fundamental of Networking</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+    </section>
 
-    <!-- Popular lecturer -->
+<!-- Popular lecturer -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Lecturer</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-8-widescreen is-6-mobile">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/75.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                                Dr. Harry Wilson
+                            </h3>
+                            <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                UI UX Design
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-8-widescreen is-6-mobile">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/75.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                                Dr. Harry Wilson
+                            </h3>
+                            <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                UI UX Design
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-8-widescreen is-6-mobile">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/75.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                                Dr. Harry Wilson
+                            </h3>
+                            <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                UI UX Design
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-8-widescreen is-6-mobile">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/75.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                                Dr. Harry Wilson
+                            </h3>
+                            <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                UI UX Design
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth-widescreen is-one-quarter-tablet is-12-mobile">
+                    <div class="box objBox">
+                        <div class="columns is-centered mx-2 is-mobile">
+                            <div class="column is-10-tablet is-8-widescreen is-6-mobile">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/75.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                                Dr. Harry Wilson
+                            </h3>
+                            <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                UI UX Design
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+    </section>
 
-    <!-- Popular open quizzes -->
+<!-- Popular open quizzes -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Open Quizzes</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more</a></span></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="columns is-centered is-multiline">
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3-widescreen is-6-tablet is-12-mobile">
+                    <div class="card mx-2 is-clickable shadowObjBox">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <br>
+        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more</a>
+    </section>
 
+<br>
 <!-- Footer -->
     <section class="section has-background-grey-dark">
         <div class="container">
