@@ -6,7 +6,7 @@ document.addEventListener('alpine:init', () => {
             document.querySelector('#burgerBtn').classList.toggle('is-active');
         },
         logout() {
-            window.location.href = '../../index.html';
+            window.location.href = '../../skill-bootcamp/index.html';
         }
     }));
 });
