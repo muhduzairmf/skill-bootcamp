@@ -8,8 +8,8 @@ document.addEventListener('alpine:init', () => {
             sessionStorage.setItem("isSignUp", "true");
             localStorage.setItem("isAuthorized", "true");
 
-            //window.location.href = '../../skill-bootcamp/timelines/timelines.html';
-            window.location.href = '../../timelines/timelines.html';
+            window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+            //window.location.href = '../../timelines/timelines.html';
         }
     }));
 });
