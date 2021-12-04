@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
-    <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
+    <script src="../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Open Quizzes</title>
 </head>
 <body x-data="main">
 
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <!-- Navbar -->
-    <nav class="navbar py-2">
+    <nav class="navbar has-background-grey-dark py-2">
         <div class="container">
             <div class="navbar-brand">
                 <div class="navbar-item mr-4">
@@ -42,16 +51,16 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                        <a href="../timelines/timelines.html" class="button has-background-grey-dark is-rounded notActive "><p class="has-text-light poppins">HOME</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                        <a href="../courses/browse-courses.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                        <a href="#" class="button  has-background-black is-rounded activeBtn"><p class="has-text-light poppins">QUIZZES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                        <a href="../dashboard/dashboard.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                     </div>
                     <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                         <div class="dropdown is-right is-hoverable">
@@ -63,13 +72,13 @@
                             </div>
                             <div class="dropdown-menu" role="menu">
                             <div id="dropCont1" class="dropdown-content has-background-grey-dark">
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 COURSES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="#" class="dropdown-item has-text-light poppins has-background-black activeBtn py-4 my-3">
                                 QUIZZES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 DASHBOARD
                                 </a>
                             </div>
@@ -120,11 +129,441 @@
         </div>
     </nav>
 
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-9-desktop is-12-touch">
 <!-- Browse all courses -->
-
+                    <!-- Header -->
+                    <div>
+                        <span class="title is-size-4-desktop is-size-5-touch poppins">Popular Open Quizzes</span>
+                        <span class="title is-size-4 is-pulled-right is-hidden-desktop is-clickable" x-on:click="toggleSearchFilterModal"><i class="bi bi-funnel"></i></span>
+                        <span>
+                            <div class="dropdown is-hoverable is-pulled-right is-hidden-touch">
+                                <div class="dropdown-trigger">
+                                  <button class="button poppins seeMore">
+                                    <span>Sort by: &nbsp;<strong>Newest</strong></span>
+                                    <span class="icon is-small">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                  <div class="dropdown-content has-background-grey-dark">
+                                    <a href="#newest" class="dropdown-item poppins seeMore">
+                                      Newest
+                                    </a>
+                                    <a href="#mostviews" class="dropdown-item poppins seeMore">
+                                      Most views
+                                    </a>
+                                  </div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="is-hidden-desktop">
+                        <br class="is-hidden-desktop">
+                        <div class="dropdown is-hoverable">
+                            <div class="dropdown-trigger">
+                              <button class="button poppins seeMore">
+                                <span>Sort by: &nbsp;<strong>Newest</strong></span>
+                                <span class="icon is-small">
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                              </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                              <div class="dropdown-content has-background-grey-dark">
+                                <a href="#newest" class="dropdown-item poppins seeMore">
+                                  Newest
+                                </a>
+                                <a href="#mostviews" class="dropdown-item poppins seeMore">
+                                  Most views
+                                </a>
+                              </div>
+                            </div>
+                        </div>
+                    </div><br></div>
+                <div class="column is-3-desktop is-hidden-touch"></div>
+            </div>
+            <div class="columns">
+                <div class="column is-9-desktop is-12-touch">
+<!-- List of courses -->
+                    <div class="columns is-multiline">
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Information Technology</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
 <!-- Pagination -->
+                    <nav class="pagination is-rounded is-centered">
+                        <ul class="pagination-list">
+                            <li><a href="" class="pagination-link has-background-white"><i class="bi bi-arrow-left"></i></a></li>
+                            <li><a href="" class="pagination-link has-background-black activeBtn poppins has-text-light">1</a></li>
+                            <li><a href="" class="pagination-link has-background-grey-dark notActive poppins has-text-light">2</a></li>
+                            <li><a href="" class="pagination-link has-background-grey-dark notActive poppins has-text-light">3</a></li>
+                            <li><a href="" class="pagination-link has-background-white"><i class="bi bi-arrow-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+<!-- Search courses -->
+                <div class="column is-3-desktop is-hidden-touch">
+                    <div class="columns">
+                        <div class="column is-12">
+                            <div class="box objBox">
+                                <p class="has-text-centered poppins mb-2"><strong>Search quizzes</strong></p>
+                                <form>
+                                    <div class="field has-addons">
+                                        <div class="control">
+                                          <input class="input poppins" type="text" placeholder="">
+                                        </div>
+                                        <div class="control">
+                                          <a class="button has-background-grey-dark has-text-light">
+                                            <i class="bi bi-search"></i>
+                                          </a>
+                                        </div>
+                                      </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div><br>
+<!-- Filter categories and content -->
+                    <div class="columns">
+                        <div class="column is-12">
+                            <div class="box objBox">
+                                <p class="has-text-centered poppins mb-2"><strong>Categories</strong></p>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Information Technology
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Art & Design
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; History
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Philosophy
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Mathematics
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Engineering
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Literature & Language
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered poppins">
+                                    <div class="column is-12" style="padding-bottom: 2px !important;">
+                                        <label class="checkbox ml-4">
+                                            <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                            &nbsp; Religion Study
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="has-text-centered">
+                                    <button class="button has-background-grey-dark has-text-light poppins is-rounded is-expanded">Apply filter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Search courses and categories -->
+<!-- Modal for search courses and filter categories, only for tablet and mobile -->
+    <div class="modal" id="searchFilterModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="section">
+                <div class="box objBox"><br>
+                    <p class="has-text-centered poppins mb-2"><strong>Search quizzes</strong></p>
+                    <form>
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                              <input class="input poppins" type="text" placeholder="">
+                            </div>
+                            <div class="control">
+                              <a class="button has-background-grey-dark has-text-light">
+                                <i class="bi bi-search"></i>
+                              </a>
+                            </div>
+                          </div>
+                    </form><br>
+                    <hr class="has-background-grey-lighter"><br>
+                    <p class="has-text-centered poppins mb-2"><strong>Categories</strong></p>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Information Technology
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Art & Design
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; History
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Philosophy
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Mathematics
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Engineering
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Literature & Language
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns is-centered poppins">
+                        <div class="column is-12" style="padding-bottom: 2px !important;">
+                            <label class="checkbox" style="margin-left: 10% !important">
+                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                &nbsp; Religion Study
+                            </label>
+                        </div>
+                    </div><br>
+                    <div class="has-text-centered">
+                        <button class="button has-background-grey-dark has-text-light poppins is-rounded is-expanded">Apply filter</button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" x-on:click="toggleSearchFilterModal"></button>
+    </div>
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">
@@ -179,8 +618,9 @@
         </footer>
     </section>
     
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <script src="../src/lib/aos.min.js"></script>
+    <script src="../src/lib/typewriter.min.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
     <script src="../src/scripts/quizzes.js"></script>
 </body>
 </html>

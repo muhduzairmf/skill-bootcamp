@@ -6,13 +6,13 @@ if (localStorage.getItem("isAuthorized") != "true") {
 
 var isSignUp = false;
 
-if (localStorage.getItem("isSignUp") == "true") {
+if (sessionStorage.getItem("isSignUp") == "true") {
     isSignUp = true;
 }
 
 function noMoreModal() {
     isSignUp = false;
-    localStorage.setItem("isSignUp", "false");
+    sessionStorage.setItem("isSignUp", "false");
 }
 
 document.addEventListener('alpine:init', () => {
@@ -24,8 +24,8 @@ document.addEventListener('alpine:init', () => {
         logout() {
             localStorage.setItem("isAuthorized", "false");
 
-            window.location.href = '../../skill-bootcamp/';
-            //window.location.href = '../../';
+            //window.location.href = '../../skill-bootcamp/index.html';
+            window.location.href = '../../index.html';
         },
         showModalGreet: isSignUp,
         closeModalGreet() {

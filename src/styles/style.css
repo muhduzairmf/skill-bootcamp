@@ -191,8 +191,11 @@ input.searchBox.poppins {
     top: 0 !important; /* Position the navbar at the top of the page */
 }
 
-
-
 .modal-content::-webkit-scrollbar {
     display: none;
+}
+
+.is-purple {
+    background-color: blueviolet !important;
+    color: white !important;
 }

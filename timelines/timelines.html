@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
-    <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
+    <script src="../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Timelines</title>
 </head>
 <body x-data="main" x-cloak>
@@ -54,16 +54,16 @@
                     </div>
                     <div class="navbar-end">
                         <div class="navbar-item">
-                            <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                            <a href="#" class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></a>
                         </div>
                         <div class="navbar-item is-hidden-desktop-only">
-                            <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                            <a href="../courses/browse-courses.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
                         </div>
                         <div class="navbar-item is-hidden-desktop-only">
-                            <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                            <a href="../quizzes/browse-quizzes.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
                         </div>
-                        <div class="navbar-item is-hidden-desktop-only">
-                            <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                        <div  class="navbar-item is-hidden-desktop-only">
+                            <a href="../dashboard/dashboard.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                         </div>
                         <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                             <div class="dropdown is-right is-hoverable">
@@ -75,13 +75,13 @@
                                 </div>
                                 <div class="dropdown-menu" role="menu">
                                   <div id="dropCont1" class="dropdown-content has-background-grey-dark">
-                                    <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                    <a href="../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       COURSES
                                     </a>
-                                      <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                      <a href="../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       QUIZZES
                                     </a>
-                                      <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                      <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       DASHBOARD
                                     </a>
                                   </div>
@@ -178,7 +178,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Course Categories</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Course Categories</span><span><a href="../courses/browse-courses.html" class="button poppins is-pulled-right is-hidden-touch seeMore" x-on:click="browseCourses">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -328,7 +328,7 @@
             </div>
         </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
+        <a href="../courses/browse-courses.html" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <!-- New released course -->
@@ -336,7 +336,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">New Released Course</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">New Released Course</span><span><a href="../courses/browse-courses.html" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -406,7 +406,7 @@
             </div>
         </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
+        <a href="../courses/browse-courses.html" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <!-- Popular lecturer -->
@@ -414,7 +414,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Lecturer</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Lecturer</span><span><a class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -523,7 +523,7 @@
             </div>
         </div>
         <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
+        <a class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <!-- Popular open quizzes -->
@@ -531,7 +531,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Open Quizzes</span><span><a href="" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
+                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Popular Open Quizzes</span><span><a href="../quizzes/browse-quizzes.html" class="button poppins is-pulled-right is-hidden-touch seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a></span></p>
                 </div>
             </div>
         </div>
@@ -599,8 +599,7 @@
                     </div>
                 </div>
             </div>
-        <br>
-        <a href="" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
+        <a href="../quizzes/browse-quizzes.html" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
     </section>
 
 <br>
@@ -657,7 +656,7 @@
         </footer>
     </section>
     
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../src/lib/aos.min.js"></script>
     <script src="../src/lib/typewriter.min.js"></script>
     <script src="../src/lib/loading.min.js"></script>
     <script src="../src/scripts/timelines.js"></script>

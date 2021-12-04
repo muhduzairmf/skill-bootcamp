@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/styles/style.css">
-    <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
+    <script src="../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Preview course</title>
 </head>
-<body x-data="main">
+<body x-data="main" x-cloak>
+
+<!-- Loading -->
+    <div class="modal is-active is-clipped" id="loading">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="loader"></div>
+        </div>
+    </div>
     
 <!-- Navbar -->
     <nav class="navbar py-2">
@@ -42,7 +50,7 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins" x-on:click="goTimelines">HOME</p></button>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
                         <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
@@ -183,8 +191,8 @@
         </footer>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <script src="../src/lib/aos.min.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
     <script src="../src/scripts/courses.js"></script>
 </body>
 </html>

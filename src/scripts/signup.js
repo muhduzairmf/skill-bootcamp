@@ -4,12 +4,8 @@ document.addEventListener('alpine:init', () => {
         displayMenu() {
             document.querySelector('#navMenu').classList.toggle('is-active');
         },
-        loginPage() {
-            window.location.href = '/skill-bootcamp/login/login.html'
-            //window.location.href = '../../login/login.html';
-        },
         submitSignup() {
-            localStorage.setItem("isSignUp", "true");
+            sessionStorage.setItem("isSignUp", "true");
             localStorage.setItem("isAuthorized", "true");
 
             window.location.href = '../../skill-bootcamp/timelines/timelines.html';

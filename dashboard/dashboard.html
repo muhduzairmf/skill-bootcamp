@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/lib/loading.min.css">
+    <style>
+        @import "../src/lib/bulma.min.css";
+        @import "../src/lib/loading.min.css";
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <title>Skill Bootcamp | Dashboard</title>
+</head>
+<body x-data="main" x-cloak>
+
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
+    <script src="../src/lib/alpine.min.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
+    <script>
+        
+        if (localStorage.getItem("isAuthorized") != "true") {
+            window.location.replace('../../skill-bootcamp/');
+            //window.location.replace('../../');
+        }
+
+
+    </script>
+</body>
+</html>
