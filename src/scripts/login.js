@@ -7,8 +7,8 @@ document.addEventListener('alpine:init', () => {
         submitLogin() {
             localStorage.setItem("isAuthorized", "true");
 
-            //window.location.href = '../../skill-bootcamp/timelines/timelines.html';
-            window.location.href = '../../timelines/timelines.html';
+            window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+            //window.location.href = '../../timelines/timelines.html';
         }
     }));
 });
