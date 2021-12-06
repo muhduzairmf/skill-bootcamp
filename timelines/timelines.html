@@ -20,7 +20,7 @@
 </div>
 
 <!-- Navbar and header -->
-<header class="hero has-background-grey-dark is-medium">
+<header id="heroTimeline" class="hero is-medium">
     <!-- Navbar -->
     <div class="hero-head">
         <nav class="navbar py-2">
@@ -35,7 +35,7 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="navbar-menu has-background-grey-dark" id="navMenu">
+                <div class="navbar-menu" id="navMenu">
                     <div class="navbar-start">
                         <div class="navbar-item ml-4-desktop">
                             <br class="is-hidden-desktop">
@@ -54,27 +54,27 @@
                     </div>
                     <div class="navbar-end">
                         <div class="navbar-item">
-                            <a href="#" class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></a>
+                            <a href="#" class="button is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></a>
                         </div>
                         <div class="navbar-item is-hidden-desktop-only">
-                            <a href="../courses/browse-courses.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
+                            <a href="../courses/browse-courses.html" class="button has-background-info-dark is-rounded noBgColor notActive"><p class="has-text-light poppins">COURSES</p></a>
                         </div>
                         <div class="navbar-item is-hidden-desktop-only">
-                            <a href="../quizzes/browse-quizzes.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
+                            <a href="../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded noBgColor notActive"><p class="has-text-light poppins">QUIZZES</p></a>
                         </div>
                         <div  class="navbar-item is-hidden-desktop-only">
-                            <a href="../dashboard/dashboard.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
+                            <a href="../dashboard/dashboard.html" class="button has-background-info-dark is-rounded noBgColor notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                         </div>
                         <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                             <div class="dropdown is-right is-hoverable">
                                 <div class="dropdown-trigger">
-                                  <button class="button has-background-grey-dark is-rounded notActive">
-                                    <span class="has-text-light poppins">MENU</span>
+                                  <button class="button is-rounded noBgColor notActive">
+                                    <span class="has-text-light poppins noBgColor">MENU</span>
                                     <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                                   </button>
                                 </div>
                                 <div class="dropdown-menu" role="menu">
-                                  <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                  <div id="dropCont1" class="dropdown-content has-background-info-dark">
                                     <a href="../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       COURSES
                                     </a>
@@ -91,13 +91,13 @@
                         <div class="navbar-item is-hidden-touch">
                             <div class="dropdown is-right is-hoverable">
                                 <div class="dropdown-trigger">
-                                    <button class="button has-background-grey-dark is-rounded notActive">
+                                    <button class="button noBgColor is-rounded notActive">
                                         <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
                                         <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                                     </button>
                                 </div>
                                 <div class="dropdown-menu" role="menu">
-                                    <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                    <div id="dropCont1" class="dropdown-content has-background-info-dark">
                                       <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
                                           <span class="image is-32x32 mb-2">
                                               <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
@@ -123,7 +123,7 @@
                                   STUDENT
                                 </p>
                                 <div class="navbar-item">
-                                    <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                    <button class="button activeBtn is-rounded "><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
         <div class="container my-4">
             <br>
             <h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins"><strong>Inovative Solutions <br> for Education</strong></h1>
-            <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins" style="width: 70%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
+            <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-light block poppins" style="width: 70%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
         </div>
     </div>
 </header>
@@ -145,7 +145,7 @@
     <div x-show="showModalGreet" class="modal is-active is-clipped">
         <div class="modal-background"></div>
         <div class="modal-content">
-            <div class="card">
+            <div class="card has-background-light">
                 <div class="card-content">
                   <div class="container">
                       <div class="columns is-centered is-vcentered">
@@ -186,11 +186,11 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_infotech.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -202,11 +202,11 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_art.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -218,11 +218,11 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_history.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -236,11 +236,11 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_philosophy.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -256,11 +256,11 @@
             </div>
             <div class="columns is-centered">
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_math.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -274,11 +274,11 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_engineering.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -292,11 +292,11 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_language.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -310,11 +310,11 @@
                     </div>
                 </div>
                 <div class="column is-one-fifth-widescreen is-3-tablet is-12-mobile">
-                    <div class="box objBox is-clickable">
+                    <div class="box objBox is-clickable category-card">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-10-tablet is-8-mobile">
                                 <figure class="image is-1by1">
-                                    <img src="https://doodleipsum.com/500/flat" alt="placeholder image">
+                                    <img src="../src/svg/category_religion.svg" alt="placeholder image" >
                                 </figure>
                             </div>
                         </div>
@@ -332,7 +332,7 @@
     </section>
 
 <!-- New released course -->
-    <section class="section">
+    <section class="section has-background-info-light">
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
@@ -347,7 +347,7 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -362,7 +362,7 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -377,7 +377,7 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -392,7 +392,7 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -431,7 +431,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                            <h3 class="title is-size-5-desktop is-size-6-touch has-text-centered poppins">
                                 Dr. Harry Wilson
                             </h3>
                             <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
@@ -450,7 +450,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                            <h3 class="title is-size-5-desktop is-size-6-touch has-text-centered poppins">
                                 Dr. Harry Wilson
                             </h3>
                             <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
@@ -469,7 +469,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                            <h3 class="title is-size-5-desktop is-size-6-touch has-text-centered poppins">
                                 Dr. Harry Wilson
                             </h3>
                             <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
@@ -492,7 +492,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                            <h3 class="title is-size-5-desktop is-size-6-touch has-text-centered poppins">
                                 Dr. Harry Wilson
                             </h3>
                             <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
@@ -511,7 +511,7 @@
                             </div>
                         </div>
                         <div class="block">
-                            <h3 class="title is-size-4-desktop is-size-5-touch has-text-centered poppins">
+                            <h3 class="title is-size-5-desktop is-size-6-touch has-text-centered poppins">
                                 Dr. Harry Wilson
                             </h3>
                             <p class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
@@ -527,7 +527,7 @@
     </section>
 
 <!-- Popular open quizzes -->
-    <section class="section">
+    <section class="section has-background-info-light">
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
@@ -542,13 +542,13 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.unsplash.com/photo-1588912914017-923900a34710?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=919&q=80" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
                                 <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                                <p class="subtitle is-6 poppins"><strong>12</strong> Questions</p>
                             </div>
                         </div>
                     </div>
@@ -557,13 +557,13 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.unsplash.com/photo-1588912914017-923900a34710?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=919&q=80" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
                                 <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                                <p class="subtitle is-6 poppins"><strong>12</strong> Questions</p>
                             </div>
                         </div>
                     </div>
@@ -572,13 +572,13 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.unsplash.com/photo-1588912914017-923900a34710?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=919&q=80" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
                                 <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                                <p class="subtitle is-6 poppins"><strong>12</strong> Questions</p>
                             </div>
                         </div>
                     </div>
@@ -587,22 +587,21 @@
                     <div class="card mx-2 is-clickable shadowObjBox">
                         <div class="card-image">
                             <figure class="image is-16by9">
-                                <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                <img src="https://images.unsplash.com/photo-1588912914017-923900a34710?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=919&q=80" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
                                 <h4 class="poppins"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="subtitle is-6 poppins">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, natus?</p>
+                                <p class="subtitle is-6 poppins"><strong>12</strong> Questions</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <a href="../quizzes/browse-quizzes.html" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a>
+        <a href="../quizzes/browse-quizzes.html" class="button poppins is-pulled-right is-hidden-desktop seeMore">See more &nbsp;<i class="bi bi-arrow-right"></i></a><br>
     </section>
 
-<br>
 <!-- Footer -->
     <section class="section has-background-grey-dark">
         <div class="container">

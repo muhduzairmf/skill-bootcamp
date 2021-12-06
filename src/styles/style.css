@@ -11,6 +11,13 @@
 
 [x-cloak] { display: none !important; }
 
+#heroHome {
+    background-image: url('../img/bg-header-home.png');
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #feedback1::-webkit-scrollbar {
     display: none;
 }
@@ -40,7 +47,7 @@
 }
 
 .goodButton:hover {
-    background: rgba(53, 53, 53, 0.6) !important;
+    background: hsl(0, 0%, 29%) !important;
     box-shadow: 0 2px 4px 0 rgba(92, 92, 92, 0.37) !important;
     backdrop-filter: blur( 12px ) !important;
     -webkit-backdrop-filter: blur( 12px ) !important;
@@ -48,7 +55,7 @@
 }
 
 .glassBox {
-    background: rgba( 255, 255, 255, 0.25 ) !important;
+    background: hsl(0, 0%, 96%) !important;
     box-shadow: 0 8px 32px 0 rgba(92, 92, 92, 0.37) !important;
     backdrop-filter: blur( 9px ) !important;
     -webkit-backdrop-filter: blur( 9px ) !important;
@@ -140,22 +147,23 @@ input.searchBox.poppins {
 }
 
 .activeBtn {
-    border: 1px solid hsl(0, 0%, 4%);
+    background: #10496d !important;
+    border: 1px solid #10496d !important;
 }
 
 .activeBtn:hover {
-    background: hsl(0, 0%, 29%) !important;
+    background: #1d72aa !important;
     box-shadow: 0 5px 10px 0 black;
-    border: 1px solid hsl(0, 0%, 29%) !important;
+    border: 1px solid #1d72aa !important;
 }
 
 .notActive {
-    border: 1px solid hsl(0, 0%, 29%);
+    border: 1px solid #1d72aa !important;
 }
 
 .notActive:hover {
-    background: hsl(0, 0%, 4%) !important;
-    border: 1px solid hsl(0, 0%, 4%) !important;
+    background: #10496d  !important;
+    border: 1px solid #10496d !important;
 }
 
 .padMega {
@@ -167,13 +175,13 @@ input.searchBox.poppins {
 }
 
 .seeMore {
-    background-color: hsl(0, 0%, 29%) !important;
+    background-color: #1d72aa !important;
     color: hsl(0, 0%, 96%) !important;
 }
 
 .seeMore:hover {
     background-color: white !important;
-    color: hsl(0, 0%, 29%) !important;
+    color: #1d72aa !important;
     border: 0px;
 }
 
@@ -198,4 +206,116 @@ input.searchBox.poppins {
 .is-purple {
     background-color: blueviolet !important;
     color: white !important;
+}
+
+@media (min-width:769px) {
+    .feature-card {
+        height: 400px !important;
+    }
+}
+
+@media (min-width:769px) {
+    .achieve-card {
+        height: 165px !important;
+    }
+}
+
+@media (min-width:920px) {
+    .achieve-card {
+        height: 180px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .achieve-card {
+        height: 195px !important;
+    }
+}
+
+@media (min-width:769px) {
+    .feedback-card {
+        height: 300px !important;
+    }
+}
+
+@media (min-width:818px) {
+    .feedback-card {
+        height: 280px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .feedback-card {
+        height: 265px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .team-card {
+        height: 160px !important;
+    }
+}
+
+@media (min-width:769px) {
+    .all-main-card {
+        height: 185px !important;
+    }
+}
+
+.login:hover {
+    color: #1d72aa !important;
+}
+
+#heroTimeline {
+    background-image: url('../svg/bg-header-timeline.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.noBgColor {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+}
+
+@media (min-width:769px) {
+    .category-card {
+        height: 160px !important;
+    }
+}
+
+@media (min-width:925px) {
+    .category-card {
+        height: 180px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .category-card {
+        height: 210px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .standard-card {
+        height: 320px !important;
+    }
+}
+
+@media (min-width:1216px) {
+    .standard-card {
+        height: 310px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .standard-card2 {
+        height: 345px !important;
+    }
+}
+
+@media (min-width:1216px) {
+    .standard-card2 {
+        height: 335px !important;
+    }
 }

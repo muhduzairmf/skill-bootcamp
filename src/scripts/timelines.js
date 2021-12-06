@@ -24,8 +24,8 @@ document.addEventListener('alpine:init', () => {
         logout() {
             localStorage.setItem("isAuthorized", "false");
 
-            //window.location.href = '../../skill-bootcamp/index.html';
-            window.location.href = '../../index.html';
+            window.location.href = '../../skill-bootcamp/index.html';
+            //window.location.href = '../../index.html';
         },
         showModalGreet: isSignUp,
         closeModalGreet() {

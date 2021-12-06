@@ -20,7 +20,7 @@
 </div>
 
 <!-- Navbar and header -->
-    <section class="hero has-background-grey-dark is-medium">
+    <section id="heroHome" class="hero is-fullheight">
         <div class="hero-head">
             <nav class="navbar py-1 px-2">
                 <div class="container">
@@ -34,33 +34,33 @@
                             <span></span>
                         </div>
                     </div>
-                    <div id="navMenu" class="navbar-menu has-background-grey-dark animate__animated animate__fadeIn">
+                    <div id="navMenu" class="navbar-menu animate__animated animate__fadeIn">
                         <div class="navbar-start">
                             <div class="navbar-item"></div>
                         </div>
                         <div class="navbar-end">
                             <div class="navbar-item">
-                                <a href="/skill-bootcamp/login/login.html" class="button is-light is-outlined poppins" x-on:click="loginPage">LOGIN</a>
+                                <a href="/skill-bootcamp/login/login.html" class="button is-light is-outlined poppins login" x-on:click="loginPage">LOGIN</a>
                             </div>
                             <div class="navbar-item">
-                                <a href="/skill-bootcamp/signup/signup.html" class="button is-light poppins" x-on:click="signupPage">SIGN UP</a>
+                                <a href="/skill-bootcamp/signup/signup.html" class="button is-light poppins has-text-info-dark" x-on:click="signupPage">SIGN UP</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-        <div class="hero-body">
-            <div class="container my-4">
-                <br class="is-hidden-desktop"><br class="is-hidden-desktop"><h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins" data-aos="fade-down" data-aos-duration="2000"><strong>Learn from <br class="is-hidden-desktop"> anywhere</strong></h1>
-                <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-light block poppins" data-aos="fade-right" data-aos-duration="2000" style="width: 70%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis dolore soluta ad provident iusto, porro necessitatibus sapiente debitis ea voluptas aperiam dolorum facere consequuntur nesciunt culpa quis non. Animi, autem!</p>
-                <a href="/skill-bootcamp/signup/signup.html" class="button is-light poppins"  x-on:click="signupPage">Sign up free</a><br class="is-hidden-desktop"><br class="is-hidden-desktop">
+        <div  class="hero-body" style="padding-top: 0px !important;">
+            <div class="container my-2">
+                <h1 class="title is-size-1-desktop is-size-2-touch has-text-light poppins" data-aos="fade-down" data-aos-duration="2000"><strong>Learn from <br class="is-hidden-desktop"> anywhere</strong></h1>
+                <p class="mt-1 subtitle is-size-5-desktop is-size-6-touch has-text-grey-lighter block poppins" data-aos="fade-right" data-aos-duration="2000" style="width: 70%;"> "Many of life's failures are people who did not realise how close they were <br class="is-hidden-touch is-hidden-desktop-only"> to success when they gave up"<br><br>-THOMAS EDISON </p>
+                <a href="/skill-bootcamp/signup/signup.html" class="button is-light poppins has-text-info-dark"  x-on:click="signupPage">Sign up free</a><br class="is-hidden-desktop"><br class="is-hidden-desktop">
             </div>
         </div>
     </section>
 
 <!-- Suggest study -->
-    <section class="section has-background-grey-light">
+    <section class="section">
         <div class="container">
             <h2 class="is-size-2 title poppins has-text-centered">
                 Let's explore and learn about <br><span id="typewriter"></span>
@@ -69,53 +69,53 @@
     </section>
 
 <!-- Features -->
-    <section class="section">
+    <section class="section has-background-info-light">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-dark has-text-centered poppins block"><strong>Features we provided</strong></h2>
-            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-darker has-text-centered poppins block my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aperiam fuga laboriosam.</p><br><br>
+            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-darker has-text-centered poppins block my-4">Choose from hundred of online video courses by Lecturer and notes given <br class="is-hidden-touch">by them.</p><br><br>
             <!-- Features card for tablet and above -->
             <div class="columns is-centered">
                 <div class="column is-3-widescreen is-4-tablet is-hidden-mobile">
-                    <div class="card mx-2" data-aos="flip-left" data-aos-duration="2500">
+                    <div class="card mx-2 feature-card" data-aos="flip-left" data-aos-duration="2500">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                <img src="src/svg/features_video.svg" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <h3 class="has-text-centered poppins"><strong>Feature 1</strong></h3>
-                                <p class="poppins has-text-centered">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <h3 class="has-text-centered poppins"><strong>Video Learning</strong></h3>
+                                <p class="poppins has-text-centered">Watch video created by lecturer for specific subject or topic.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="column is-3-widescreen is-4-tablet is-hidden-mobile">
-                    <div class="card mx-2" data-aos="flip-left" data-aos-duration="2500">
+                    <div class="card mx-2 feature-card" data-aos="flip-left" data-aos-duration="2500">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                <img src="src/svg/features_learning.svg" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <h3 class="has-text-centered poppins"><strong>Feature 2</strong></h3>
-                                <p class="poppins has-text-centered">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <h3 class="has-text-centered poppins"><strong>Learning Materials</strong></h3>
+                                <p class="poppins has-text-centered">Download Notes for Easy Study Anywhere and Anytime.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="column is-3-widescreen is-4-tablet is-hidden-mobile">
-                    <div class="card mx-2" data-aos="flip-left" data-aos-duration="2500">
+                    <div class="card mx-2 feature-card" data-aos="flip-left" data-aos-duration="2500">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                <img src="src/svg/features_information.svg" alt="placeholder image">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <h3 class="has-text-centered poppins"><strong>Feature 3</strong></h3>
-                                <p class="poppins has-text-centered">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <h3 class="has-text-centered poppins"><strong>All in One Information</strong></h3>
+                                <p class="poppins has-text-centered">Do not miss opportunity on joining our event.</p>
                             </div>
                         </div>
                     </div>
@@ -128,13 +128,13 @@
                         <div class="card mx-4" data-aos="flip-left" data-aos-duration="2500">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/features_video.svg" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <h3 class="has-text-centered poppins"><strong>Feature 1</strong></h3>
-                                    <p class="poppins has-text-centered">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    <h3 class="has-text-centered poppins"><strong>Video Learning</strong></h3>
+                                    <p class="poppins has-text-centered">Watch video created by lecturer for specific subject or topic.</p>
                                 </div>
                             </div>
                         </div>
@@ -145,13 +145,13 @@
                         <div class="card mx-4" data-aos="flip-left" data-aos-duration="2500">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/features_learning.svg" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <h3 class="has-text-centered poppins"><strong>Feature 2</strong></h3>
-                                    <p class="poppins has-text-centered">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    <h3 class="has-text-centered poppins"><strong>Learning Materials</strong></h3>
+                                    <p class="poppins has-text-centered">Download Notes for Easy Study Anywhere and Anytime.</p>
                                 </div>
                             </div>
                         </div>
@@ -162,13 +162,13 @@
                         <div class="card mx-4" data-aos="flip-left" data-aos-duration="2500">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/features_information.svg" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <h3 class="has-text-centered poppins"><strong>Feature 3</strong></h3>
-                                    <p class="poppins has-text-centered">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    <h3 class="has-text-centered poppins"><strong>All in One Information</strong></h3>
+                                    <p class="poppins has-text-centered">Do not miss opportunity on joining our event.</p>
                                 </div>
                             </div>
                         </div>
@@ -179,24 +179,23 @@
     </section>
 
 <!-- Aims -->
-    <section class="section has-background-grey-dark">
+    <section class="section has-background-info-dark">
         <div class="container my-6">
             <div class="columns is-centered is-vcentered mx-2">
                 <div class="column is-4 mx-3">
                     <figure class="image is-1by1" data-aos="fade-right" data-aos-duration="2500">
-                        <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                        <img src="src/svg/aim.svg" alt="placeholder image">
                     </figure>
                 </div>
                 <div class="column is-5 mx-3">
                     <div class="block" data-aos="fade-down" data-aos-duration="2500">
                         <h3 class="title is-size-3-desktop is-size-4-touch has-text-light poppins"><strong>Our aims</strong></h3><br>
-                        <p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis pariatur eius necessitatibus autem inventore provident, amet ipsa quas praesentium enim nihil, tenetur nemo magnam cupiditate. Eveniet ipsa doloribus aperiam optio.</p>
-                        <p class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3">Lorem ipsum dolor sit.</p>
+                        <p class="subtitle is-size-5-desktop is-size-6-touch has-text-light poppins mb-5">Skill Bootcamp is a free, open source platform that provides learning that can easily be accessed by any students.</p>
+                        <br class="is-hidden-touch">
                         <ul>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
-                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-grey-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Lorem ipsum dolor sit amet consectetur.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Visual learning method for students to learn.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Provide learning materials for students.</li>
+                            <li class="subtitle is-size-5-desktop is-size-6-touch has-text-light poppins mb-3"><i class="bi bi-pencil-square"></i>&nbsp; Easy information access in one place.</li>
                         </ul>
                     </div>
                 </div>
@@ -205,7 +204,7 @@
     </section>
 
 <!-- Objectives -->
-    <section class="section has-background-grey-light">
+    <section class="section">
         <div class="container my-6">
             <div class="columns is-centered is-vcentered mx-2">
                 <div class="column is-5 mx-3">
@@ -251,7 +250,7 @@
                 </div>
                 <div class="column is-4 mx-3">
                     <figure class="image is-1by1" data-aos="fade-left" data-aos-duration="2500">
-                        <img src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                        <img src="src/svg/objective.svg" alt="placeholder image">
                     </figure>
                 </div>
             </div>
@@ -259,17 +258,17 @@
     </section>
 
 <!-- Achievements -->
-    <section class="section">
+    <section class="section has-background-info-light">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-centered poppins"><strong>Our achievements</strong></h2><br>
             <!-- Achievement card for tablet and above -->
             <div class="columns is-centered is-vcentered mx-2 is-hidden-mobile">
                 <div class="column is-2-widescreen is-3-desktop-only is-3-tablet-only">
-                    <div class="box objBox" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="box objBox achieve-card" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_student.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -284,11 +283,11 @@
                     </div>
                 </div>
                 <div class="column is-2-widescreen is-3-desktop-only is-3-tablet-only">
-                    <div class="box objBox" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="box objBox achieve-card" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_course.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -303,11 +302,11 @@
                     </div>
                 </div>
                 <div class="column is-2-widescreen is-3-desktop-only is-3-tablet-only">
-                    <div class="box objBox" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="box objBox achieve-card" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_quiz.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -322,11 +321,11 @@
                     </div>
                 </div>
                 <div class="column is-2-widescreen is-3-desktop-only is-3-tablet-only">
-                    <div class="box objBox" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="box objBox achieve-card" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1 ">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_lecturer.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -341,14 +340,14 @@
                     </div>
                 </div>
             </div>
-            <!-- Achievement card for tablet and above -->
+            <!-- Achievement card for mobile -->
             <div class="columns is-mobile is-hidden-tablet">
                 <div class="column is-10 is-offset-1">
                     <div class="box objBox" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-6">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_student.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -369,7 +368,7 @@
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-6">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_course.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -390,7 +389,7 @@
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-6">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img src="src/svg/achieve_quiz.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -411,7 +410,7 @@
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-6">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/700/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/achieve_lecturer.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
@@ -430,17 +429,17 @@
     </section>
 
 <!-- Who can take benefit -->
-    <section class="section has-background-grey-dark">
+    <section class="section has-background-info-dark">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-centered has-text-light poppins" data-aos="zoom-in-up" data-aos-duration="2500"><strong>Who can take benefit from this website?</strong></h2>
-            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-grey-light poppins my-5" data-aos="zoom-in-up" data-aos-duration="2500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis pariatur eius necessitatibus autem inventore provident.</p><br>
+            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-light poppins my-5" data-aos="zoom-in-up" data-aos-duration="2500">Take advantage to learn something new.</p><br>
             <div class="columns mx-2">
                 <div class="column">
                     <div class="box" data-aos="fade-up-right" data-aos-duration="2500">
                         <article class="media">
                             <div class="media-left">
-                                <figure class="is-24x24">
-                                    <img src="https://doodleipsum.com/128/flat">
+                                <figure>
+                                    <img src="src/svg/benefit_student.svg" style="width: 64px; height: auto;">
                                 </figure>
                             </div>
                             <div class="media-content is-hidden-mobile">
@@ -470,8 +469,8 @@
                         <div class="box" data-aos="fade-up-left" data-aos-duration="2500">
                             <article class="media">
                                 <div class="media-left">
-                                    <figure class="is-24x24">
-                                        <img src="https://doodleipsum.com/128/flat">
+                                    <figure>
+                                        <img src="src/svg/benefit_lecturer.svg" style="width: 64px; height: auto;">
                                     </figure>
                                 </div>
                                 <div class="media-content is-hidden-mobile">
@@ -502,14 +501,14 @@
     </section>
 
 <!-- Feedback -->
-    <section class="section has-background-grey-light">
+    <section class="section">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-centered poppins" data-aos="zoom-out" data-aos-duration="2500"><strong>What our students have to say?</strong></h2>
-            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-grey-dark poppins my-5" data-aos="zoom-out" data-aos-duration="2500">Lorem ipsum dolor sit amet consectetur adipisicing elit pariatur eius.</p><br>
+            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-grey-dark poppins my-5" data-aos="zoom-out" data-aos-duration="2500">Discover Your Right Program in Our Courses.</p><br>
             <!-- Feedback card for tablet and above -->
-            <div class="columns is-centered is-vcentered mx-4 is-hidden-touch">
+            <div class="columns is-centered is-vcentered mx-4 is-hidden-mobile">
                 <div class="column is-3-widescreen is-4-desktop-only is-4-tablet-only">
-                    <div class="card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="3000">
+                    <div class="card feedback-card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="3000">
                         <div class="card-content">
                             <div class="media">
                               <div class="media-left">
@@ -524,17 +523,14 @@
                             </div>
                         
                             <div class="content poppins">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Phasellus nec iaculis mauris.
-                              <a href="#">#skill_bootcamp</a> <a href="#">#uthm</a>
-                              <br>
-                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                              "This is such a great website."
+                              <a href="#">#skill_bootcamp</a>
                             </div>
                           </div>
                     </div>
                 </div>
                 <div class="column is-3-widescreen is-4-desktop-only is-4-tablet-only">
-                    <div class="card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">
+                    <div class="card feedback-card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">
                         <div class="card-content">
                             <div class="media">
                               <div class="media-left">
@@ -549,17 +545,14 @@
                             </div>
                         
                             <div class="content poppins">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Phasellus nec iaculis mauris.
-                              <a href="#">#skill_bootcamp</a> <a href="#">#uthm</a>
-                              <br>
-                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                              "I really recommend this website to all of student because of the content is very great and useful."
+                              <a href="#">#skill_bootcamp</a>
                             </div>
                           </div>
                     </div>
                 </div>
                 <div class="column is-3-widescreen is-4-desktop-only is-4-tablet-only">
-                    <div class="card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
+                    <div class="card feedback-card" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
                         <div class="card-content">
                             <div class="media">
                               <div class="media-left">
@@ -574,11 +567,8 @@
                             </div>
                         
                             <div class="content poppins">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Phasellus nec iaculis mauris.
-                              <a href="#">#skill_bootcamp</a> <a href="#">#uthm</a>
-                              <br>
-                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                              "This website is very recommended to other student that want to gain new knowledges."
+                              <a href="#">#skill_bootcamp</a>
                             </div>
                           </div>
                     </div>
@@ -602,11 +592,8 @@
                             </div>
                         
                             <div class="content poppins">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Phasellus nec iaculis mauris.
-                              <a href="#">#skill_bootcamp</a> <a href="#">#uthm</a>
-                              <br>
-                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                "This is such a great website."
+                              <a href="#">#skill_bootcamp</a>
                             </div>
                           </div>
                     </div>
@@ -629,11 +616,8 @@
                             </div>
                         
                             <div class="content poppins">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Phasellus nec iaculis mauris.
-                              <a href="#">#skill_bootcamp</a> <a href="#">#uthm</a>
-                              <br>
-                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                "I really recommend this website to all of student because of the content is very great and useful."
+                              <a href="#">#skill_bootcamp</a>
                             </div>
                           </div>
                     </div>
@@ -656,11 +640,8 @@
                             </div>
                         
                             <div class="content poppins">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Phasellus nec iaculis mauris.
-                              <a href="#">#skill_bootcamp</a> <a href="#">#uthm</a>
-                              <br>
-                              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                "This website is very recommended to other student that want to gain new knowledges."
+                              <a href="#">#skill_bootcamp</a>
                             </div>
                           </div>
                     </div>
@@ -670,88 +651,88 @@
     </section>
 
 <!-- Our team -->
-    <section class="section">
+    <section class="section has-background-info-light">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-centered poppins" data-aos="zoom-in-up" data-aos-duration="2500"><strong>Meet our teams</strong></h2>
-            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-grey-dark poppins my-5" data-aos="zoom-in-up" data-aos-duration="2500">Lorem ipsum dolor sit amet consectetur adipisicing elit pariatur eius.</p><br>
+            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-grey-dark poppins my-5" data-aos="zoom-in-up" data-aos-duration="2500">The Frontend Man</p><br>
             <!-- Team members card for widescreen and above -->
             <div class="columns is-centered is-hidden-touch">
                 <div class="column is-one-fifth-desktop is-2-widescreen">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <div class="box objBox team-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_data_analyst.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                DATA ANALYST
                             </h3>
                         </div>
                     </div>
                 </div>
                 <div class="column is-one-fifth-desktop is-2-widescreen">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <div class="box objBox team-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_designer.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                DESIGNER
                             </h3>
                         </div>
                     </div>
                 </div>
                 <div class="column is-one-fifth-desktop is-2-widescreen">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <div class="box objBox team-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_programmer.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                PROGRAMMER
                             </h3>
                         </div>
                     </div>
                 </div>
                 <div class="column is-one-fifth-desktop is-2-widescreen">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <div class="box objBox team-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_qa_tester.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                QA TESTER
                             </h3>
                         </div>
                     </div>
                 </div>
                 <div class="column is-one-fifth-desktop is-2-widescreen">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                    <div class="box objBox team-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                         <div class="columns is-centered mx-2 is-mobile">
                             <div class="column is-8">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_requirement_analyst.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                REQUIREMENT ANALYST
                             </h3>
                         </div>
                     </div>
@@ -764,13 +745,13 @@
                         <div class="columns is-centered is-mobile">
                             <div class="column is-10-mobile is-8-tablet">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_data_analyst.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                DATA ANALYST
                             </h3>
                         </div>
                     </div>
@@ -780,47 +761,13 @@
                         <div class="columns is-centered is-mobile">
                             <div class="column is-10-mobile is-8-tablet">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_designer.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-mobile is-centered is-hidden-desktop">
-                <div class="column is-4-tablet is-5-mobile">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                        <div class="columns is-centered is-mobile">
-                            <div class="column is-10-mobile is-8-tablet">
-                                <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="block">
-                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-4-tablet is-5-mobile">
-                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                        <div class="columns is-centered is-mobile">
-                            <div class="column is-10-mobile is-8-tablet">
-                                <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="block">
-                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                DESIGNER
                             </h3>
                         </div>
                     </div>
@@ -832,13 +779,47 @@
                         <div class="columns is-centered is-mobile">
                             <div class="column is-10-mobile is-8-tablet">
                                 <figure class="image is-1by1">
-                                    <img class="is-rounded" src="https://doodleipsum.com/100/flat" alt="placeholder image">
+                                    <img class="is-rounded" src="src/svg/meet_programmer.svg" alt="placeholder image">
                                 </figure>
                             </div>
                         </div>
                         <div class="block">
                             <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
-                                DEVELOPERS
+                                PROGRAMMER
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4-tablet is-5-mobile">
+                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                        <div class="columns is-centered is-mobile">
+                            <div class="column is-10-mobile is-8-tablet">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="src/svg/meet_qa_tester.svg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                QA TESTER
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile is-centered is-hidden-desktop">
+                <div class="column is-4-tablet is-5-mobile">
+                    <div class="box objBox" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                        <div class="columns is-centered is-mobile">
+                            <div class="column is-10-mobile is-8-tablet">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="src/svg/meet_requirement_analyst.svg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="subtitle is-size-6-desktop is-size-7-touch has-text-centered poppins">
+                                REQUIREMENT ANALYST
                             </h3>
                         </div>
                     </div>

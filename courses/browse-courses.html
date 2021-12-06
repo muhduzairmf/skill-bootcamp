@@ -20,7 +20,7 @@
     </div>
 
 <!-- Navbar -->
-    <nav class="navbar py-2 has-background-grey-dark">
+    <nav class="navbar py-2 has-background-info-dark">
         <div class="container">
             <div class="navbar-brand">
                 <div class="navbar-item mr-4">
@@ -32,7 +32,7 @@
                     <span></span>
                 </div>
             </div>
-            <div class="navbar-menu has-background-grey-dark" id="navMenu">
+            <div class="navbar-menu has-background-info-dark" id="navMenu">
                 <div class="navbar-start">
                     <div class="navbar-item ml-4-desktop">
                         <br class="is-hidden-desktop">
@@ -51,28 +51,28 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <a href="../timelines/timelines.html" class="button  has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="goTimelines">HOME</p></a>
+                        <a href="../timelines/timelines.html" class="button  has-background-info-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="goTimelines">HOME</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <a href="#" class="button has-background-black is-rounded activeBtn "><p class="has-text-light poppins">COURSES</p></a>
+                        <a href="#" class="button is-rounded activeBtn "><p class="has-text-light poppins">COURSES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <a href="../quizzes/browse-quizzes.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
+                        <a href="../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <a href="../dashboard/dashboard.html" class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
+                        <a href="../dashboard/dashboard.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                     </div>
                     <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                            <button class="button has-background-grey-dark is-rounded notActive">
+                            <button class="button has-background-info-dark is-rounded notActive">
                                 <span class="has-text-light poppins">MENU</span>
                                 <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                            <div id="dropCont1" class="dropdown-content has-background-grey-dark">
-                                <a href="#" class="dropdown-item has-text-light poppins has-background-black activeBtn py-4 my-3">
+                            <div id="dropCont1" class="dropdown-content has-background-info-dark">
+                                <a href="#" class="dropdown-item has-text-light poppins has-background-link-dark activeBtn py-4 my-3">
                                 COURSES
                                 </a>
                                 <a href="../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
@@ -88,13 +88,13 @@
                     <div class="navbar-item is-hidden-touch">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                                <button class="button has-background-grey-dark is-rounded notActive">
+                                <button class="button has-background-info-dark is-rounded notActive">
                                     <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
                                     <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                                 </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                                <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                <div id="dropCont1" class="dropdown-content has-background-info-dark">
                                 <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
                                     <span class="image is-32x32 mb-2">
                                         <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
@@ -120,7 +120,7 @@
                             STUDENT
                             </p>
                             <div class="navbar-item">
-                                <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                <button class="button is-rounded activeBtn"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
         </div>
     </nav>
 
-    <section class="section">
+    <section class="section has-background-light">
         <div class="container">
             <div class="columns is-vcentered">
                 <div class="column is-9-desktop is-12-touch">
@@ -149,7 +149,7 @@
                                   </button>
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                  <div class="dropdown-content has-background-grey-dark">
+                                  <div class="dropdown-content has-background-info-dark">
                                     <a href="#newest" class="dropdown-item poppins seeMore">
                                       Newest
                                     </a>
@@ -191,16 +191,34 @@
 <!-- List of courses -->
                     <div class="columns is-multiline">
                         <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
+                            <div class="card is-clickable shadowObjBox standard-card2">
                             <div class="card-image">
                                 <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                    <img src="https://images.unsplash.com/photo-1610650394144-a778795cf585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Engineering</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Engineering Drawing and CAD</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Peter Drury &nbsp;|&nbsp; 110 Students</p>
+                                <div class="tags">
+                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
+                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox standard-card2">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content" style="padding: 18px !important;">
                                 <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Fundamental of Networking</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Harry Wilson &nbsp;|&nbsp; 250 Students</p>
                                 <div class="tags">
                                     <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
                                     <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
@@ -210,16 +228,104 @@
                             </div>
                         </div>
                         <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
+                            <div class="card is-clickable shadowObjBox standard-card2">
                             <div class="card-image">
                                 <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                    <img src="https://cdn.pixabay.com/photo/2016/03/05/20/00/algebra-1238600_960_720.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Mathematics</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Linear Algebra</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Viktor Axelsen &nbsp;|&nbsp; 195 Students</p>
+                                <div class="tags">
+                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
+                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox standard-card2">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://cdn.pixabay.com/photo/2012/10/26/03/12/cologne-63176_960_720.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>History</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>World War I & II</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Alfonso Alberque &nbsp;|&nbsp; 90 Students</p>
+                                <div class="tags">
+                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox standard-card2">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Art & Design</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Basics in Photography</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Patrick Kluivert &nbsp;|&nbsp; 190 Students</p>
+                                <div class="tags">
+                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox standard-card2">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.pexels.com/photos/6457562/pexels-photo-6457562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Language & Literature</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to be a Good Listener</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Andy Murray &nbsp;|&nbsp; 207 Students</p>
+                                <div class="tags">
+                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
+                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox standard-card2">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.unsplash.com/photo-1610650394144-a778795cf585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content" style="padding: 18px !important;">
+                                <p class="poppins"><small>Engineering</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Engineering Drawing and CAD</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Peter Drury &nbsp;|&nbsp; 110 Students</p>
+                                <div class="tags">
+                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
+                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
+                            <div class="card is-clickable shadowObjBox standard-card2">
+                            <div class="card-image">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content" style="padding: 18px !important;">
                                 <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Fundamental of Networking</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Harry Wilson &nbsp;|&nbsp; 250 Students</p>
                                 <div class="tags">
                                     <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
                                     <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
@@ -229,189 +335,69 @@
                             </div>
                         </div>
                         <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
+                            <div class="card is-clickable shadowObjBox standard-card2">
                             <div class="card-image">
                                 <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                    <img src="https://cdn.pixabay.com/photo/2016/03/05/20/00/algebra-1238600_960_720.jpg" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                                <p class="poppins"><small>Mathematics</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Linear Algebra</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Viktor Axelsen &nbsp;|&nbsp; 195 Students</p>
                                 <div class="tags">
                                     <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
                                     <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
                                 </div>
                             </div>
                             </div>
                         </div>
                         <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
+                            <div class="card is-clickable shadowObjBox standard-card2">
                             <div class="card-image">
                                 <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                    <img src="https://cdn.pixabay.com/photo/2012/10/26/03/12/cologne-63176_960_720.jpg" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                                <p class="poppins"><small>History</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>World War I & II</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Alfonso Alberque &nbsp;|&nbsp; 90 Students</p>
                                 <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
                                     <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
                                 </div>
                             </div>
                             </div>
                         </div>
                         <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
+                            <div class="card is-clickable shadowObjBox standard-card2">
                             <div class="card-image">
                                 <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                                <p class="poppins"><small>Art & Design</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>Basics in Photography</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Patrick Kluivert &nbsp;|&nbsp; 190 Students</p>
                                 <div class="tags">
                                     <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
                                 </div>
                             </div>
                             </div>
                         </div>
                         <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
+                            <div class="card is-clickable shadowObjBox standard-card2">
                             <div class="card-image">
                                 <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
+                                    <img src="https://images.pexels.com/photos/6457562/pexels-photo-6457562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="placeholder image">
                                 </figure>
                             </div>
                             <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
+                                <p class="poppins"><small>Language & Literature</small></p>
+                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to be a Good Listener</strong></h4>
+                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Andy Murray &nbsp;|&nbsp; 207 Students</p>
                                 <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
-                            <div class="card-image">
-                                <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
-                                <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
-                            <div class="card-image">
-                                <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
-                                <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
-                            <div class="card-image">
-                                <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
-                                <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
-                            <div class="card-image">
-                                <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
-                                <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
-                            <div class="card-image">
-                                <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
-                                <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
-                                    <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
-                                    <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                            <div class="card is-clickable shadowObjBox">
-                            <div class="card-image">
-                                <figure class="image is-16by9">
-                                    <img src="https://picsum.photos/640/360" alt="placeholder image">
-                                </figure>
-                            </div>
-                            <div class="card-content" style="padding: 18px !important;">
-                                <p class="poppins"><small>Information Technology</small></p>
-                                <h4 class="poppins subtitle is-5 mb-1"><strong>How to speak English like a pro?</strong></h4>
-                                <p class="poppins mb-1" style="font-size: 14px !important;">Dr. Larry Thompson &nbsp;|&nbsp; 210 Students</p>
-                                <div class="tags">
-                                    <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
                                     <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
                                     <span class="tag is-purple"><a href="#quiz" style="color: white !important;">Quiz</a></span>
                                 </div>
@@ -423,9 +409,9 @@
                     <nav class="pagination is-rounded is-centered">
                         <ul class="pagination-list">
                             <li><a href="" class="pagination-link has-background-white"><i class="bi bi-arrow-left"></i></a></li>
-                            <li><a href="" class="pagination-link has-background-black activeBtn poppins has-text-light">1</a></li>
-                            <li><a href="" class="pagination-link has-background-grey-dark notActive poppins has-text-light">2</a></li>
-                            <li><a href="" class="pagination-link has-background-grey-dark notActive poppins has-text-light">3</a></li>
+                            <li><a href="" class="pagination-link activeBtn poppins has-text-light">1</a></li>
+                            <li><a href="" class="pagination-link has-background-info-dark notActive poppins has-text-light">2</a></li>
+                            <li><a href="" class="pagination-link has-background-info-dark notActive poppins has-text-light">3</a></li>
                             <li><a href="" class="pagination-link has-background-white"><i class="bi bi-arrow-right"></i></a></li>
                         </ul>
                     </nav>
@@ -442,7 +428,7 @@
                                           <input class="input poppins" type="text" placeholder="">
                                         </div>
                                         <div class="control">
-                                          <a class="button has-background-grey-dark has-text-light">
+                                          <a class="button has-background-info-dark has-text-light">
                                             <i class="bi bi-search"></i>
                                           </a>
                                         </div>
@@ -547,7 +533,7 @@
                                     </div>
                                 </div>
                                 <div class="has-text-centered">
-                                    <button class="button has-background-grey-dark has-text-light poppins is-rounded is-expanded">Apply filter</button>
+                                    <button class="button has-background-info-dark has-text-light poppins is-rounded is-expanded">Apply filter</button>
                                 </div>
                             </div>
                         </div>
@@ -570,7 +556,7 @@
                               <input class="input poppins" type="text" placeholder="">
                             </div>
                             <div class="control">
-                              <a class="button has-background-grey-dark has-text-light">
+                              <a class="button has-background-info-dark has-text-light">
                                 <i class="bi bi-search"></i>
                               </a>
                             </div>
@@ -669,7 +655,7 @@
                         </div>
                     </div>
                     <div class="has-text-centered">
-                        <button class="button has-background-grey-dark has-text-light poppins is-rounded is-expanded">Apply filter</button><br>
+                        <button class="button has-background-info-dark has-text-light poppins is-rounded is-expanded">Apply filter</button><br>
                     </div>
                 </div>
             </div>
