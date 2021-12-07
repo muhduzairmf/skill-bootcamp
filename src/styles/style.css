@@ -319,3 +319,21 @@ input.searchBox.poppins {
         height: 335px !important;
     }
 }
+
+@media (min-width:769px) {
+    .benefit-card {
+        height: 210px !important;
+    }
+}
+
+@media (min-width:925px) {
+    .benefit-card {
+        height: 240px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .benefit-card {
+        height: 270px !important;
+    }
+}
