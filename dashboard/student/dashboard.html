@@ -5,18 +5,313 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../src/styles/style.css">
-    <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
+    <script src="../../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Student's Dashboard</title>
 </head>
 <body x-data="main">
 
 <!-- Navbar -->
+    <nav class="navbar has-background-info-dark py-2">
+        <div class="container">
+            <div class="navbar-brand">
+                <div class="navbar-item mr-4">
+                    <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
+                </div>
+                <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="navbar-menu has-background-info-dark" id="navMenu">
+                <div class="navbar-start">
+                    <div class="navbar-item ml-4-desktop">
+                        <br class="is-hidden-desktop">
+                        <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                            <div class="control is-expanded">
+                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                            </div>
+                            <div class="control">
+                                <a class="button searchBox searchBtn poppins">
+                                    <i class="bi bi-search"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <br class="is-hidden-desktop">
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a href="../../timelines/timelines.html" class="button has-background-info-dark is-rounded notActive "><p class="has-text-light poppins">HOME</p></a>
+                    </div>
+                    <div class="navbar-item is-hidden-desktop-only">
+                        <a href="../../courses/browse-courses.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
+                    </div>
+                    <div class="navbar-item is-hidden-desktop-only">
+                        <a href="../../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
+                    </div>
+                    <div class="navbar-item is-hidden-desktop-only">
+                        <a href="#" class="button is-rounded activeBtn"><p class="has-text-light poppins">DASHBOARD</p></a>
+                    </div>
+                    <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
+                        <div class="dropdown is-right is-hoverable">
+                            <div class="dropdown-trigger">
+                            <button class="button has-background-info-dark is-rounded notActive">
+                                <span class="has-text-light poppins">MENU</span>
+                                <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            </div>
+                            <div class="dropdown-menu" role="menu">
+                            <div id="dropCont1" class="dropdown-content has-background-info-dark">
+                                <a href="../../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                COURSES
+                                </a>
+                                <a href="../../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins activeBtn py-4 my-3">
+                                QUIZZES
+                                </a>
+                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                DASHBOARD
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-item is-hidden-touch">
+                        <div class="dropdown is-right is-hoverable">
+                            <div class="dropdown-trigger">
+                                <button class="button has-background-info-dark is-rounded notActive">
+                                    <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
+                                    <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" role="menu">
+                                <div id="dropCont1" class="dropdown-content has-background-info-dark">
+                                <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
+                                    <span class="image is-32x32 mb-2">
+                                        <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                    </span>
+                                    Tim Carlton<br>
+                                    STUDENT
+                                </p>
+                                <a href="#" class="dropdown-item has-text-light poppins activeBtn py-2 my-2" x-on:click="logout">
+                                    Log out
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hidden-desktop">
+                        <div class="navbar-dropdown">
+                            <hr style="background-color: hsl(0, 0%, 96%) !important;">
+                            <p href="#" class="navbar-item has-text-light poppins py-2 my-2">
+                                <span class="image is-32x32 mb-2">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                </span>
+                            Tim Carlton<br>
+                            STUDENT
+                            </p>
+                            <div class="navbar-item">
+                                <button class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <section class="section has-background-info-light">
 <!-- Header -->
-
+        <div class="container">
+            <h2 class="title is-size-3-desktop is-size-4-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins"><strong>Dashboard</strong></h2>
+            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins">Student's Dashboard</p><br>
+        </div>
+        <div class="container mb-5">
+            <div class="columns">
 <!-- All settings -->
-
+                <div class="column is-4-tablet is-3-widescreen">
+                    <div class="box" style="padding-left: 0% !important; padding-right: 0% !important;">
+                        <div class="columns is-centered is-mobile mt-2" style="margin-bottom: 3px !important;">
+                            <div class="column is-4">
+                                <figure class="image is-1by1">
+                                    <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                        <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-dark poppins mb-5"><strong>Tim Carlton</strong></p>
+                        <div class="mb-3"></div>
+                        <div>
+                            <a href="#" class="button is-outlined active-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-pencil-square"></i>&nbsp;&nbsp;&nbsp;Personal detail
+                            </a>
+                            <a href="mycourses.html" class="button is-outlined notactive-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-journal-bookmark"></i>&nbsp;&nbsp;&nbsp;My courses
+                            </a>
+                            <a href="enroll-later.html" class="button is-outlined notactive-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-clock"></i>&nbsp;&nbsp;&nbsp;Enroll later courses
+                            </a>
+                            <a href="openquiz-history.html" class="button is-outlined notactive-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-card-checklist"></i>&nbsp;&nbsp;&nbsp;Quizzes history
+                            </a>
+                            <a href="change.html" class="button is-outlined notactive-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-lock"></i>&nbsp;&nbsp;&nbsp;Change Password
+                            </a>
+                            <a href="#" class="button is-outlined notactive-setting poppins has-text-left" x-on:click="logout">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-box-arrow-left"></i>&nbsp;&nbsp;&nbsp;Log out
+                            </a>
+                        </div>
+                    </div>
+                </div>
 <!-- Chosen setting, Personal detail as default -->
+                <div class="column is-8-tablet is-9-widescreen">
+                    <div class="box">
+                        <div class="container-fluid">
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Personal detail</span><span><a href="personal-detail.html" class="button poppins is-pulled-right is-hidden-touch seeMore"><i class="bi bi-pencil-square"></i>&nbsp; Edit details </a></span></p>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline">
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Full name</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            Tim Carlton
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Username</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            timcarlton
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline">
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Email</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            timcarlton.dev@gmail.com
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Phone Number</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            +60123456789
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Address</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            No. 123 Taman Bahagia
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline">
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">City</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            Changloon
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Postal Code</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            06010
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline">
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">State</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            Kedah
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Country</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            Malaysia
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">About me</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5 has-text-justified">
+                                            I am highly organized. I always take notes, and I use a series of tools to help myself stay on top of deadlines. I like to keep a clean workspace and create a logical filing method so I'm always able to find what I need. I find this increases efficiency and helps the rest of the team stay on track, too. In my last role, I created a new filing process that increased departmental efficiency 25%.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br class="is-hidden-desktop">
+                            <a class="button poppins is-pulled-right is-hidden-desktop seeMore"><i class="bi bi-pencil-square"></i>&nbsp; Edit details</a>
+                            <br class="is-hidden-desktop"><br class="is-hidden-desktop">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">
@@ -71,8 +366,6 @@
         </footer>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
     <script src="../../src/scripts/studentDashboard.js"></script>
 </body>
 </html>

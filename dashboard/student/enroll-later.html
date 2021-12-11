@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../src/styles/style.css">
     <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
-    <title>Skill Bootcamp | Add Quizzes</title>
+    <title>Skill Bootcamp | Take later courses</title>
 </head>
 <body x-data="main">
     
@@ -91,7 +91,7 @@
                                         <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
                                     </span>
                                     Tim Carlton<br>
-                                    LECTURER
+                                    STUDENT
                                 </p>
                                 <a href="#" class="dropdown-item has-text-light poppins activeBtn py-2 my-2" x-on:click="logout">
                                     Log out
@@ -108,7 +108,7 @@
                                     <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
                                 </span>
                             Tim Carlton<br>
-                            LECTURER
+                            STUDENT
                             </p>
                             <div class="navbar-item">
                                 <button class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
@@ -124,7 +124,7 @@
 <!-- Header -->
         <div class="container">
             <h2 class="title is-size-3-desktop is-size-4-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins"><strong>Dashboard</strong></h2>
-            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins">Lecturer's Dashboard</p><br>
+            <p class="subtitle is-size-5-desktop is-size-6-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins">Student's Dashboard</p><br>
         </div>
         <div class="container mb-5">
             <div class="columns">
@@ -144,11 +144,14 @@
                             <a href="dashboard.html" class="button is-outlined notactive-setting poppins has-text-left">
                                 <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-pencil-square"></i>&nbsp;&nbsp;&nbsp;Personal detail
                             </a>
-                            <a href="add-courses.html" class="button is-outlined notactive-setting poppins has-text-left">
-                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-journal-bookmark"></i>&nbsp;&nbsp;&nbsp;Add courses
+                            <a href="mycourses.html" class="button is-outlined notactive-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-journal-bookmark"></i>&nbsp;&nbsp;&nbsp;My courses
                             </a>
-                            <a href="add-quizzes.html" class="button is-outlined active-setting poppins has-text-left">
-                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-card-checklist"></i>&nbsp;&nbsp;&nbsp;Add quizzes
+                            <a href="enroll-later.html" class="button is-outlined active-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-clock"></i>&nbsp;&nbsp;&nbsp;Enroll later courses
+                            </a>
+                            <a href="openquiz-history.html" class="button is-outlined notactive-setting poppins has-text-left">
+                                <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-card-checklist"></i>&nbsp;&nbsp;&nbsp;Quizzes history
                             </a>
                             <a href="change.html" class="button is-outlined notactive-setting poppins has-text-left">
                                 <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-lock"></i>&nbsp;&nbsp;&nbsp;Change Password
@@ -159,13 +162,13 @@
                         </div>
                     </div>
                 </div>
-<!-- Add quizzes -->
+<!-- List of enroll later courses -->
                 <div class="column is-8-tablet is-9-widescreen">
                     <div class="box">
                         <div class="container-fluid">
                             <div class="columns">
                                 <div class="column is-12">
-                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Add quizzes</span></p>
+                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Enroll later courses</span></p>
                                 </div>
                             </div>
                         </div>
@@ -230,6 +233,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
-    <script src="../../src/scripts/lecturerDashboard.js"></script>
+    <script src="../../src/scripts/studentDashboard.js"></script>
 </body>
 </html>

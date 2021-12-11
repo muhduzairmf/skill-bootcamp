@@ -1,7 +1,7 @@
 
 if (localStorage.getItem("isAuthorized") != "true") {
-    //window.location.replace('../../skill-bootcamp/');
-    window.location.replace('../../');
+    window.location.replace('../../skill-bootcamp/index.html');
+    //window.location.replace('../../');
 }
 
 document.addEventListener('alpine:init', () => {

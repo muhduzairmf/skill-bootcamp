@@ -337,3 +337,33 @@ input.searchBox.poppins {
         height: 270px !important;
     }
 }
+
+.active-setting {
+    background-color: #209cee;
+    color: #f5f5f5;
+    display: block; 
+    border: 0px;
+    border-radius: 0%;
+}
+
+.active-setting:hover {
+    background-color: #1d72aa;
+    color: #f5f5f5;
+    display: block; 
+    border: 0px;
+    border-radius: 0%;
+}
+
+.notactive-setting {
+    display: block; 
+    border: 0px;
+    border-radius: 0%;
+}
+
+.notactive-setting:hover {
+    background-color: #209cee;
+    color: #f5f5f5;
+    display: block; 
+    border: 0px;
+    border-radius: 0%;
+}
