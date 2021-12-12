@@ -367,3 +367,50 @@ input.searchBox.poppins {
     border: 0px;
     border-radius: 0%;
 }
+
+@media (min-width:769px) {
+    .standard-card-setting {
+        height: 370px !important;
+    }
+}
+
+@media (min-width:1216px) {
+    .standard-card-setting {
+        height: 375px !important;
+    }
+}
+
+.progressbar {
+    height: 5px !important;
+    margin-bottom: 0px !important;
+}
+
+@media (min-width:769px) {
+    .standard-card-setting1 {
+        height: 310px !important;
+    }
+}
+
+@media (min-width:1216px) {
+    .standard-card-setting1 {
+        height: 315px !important;
+    }
+}
+
+@media (min-width:769px) {
+    .standard-card-setting2 {
+        height: 370px !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .standard-card-setting2 {
+        height: 360px !important;
+    }
+}
+
+@media (min-width:1216px) {
+    .standard-card-setting2 {
+        height: 350px !important;
+    }
+}
