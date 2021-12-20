@@ -110,7 +110,7 @@
                             </div>
                             <div class="word-line poppins mb-5">&nbsp; or &nbsp;</div>
                             <div class="has-text-centered">
-                                <button class="button glassButton">
+                                <button type="button" class="button glassButton" x-on:click="signupGoogle">
                                     <figure class="image is-16x16">
                                         <img src="../src/svg/Google.svg" alt="">
                                     </figure>
@@ -135,6 +135,211 @@
         </div>
     </section>
 
+<!-- Sign up Google Modal -->
+    <div class="modal is-active" x-show="googleModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            
+            <!-- First step, ask to choose account -->
+            <div class="card" x-show="firstStep">
+                <div class="card-content">
+                    <div class="columns is-mobile is-gapless is-vcentered" style="margin-bottom: 0% !important;">
+                        <div class="column is-1">
+                            <figure class="image is-16x16">
+                                <img src="../src/svg/Google.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="column is-11">
+                            <p class="subtitle is-6 poppins has-text-grey">Sign up with Google</p>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px !important; margin-bottom: 10px !important;"><br>
+                    <h2 class="is-size-3-desktop is-size-4-touch title has-text-centered poppins my-4"><strong>Choose your account</strong></h2>
+                    <h3 class="is-size-5-desktop is-size-6-touch subtitle has-text-centered poppins m-4">to continue to Skill Bootcamp</h3><br>
+                    <article class="media chooseAcc is-clickable" style="margin: 0px !important; padding-top: 5px !important; padding-bottom: 5px !important;" x-on:click="toSecondStepPath1">
+                        <figure class="media-left">
+                          <p class="image is-48x48">
+                            <img class="is-rounded" src="https://randomuser.me/api/portraits/men/44.jpg">
+                          </p>
+                        </figure>
+                        <div class="media-content">
+                          <div class="content poppins">
+                            <p>
+                                <strong style="font-size: larger;">Alexander Great</strong>
+                                <br>alexandergreat@gmail.com
+                            </p>
+                          </div>
+                        </div>
+                    </article>
+                    <article class="media chooseAcc is-clickable" style="margin: 0px !important; padding-top: 5px !important; padding-bottom: 5px !important;" x-on:click="toSecondStepPath1">
+                        <figure class="media-left">
+                          <p class="image is-48x48">
+                            <img class="is-rounded" src="https://randomuser.me/api/portraits/men/71.jpg">
+                          </p>
+                        </figure>
+                        <div class="media-content">
+                          <div class="content poppins">
+                            <p>
+                                <strong style="font-size: larger;">Roberto Carlos</strong>
+                                <br>robertocarlos@gmail.com
+                            </p>
+                          </div>
+                        </div>
+                    </article>
+                    <article class="media chooseAcc is-clickable" style="margin: 0px !important; padding-top: 5px !important; padding-bottom: 5px !important;" x-on:click="toSecondStepPath1">
+                        <figure class="media-left">
+                          <p class="image is-48x48">
+                            <img class="is-rounded" src="https://randomuser.me/api/portraits/women/72.jpg">
+                          </p>
+                        </figure>
+                        <div class="media-content">
+                          <div class="content poppins">
+                            <p>
+                                <strong style="font-size: larger;">Monica Michelle</strong>
+                                <br>monicamichelle@gmail.com
+                            </p>
+                          </div>
+                        </div>
+                    </article>
+                    <article class="media chooseAcc is-clickable" style="margin: 0px !important; padding-top: 5px !important; padding-bottom: 5px !important;" x-on:click="toSecondStepPath2">
+                        <figure class="media-left">
+                          <p class="image is-48x48">
+                            <img src="../src/img/account_user.png">
+                          </p>
+                        </figure>
+                        <div class="media-content">
+                          <div class="content poppins">
+                            <p style="padding-top: 5px !important;">
+                                Use another Google account
+                            </p>
+                          </div>
+                        </div>
+                    </article><br>
+                    <hr style="margin-top: 10px !important; margin-bottom: 10px !important;">
+                    <p class="subtitle is-size-6 poppins has-text-centered has-text-grey px-6">To continue, Google will share your name, email and profile picture with Skill Bootcamp</p>
+                </div>
+            </div>
+
+            <!-- step 2 path 1, show what Google will share -->
+            <div class="card" x-show="secondStepPath1">
+                <div class="card-content">
+                    <div class="columns is-mobile is-gapless is-vcentered" style="margin-bottom: 0% !important;">
+                        <div class="column is-1">
+                            <figure class="image is-16x16">
+                                <img src="../src/svg/Google.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="column is-11">
+                            <p class="subtitle is-6 poppins has-text-grey">Sign up with Google</p>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px !important; margin-bottom: 10px !important;"><br><br>
+                    <h5 class="is-size-4-desktop is-size-5-touch title poppins px-6"><strong>This will allow Skill Bootcamp to</strong></h5><br>
+                    <div class="content px-6">
+                        <p class="poppins"><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;View and access your personal information from Google</p>
+                        <hr>
+                        <p class="poppins"><i class="bi bi-envelope-check"></i>&nbsp;&nbsp;Send security code to your Gmail account</p>
+                        <hr><br>
+                    </div>
+                    <br><br>
+                    <div class="columns px-4">
+                        <div class="column is-12">
+                            <span>
+                                <a class="has-text-info is-pulled-left poppins" x-on:click="closeSecondStepPath1">Cancel</a>
+                            </span>
+                            <span class="is-pulled-right">
+                                <button class="button is-info poppins" x-on:click="submitSignup">Confirm</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- step 2 path 2, user enter gmail and password -->
+            <div class="card" x-show="secondStepPath2">
+                <div class="card-content">
+                    <div class="columns is-mobile is-gapless is-vcentered" style="margin-bottom: 0% !important;">
+                        <div class="column is-1">
+                            <figure class="image is-16x16">
+                                <img src="../src/svg/Google.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="column is-11">
+                            <p class="subtitle is-6 poppins has-text-grey">Sign up with Google</p>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px !important; margin-bottom: 10px !important;"><br>
+                    <h2 class="is-size-3-desktop is-size-4-touch title has-text-centered poppins my-4"><strong>Enter your Google account</strong></h2>
+                    <h3 class="is-size-5-desktop is-size-6-touch subtitle has-text-centered poppins m-4">to continue to Skill Bootcamp</h3><br>
+                    <div class="columns is-centered">
+                        <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                            <div class="field mb-5">
+                                <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Email</p></label>
+                                <div class="control">
+                                    <input id="email" class="input poppins inputGlass" type="email" placeholder="👤">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns is-centered">
+                        <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                            <div class="field">
+                                <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Password</p></label>
+                                <div class="control">
+                                    <input id="password" class="input poppins inputGlass" type="password" placeholder="🔑" autocomplete="current-password">
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
+                    <div class="field mb-5">
+                        <div class="control has-text-centered">
+                            <button class="button is-rounded has-background-info-dark poppins is-medium px-6 goodButton" x-on:click="toThirdStepPath2">
+                                <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Continue</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- step 3 path 2, show what Google will share -->
+            <div class="card" x-show="thirdStepPath2">
+                <div class="card-content">
+                    <div class="columns is-mobile is-gapless is-vcentered" style="margin-bottom: 0% !important;">
+                        <div class="column is-1">
+                            <figure class="image is-16x16">
+                                <img src="../src/svg/Google.svg" alt="">
+                            </figure>
+                        </div>
+                        <div class="column is-11">
+                            <p class="subtitle is-6 poppins has-text-grey">Sign up with Google</p>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px !important; margin-bottom: 10px !important;"><br><br>
+                    <h5 class="is-size-4-desktop is-size-5-touch title poppins px-6"><strong>This will allow Skill Bootcamp to</strong></h5><br>
+                    <div class="content px-6">
+                        <p class="poppins"><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;View and access your personal information from Google</p>
+                        <hr>
+                        <p class="poppins"><i class="bi bi-envelope-check"></i>&nbsp;&nbsp;Send security code to your Gmail account</p>
+                        <hr><br>
+                    </div>
+                    <br><br>
+                    <div class="columns">
+                        <div class="column is-12">
+                            <span>
+                                <a class="has-text-info is-pulled-left poppins" x-on:click="closeThirdStepPath2">Cancel</a>
+                            </span>
+                            <span class="is-pulled-right">
+                                <a class="button is-info poppins">Confirm</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="modal-close is-large" aria-label="close" x-on:click="signupGoogle"></button>
+    </div>
+
 <!-- Footer -->
     <section class="section has-background-grey-dark">
         <div class="container">
@@ -142,37 +347,37 @@
                 <div class="columns">
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Skill Bootcamp</h4>
-                    <p class="poppins has-text-grey-light">
-                    Lorem ipsum dolor sit amet consec tetur adipi sicing elit. Eveniet duci mus ex maiores! Corporis et autem pariatur deserunt suscipit prae sentium doloremque perferendis odio?
+                    <p class="poppins has-text-grey-light has-text-justified mr-4">
+                        Skill Bootcamp is free and open source platform that provides learning materials that can easily be accessed by any students.
                     </p><br class="is-hidden-desktop">
                 </div>
                 <div class="column poppins">
                     <h4 class="title is-4 poppins has-text-light">Social Networks</h4>
                     
                     <p class="is-size-4">
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://facebook.com"><i class="bi bi-facebook"></i></a></span>&nbsp;&nbsp;
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://twitter.com"><i class="bi bi-twitter"></i></a></span>&nbsp;&nbsp;
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://instagram.com"><i class="bi bi-instagram"></i></a></span>&nbsp;&nbsp;
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://youtube.com"><i class="bi bi-youtube"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-link-dark" href="https://facebook.com"><i class="bi bi-facebook"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-info" href="https://twitter.com"><i class="bi bi-twitter"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="is-instagram" href="https://instagram.com"><i class="bi bi-instagram"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-danger" href="https://youtube.com"><i class="bi bi-youtube"></i></a></span>&nbsp;&nbsp;
                     </p>
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins has-text-light"><i class="bi bi-caret-right-fill"></i>&nbsp;&nbsp;Categories</h4>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Information Technology</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Art & Design</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;History</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Philosophy</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Mathematics</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Engineering</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Literature & Language</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>

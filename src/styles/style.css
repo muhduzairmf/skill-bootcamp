@@ -5,6 +5,14 @@
 @import "../lib/loading.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+.is-instagram {
+    color: rgb(209, 28, 209) !important;
+}
+
+.is-instagram:hover {
+    color: rgb(180, 19, 180) !important;
+}
+
 .poppins {
     font-family:  'Poppins', 'Lucida Sans', 'Segoe UI', Tahoma, Helvetica, Verdana, sans-serif;
 }
@@ -413,4 +421,26 @@ input.searchBox.poppins {
     .standard-card-setting2 {
         height: 350px !important;
     }
+}
+
+@media (min-width:769px) {
+    .standard-card-setting3 {
+        height: 295px !important;
+    }
+}
+
+@media (min-width:1216px) {
+    .standard-card-setting3 {
+        height: 290px !important;
+    }
+}
+
+@media (min-width:769px) {
+    .chooseAcc {
+        padding-left: 20% !important;
+    }
+}
+
+.chooseAcc:hover {
+    background: #f5f5f5;
 }

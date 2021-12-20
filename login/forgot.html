@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/style.css">
+    <script src="../src/lib/alpine.min.js" defer></script>
+    <title>Forgot Password</title>
+</head>
+<body x-data="{
+    firstprompt: true,
+    secondprompt: false,
+    thirdprompt: false,
+    finalprompt: false,
+    toSecondPrompt() {
+        this.firstprompt = ! this.firstprompt;
+        this.secondprompt = ! this.secondprompt;
+    },
+    toThirdPrompt() {
+        this.secondprompt = ! this.secondprompt;
+        this.thirdprompt = ! this.thirdprompt;
+    },
+    toFinalPrompt() {
+        this.thirdprompt = ! this.thirdprompt;
+        this.finalprompt = ! this.finalprompt;
+    },
+    toLogin() {
+        window.location.replace('login.html');
+    }
+}">
+
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
+    <section class="hero is-fullheight has-background-light">
+        <div class="hero-body">
+            <div class="container my-5">
+                <div class="columns is-centered">
+                    <div class="column is-12-mobile is-three-fifths-tablet is-6-widescreen">
+
+                    <!-- First prompt, ask user to enter username and email -->
+                    <div class="box glassBox" x-show="firstprompt">
+                        <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Forgot Password</strong></h2>
+                        <h3 class="is-size-4-desktop is-size-5-touch subtitle has-text-centered poppins m-4">Please enter your username and email to configure your account.</h3>
+                        <div class="container my-6">
+                            <div class="columns is-centered">
+                                <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                                    <div class="field mb-5">
+                                        <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Username</p></label>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" placeholder="👤">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-centered">
+                                <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                                    <div class="field">
+                                        <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Email</p></label>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" placeholder="📧">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="field mb-5">
+                                <div class="control has-text-centered">
+                                    <button class="button is-rounded has-background-info-dark poppins is-medium px-6 goodButton" x-on:click="toSecondPrompt">
+                                        <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Next <i class="bi bi-arrow-right"></i></p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second prompt, user enter six digit security code that come from their email -->
+                    <div class="box glassBox" x-show="secondprompt">
+                        <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Forgot Password</strong></h2>
+                        <h3 class="is-size-4-desktop is-size-5-touch subtitle has-text-centered poppins mx-4 my-4">Please enter six digit security code that was sent to the ****uzair@gmail.com</h3>
+                        <div class="container my-6">
+                            <div class="columns is-centered">
+                                <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                                    <div class="field has-addons mb-5">
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" maxlength="1" placeholder="*">
+                                        </div>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" maxlength="1" placeholder="*">
+                                        </div>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" maxlength="1" placeholder="*">
+                                        </div>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" maxlength="1" placeholder="*">
+                                        </div>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" maxlength="1" placeholder="*">
+                                        </div>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="text" maxlength="1" placeholder="*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="field mb-5">
+                                <div class="control has-text-centered">
+                                    <button class="button is-rounded has-background-info-dark poppins is-medium px-6 goodButton" x-on:click="toThirdPrompt">
+                                        <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Next <i class="bi bi-arrow-right"></i></p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third prompt, user create new password -->
+                    <div class="box glassBox" x-show="thirdprompt">
+                        <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Forgot Password</strong></h2>
+                        <h3 class="is-size-4-desktop is-size-5-touch subtitle has-text-centered poppins m-4">Please set up your new password</h3>
+                        <div class="container my-6">
+                            <div class="columns is-centered">
+                                <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                                    <div class="field mb-5">
+                                        <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Password</p></label>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="password" autocomplete="new-password" placeholder="🔑">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-centered">
+                                <div class="column is-12-mobile is-10-tablet is-8-widescreen">
+                                    <div class="field">
+                                        <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Confirm Password</p></label>
+                                        <div class="control">
+                                            <input class="input poppins inputGlass" type="password" autocomplete="new-password" placeholder="🔐">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="field mb-5">
+                                <div class="control has-text-centered">
+                                    <button class="button is-rounded has-background-info-dark poppins is-medium px-6 goodButton" x-on:click="toFinalPrompt">
+                                        <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Next <i class="bi bi-arrow-right"></i></p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final prompt, ask user to re-login again -->
+                    <div class="box glassBox" x-show="finalprompt">
+                        <h2 class="is-size-2-desktop is-size-3-touch title has-text-centered poppins my-4"><strong>Forgot Password</strong></h2>
+                        <h3 class="is-size-4-desktop is-size-5-touch subtitle has-text-centered poppins m-4">Your password successfully has been resetted.</h3>
+                        <div class="container my-6">
+                            <div class="field mb-5">
+                                <div class="control has-text-centered">
+                                    <button class="button is-rounded has-background-info-dark poppins is-medium px-6 goodButton" x-on:click="toLogin">
+                                        <p class="has-text-light is-size-5-desktop is-size-6-touch mx-4 my-2">Go to Login page <i class="bbi bi-box-arrow-in-right"></i></p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="../src/lib/loading.min.js"></script>
+</body>
+</html>

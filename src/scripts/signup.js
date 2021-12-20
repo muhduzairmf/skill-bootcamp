@@ -10,6 +10,34 @@ document.addEventListener('alpine:init', () => {
 
             window.location.href = '../../skill-bootcamp/timelines/timelines.html';
             //window.location.href = '../../timelines/timelines.html';
+        },
+        googleModal: false,
+        signupGoogle() {
+            this.googleModal = ! this.googleModal;
+        },
+        firstStep: true,
+        secondStepPath1: false,
+        toSecondStepPath1() {
+            this.firstStep = ! this.firstStep;
+            this.secondStepPath1 = ! this.secondStepPath1;
+        },
+        closeSecondStepPath1() {
+            this.secondStepPath1 = ! this.secondStepPath1;
+            this.firstStep = ! this.firstStep;
+        },
+        secondStepPath2: false,
+        thirdStepPath2: false,
+        toSecondStepPath2() {
+            this.firstStep = ! this.firstStep;
+            this.secondStepPath2 = ! this.secondStepPath2;
+        },  
+        toThirdStepPath2() {
+            this.secondStepPath2 = ! this.secondStepPath2;
+            this.thirdStepPath2 = ! this.thirdStepPath2;
+        },
+        closeThirdStepPath2() {
+            this.thirdStepPath2 = ! this.thirdStepPath2;
+            this.firstStep = ! this.firstStep;
         }
     }));
 });

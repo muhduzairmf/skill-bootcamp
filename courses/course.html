@@ -19,7 +19,7 @@
     </div>
     
 <!-- Navbar -->
-    <nav class="navbar py-2">
+    <nav class="navbar py-2 has-background-info-dark">
         <div class="container">
             <div class="navbar-brand">
                 <div class="navbar-item mr-4">
@@ -31,18 +31,18 @@
                     <span></span>
                 </div>
             </div>
-            <div class="navbar-menu has-background-grey-dark" id="navMenu">
+            <div class="navbar-menu has-background-info-dark" id="navMenu">
                 <div class="navbar-start">
                     <div class="navbar-item ml-4-desktop">
                         <br class="is-hidden-desktop">
                         <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                            <div class="control is-expanded">
+                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                            </div>
                             <div class="control">
                                 <a class="button searchBox searchBtn poppins">
                                     <i class="bi bi-search"></i>
                                 </a>
-                            </div>
-                            <div class="control is-expanded">
-                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
                             </div>
                         </div>
                         <br class="is-hidden-desktop">
@@ -50,34 +50,34 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins" x-on:click="goTimelines">HOME</p></button>
+                        <a href="../timelines/timelines.html" class="button  has-background-info-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="goTimelines">HOME</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                        <a href="#" class="button is-rounded activeBtn "><p class="has-text-light poppins">COURSES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                        <a href="../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                        <a href="../dashboard/dashboard.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                     </div>
                     <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                            <button class="button has-background-grey-dark is-rounded notActive">
+                            <button class="button has-background-info-dark is-rounded notActive">
                                 <span class="has-text-light poppins">MENU</span>
                                 <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                            <div id="dropCont1" class="dropdown-content has-background-grey-dark">
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                            <div id="dropCont1" class="dropdown-content has-background-info-dark">
+                                <a href="#" class="dropdown-item has-text-light poppins has-background-link-dark activeBtn py-4 my-3">
                                 COURSES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 QUIZZES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 DASHBOARD
                                 </a>
                             </div>
@@ -87,13 +87,13 @@
                     <div class="navbar-item is-hidden-touch">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                                <button class="button has-background-grey-dark is-rounded notActive">
+                                <button class="button has-background-info-dark is-rounded notActive">
                                     <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
                                     <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                                 </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                                <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                <div id="dropCont1" class="dropdown-content has-background-info-dark">
                                 <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
                                     <span class="image is-32x32 mb-2">
                                         <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
@@ -119,7 +119,7 @@
                             STUDENT
                             </p>
                             <div class="navbar-item">
-                                <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                <button class="button is-rounded activeBtn"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
                             </div>
                         </div>
                     </div>
@@ -128,13 +128,40 @@
         </div>
     </nav>
 
-<!-- Title and video -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-hidden-touch">
+                <div class="column is-12">
+<!-- Header -->
+                    <h4 class="title is-size-4 poppins">Engineering Drawing and CAD</h4>
+                </div>
+            </div>
+            <div class="columns is-hidden-desktop">
+                <div class="column">
+                    <div>
+                        <span class="title is-size-5 poppins mr-4">Engineering Drawing and CAD</span>
+                        <span class="is-pulled-right poppins is-clickable">Contents <i class="bi bi-layout-text-window-reverse"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-12-touch is-two-thirds-desktop is-three-quarters-widescreen">hello
+<!-- Video -->
 
 <!-- Description -->
 
 <!-- QnA -->
 
+                </div>
+                <div class="column is-12-touch is-one-third-desktop is-one-quaters-widescreen">hello
 <!-- Table of contents -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Modal for table of contents, for mobile and tablet -->
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">
@@ -143,37 +170,37 @@
                 <div class="columns">
                 <div class="column">
                     <h4 class="title is-4 poppins has-text-light">Skill Bootcamp</h4>
-                    <p class="poppins has-text-grey-light">
-                    Lorem ipsum dolor sit amet consec tetur adipi sicing elit. Eveniet duci mus ex maiores! Corporis et autem pariatur deserunt suscipit prae sentium doloremque perferendis odio?
+                    <p class="poppins has-text-grey-light has-text-justified mr-4">
+                        Skill Bootcamp is free and open source platform that provides learning materials that can easily be accessed by any students.
                     </p><br class="is-hidden-desktop">
                 </div>
                 <div class="column poppins">
                     <h4 class="title is-4 poppins has-text-light">Social Networks</h4>
                     
                     <p class="is-size-4">
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://facebook.com"><i class="bi bi-facebook"></i></a></span>&nbsp;&nbsp;
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://twitter.com"><i class="bi bi-twitter"></i></a></span>&nbsp;&nbsp;
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://instagram.com"><i class="bi bi-instagram"></i></a></span>&nbsp;&nbsp;
-                        <span class="icon has-text-light is-clickable"><a class="has-text-light" href="https://youtube.com"><i class="bi bi-youtube"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-link-dark" href="https://facebook.com"><i class="bi bi-facebook"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-info" href="https://twitter.com"><i class="bi bi-twitter"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="is-instagram" href="https://instagram.com"><i class="bi bi-instagram"></i></a></span>&nbsp;&nbsp;
+                        <span class="icon has-text-light is-clickable"><a class="has-text-danger" href="https://youtube.com"><i class="bi bi-youtube"></i></a></span>&nbsp;&nbsp;
                     </p>
                     <br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Courses</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Quizzes</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;Dashboard</a></h4>
-                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-cursor"></i></span>&nbsp;About Us</a></h4><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;Courses</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;Quizzes</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;Dashboard</a></h4>
+                    <h4 class="title is-4 poppins"><a class="has-text-light"><span class="has-text-light is-size-6-touch is-size-5-desktop"><i class="bi bi-caret-right-fill"></i></span>&nbsp;&nbsp;About Us</a></h4><br class="is-hidden-desktop">
                 </div>
                 <div class="column">
-                    <h4 class="title is-4 poppins has-text-light">Categories</h4>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Information Technology</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Art & Design</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; History</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Philosophy</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Mathematics</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Engineering</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Literature & Language</a></p>
-                    <p class="poppins"><a class="has-text-grey-light"><i class="bi bi-megaphone"></i>&nbsp; Religion Study</a></p><br class="is-hidden-desktop">
+                    <h4 class="title is-4 poppins has-text-light"><i class="bi bi-caret-right-fill"></i>&nbsp;&nbsp;Categories</h4>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Information Technology</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Art & Design</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;History</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Philosophy</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Mathematics</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Engineering</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Literature & Language</a></p>
+                    <p class="poppins mb-2"><a class="has-text-grey-light">&nbsp;&nbsp;Religion Study</a></p><br class="is-hidden-desktop">
                 </div>
                 </div>
             </div>
