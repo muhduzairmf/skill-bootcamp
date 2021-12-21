@@ -9,6 +9,14 @@ document.addEventListener('alpine:init', () => {
 
             window.location.href = '../../skill-bootcamp/timelines/timelines.html';
             //window.location.href = '../../timelines/timelines.html';
+        },
+        warnCaps: false,
+        detectCaps(event) {
+            if (event.getModifierState('CapsLock')) {
+                this.warnCaps = true;
+            } else {
+                this.warnCaps = false;
+            }
         }
     }));
 });

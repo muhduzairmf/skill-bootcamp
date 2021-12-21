@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../src/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
     <script src="../src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Login</title>
@@ -23,9 +23,9 @@
     <nav class="navbar py-1 px-2 has-background-info-dark">
         <div class="container">
             <div class="navbar-brand">
-                <div class="navbar-item">
-                    <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
-                </div>
+                <a class="navbar-item" href="../">
+                    <img src="../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
+                </a>
                 <div class="navbar-burger has-text-light" x-on:click="displayMenu">
                     <span></span>
                     <span></span>
@@ -68,7 +68,10 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Password</p></label>
                                         <div class="control">
-                                            <input id="password" class="input poppins inputGlass" type="password" placeholder="🔑" autocomplete="current-password">
+                                            <input id="password" class="input poppins inputGlass" type="password" placeholder="🔑" autocomplete="current-password" x-on:keyup="detectCaps">
+                                        </div>
+                                        <div x-show="warnCaps">
+                                            <p class="subtitle is-7 poppins mt-2" style="color: orange;">Caps Lock is on</p>
                                         </div>
                                     </div>
                                 </div>

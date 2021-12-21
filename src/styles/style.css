@@ -4,6 +4,17 @@
 @import "../lib/aos.min.css";
 @import "../lib/loading.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap');
+
+.navbar-logo {
+    max-height: max-content !important; 
+    width: 50px !important; 
+    height: 50px !important;
+}
+
+.cairo {
+    font-family: 'Cairo', 'Lucida Sans', 'Segoe UI', Tahoma, Helvetica, Verdana, sans-serif;
+}
 
 .is-instagram {
     color: rgb(209, 28, 209) !important;
@@ -407,7 +418,7 @@ input.searchBox.poppins {
 
 @media (min-width:769px) {
     .standard-card-setting2 {
-        height: 370px !important;
+        height: 375px !important;
     }
 }
 
@@ -419,7 +430,7 @@ input.searchBox.poppins {
 
 @media (min-width:1216px) {
     .standard-card-setting2 {
-        height: 350px !important;
+        height: 355px !important;
     }
 }
 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../src/styles/style.css">
+    <link rel="shortcut icon" href="../../src/img/favicon.png" type="image/x-icon">
     <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
     <title>Skill Bootcamp | Change Password</title>
 </head>
@@ -14,9 +15,9 @@
     <nav class="navbar has-background-info-dark py-2">
         <div class="container">
             <div class="navbar-brand">
-                <div class="navbar-item mr-4">
-                    <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
-                </div>
+                <a class="navbar-item" href="../../">
+                    <img src="../../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
+                </a>
                 <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
                     <span></span>
                     <span></span>
@@ -177,7 +178,10 @@
                                         <div class="field">
                                             <label class="label poppins">Current password</label>
                                             <div class="control">
-                                              <input class="input is-rounded poppins" type="password" placeholder="" autocomplete="current-password">
+                                              <input class="input is-rounded poppins" type="password" placeholder="" autocomplete="current-password" x-model="currentPass" x-on:keyup="detectCaps1">
+                                            </div>
+                                            <div x-show="warnCaps1">
+                                                <p class="subtitle is-7 poppins mt-2" style="color: orange;">Caps Lock is on</p>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +191,10 @@
                                         <div class="field">
                                             <label class="label poppins">New password</label>
                                             <div class="control">
-                                              <input class="input is-rounded poppins" type="password" placeholder="" autocomplete="new-password">
+                                              <input class="input is-rounded poppins" type="password" placeholder="" autocomplete="new-password" x-model="newPass" x-on:keyup="detectCaps2">
+                                            </div>
+                                            <div x-show="warnCaps2">
+                                                <p class="subtitle is-7 poppins mt-2" style="color: orange;">Caps Lock is on</p>
                                             </div>
                                         </div>
                                     </div>
@@ -197,14 +204,20 @@
                                         <div class="field">
                                             <label class="label poppins">Re-type new password</label>
                                             <div class="control">
-                                              <input class="input is-rounded poppins" type="password" placeholder="" autocomplete="new-password">
+                                              <input class="input is-rounded poppins" type="password" placeholder="" autocomplete="new-password" x-model="confirmPass" x-on:keyup="detectCaps3" x-on:input="matchPass">
+                                            </div>
+                                            <div x-show="notMatch">
+                                                <p class="subtitle is-7 has-text-danger poppins mt-2">Your password is not match!</p>
+                                            </div>
+                                            <div x-show="warnCaps3">
+                                                <p class="subtitle is-7 poppins mt-2" style="color: orange;">Caps Lock is on</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="field is-grouped is-grouped-right mr-2">
                                     <p class="control">
-                                      <a class="button is-white poppins is-rounded" style="border: 1px solid #7a7a7a !important;">
+                                      <a class="button is-white poppins is-rounded" style="border: 1px solid #7a7a7a !important;" x-on:click="clearForm">
                                         Cancel
                                       </a>
                                     </p>

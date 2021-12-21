@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="src/styles/style.css">
     <script src="src/lib/alpine.min.js" defer></script>
     <title>Skill Bootcamp | Home</title>
@@ -25,9 +25,9 @@
             <nav class="navbar py-1 px-2">
                 <div class="container">
                     <div class="navbar-brand">
-                        <div class="navbar-item">
-                            <h3 class="is-size-3"><a>🎓</a></h3>
-                        </div>
+                        <a class="navbar-item" href="#">
+                            <img src="src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
+                        </a>
                         <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
                             <span></span>
                             <span></span>
@@ -38,7 +38,19 @@
                         <div class="navbar-start">
                             <div class="navbar-item"></div>
                         </div>
-                        <div class="navbar-end">
+                        <div class="navbar-end" style="background: transparent !important;">
+                            <div class="navbar-item mr-4">
+                                <a href="#features" class="poppins has-text-light">Features</a>
+                            </div>
+                            <div class="navbar-item mr-4">
+                                <a href="#aims" class="poppins has-text-light">Aims</a>
+                            </div>
+                            <div class="navbar-item mr-4">
+                                <a href="#achievements" class="poppins has-text-light">Achievements</a>
+                            </div>
+                            <div class="navbar-item mr-4">
+                                <a href="#feedback" class="poppins has-text-light">Feedback</a>
+                            </div>
                             <div class="navbar-item">
                                 <a href="/skill-bootcamp/login/login.html" class="button is-light is-outlined poppins login" x-on:click="loginPage">LOGIN</a>
                             </div>
@@ -69,7 +81,7 @@
     </section>
 
 <!-- Features -->
-    <section class="section has-background-info-dark">
+    <section id="features" class="section has-background-info-dark">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-light has-text-centered poppins block"><strong>Features we provided</strong></h2>
             <p class="subtitle is-size-5-desktop is-size-6-touch has-text-light has-text-centered poppins block my-4">Choose from hundred of online video courses by Lecturer and notes given <br class="is-hidden-touch">by them.</p><br><br>
@@ -179,7 +191,7 @@
     </section>
 
 <!-- Aims -->
-    <section class="section has-background-info-light">
+    <section id="aims" class="section has-background-info-light">
         <div class="container my-6">
             <div class="columns is-centered is-vcentered mx-2">
                 <div class="column is-4 mx-3">
@@ -204,7 +216,7 @@
     </section>
 
 <!-- Achievements -->
-    <section class="section has-background-info">
+    <section id="achievements" class="section has-background-info">
         <div class="container my-6">
             <h2 class="title is-size-2-desktop is-size-3-touch has-text-light has-text-centered poppins"><strong>Our achievements</strong></h2><br>
             <!-- Achievement card for tablet and above -->
@@ -416,7 +428,7 @@
     </section>
 
 <!-- Feedback -->
-    <section class="section has-background-info-dark">
+    <section id="feedback" class="section has-background-info-dark">
         <div class="container my-6">
             <h2 class="title has-text-light is-size-2-desktop is-size-3-touch has-text-centered poppins" data-aos="zoom-out" data-aos-duration="2500"><strong>What our students have to say?</strong></h2>
             <p class="subtitle has-text-light is-size-5-desktop is-size-6-touch has-text-centered poppins my-5" data-aos="zoom-out" data-aos-duration="2500">Discover Your Right Program in Our Courses.</p><br>
