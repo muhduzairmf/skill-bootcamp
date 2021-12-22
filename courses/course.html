@@ -23,7 +23,7 @@
     <nav class="navbar py-2 has-background-info-dark">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="#">
+                <a class="navbar-item mr-4" href="#">
                     <img src="../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
                 </a>
                 <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
@@ -34,7 +34,7 @@
             </div>
             <div class="navbar-menu has-background-info-dark" id="navMenu">
                 <div class="navbar-start">
-                    <div class="navbar-item ml-4-desktop">
+                    <div class="navbar-item ml-4">
                         <br class="is-hidden-desktop">
                         <div class="field has-addons" style="margin-bottom: 0rem !important;">
                             <div class="control is-expanded">
@@ -129,33 +129,343 @@
         </div>
     </nav>
 
-    <section class="section">
+    <section class="section has-background-light">
         <div class="container">
             <div class="columns is-hidden-touch">
                 <div class="column is-12">
 <!-- Header -->
-                    <h4 class="title is-size-4 poppins">Engineering Drawing and CAD</h4>
+                    <h4 class="title is-size-3 poppins">Engineering Drawing and CAD</h4>
                 </div>
             </div>
             <div class="columns is-hidden-desktop">
                 <div class="column">
                     <div>
-                        <span class="title is-size-5 poppins mr-4">Engineering Drawing and CAD</span>
-                        <span class="is-pulled-right poppins is-clickable">Contents <i class="bi bi-layout-text-window-reverse"></i></span>
+                        <span class="title is-size-3 poppins mr-4">Engineering Drawing and CAD</span>
                     </div>
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-12-touch is-two-thirds-desktop is-three-quarters-widescreen">hello
+                <div class="column is-12-touch is-two-thirds-desktop is-9-widescreen">
 <!-- Video -->
+                    <div class="columns">
+                        <div class="column is-12">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-16by9">
+                                        <iframe 
+                                            style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border: 0;"
+                                            loading="lazy";
+                                            srcdoc="<style>
+                                            * {
+                                            padding: 0;
+                                            margin: 0;
+                                            overflow: hidden;
+                                            }
+                                            
+                                            body, html {
+                                                height: 100%;
+                                            }
+                                            
+                                            img, svg {
+                                                position: absolute;
+                                                width: 100%;
+                                                top: 0;
+                                                bottom: 0;
+                                                margin: auto;
+                                            }
+                                            
+                                            svg {
+                                                filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+                                                transition: all 250ms ease-in-out;
+                                            }
+                                            
+                                            body:hover svg {
+                                                filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+                                                transform: scale(1.2);
+                                            }
+                                            </style>
+                                            <a href='https://www.youtube.com/embed/khdT1e7jEIE?autoplay=1'>
+                                            <img src='https://images.unsplash.com/photo-1610650394144-a778795cf585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='Custom Lazy Loading YouTube Embed Code'>
+                                            <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
+                                            </a>
+                                            "
+                                            src="https://www.youtube.com/embed/khdT1e7jEIE" 
+                                            title="Custom Lazy Loading YouTube Embed Code"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- Table of content, for tablet and mobile only -->
+                    <div class="columns is-hidden-desktop">
+                        <div class="column is-12">
+                            <div class="card mb-4">
+                                <header class="card-title">
+                                    <div class="card-header-title" style="display: block !important;">
+                                        <h5 class="poppins is-size-5 has-text-centered"><strong>Table of contents</strong></h5>
+                                    </div>
+                                </header>
+                                <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                <header class="card-header is-clickable" x-on:click="toggleCardContent1">
+                                    <h5 class="card-header-title poppins is-size-5">
+                                        <span class="icon">
+                                            <i class="bi bi-chevron-up" x-show="arrowUp1"></i>
+                                            <i class="bi bi-chevron-down" x-show="arrowDown1"></i>
+                                        </span>&nbsp;&nbsp;<span class="is-hidden-widescreen">&nbsp;&nbsp;&nbsp;</span>
+                                        Introduction
+                                    </h5>
+                                </header>
+                                <article class="card-content is-shadow" x-show="contentCard1" x-transition style="padding: 0% !important;">
+                                    <p class="poppins has-background-info-light px-5 py-4"><i class="bi bi-play-btn"></i>  What is Engineering Drawing?</p>
+                                    <p class="poppins px-5 py-4"><i class="bi bi-file-text"></i>  Important tools for Engineering Drawing</p>
+                                </article>
+                                <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                <header class="card-header is-clickable" x-on:click="toggleCardContent2">
+                                    <h5 class="card-header-title poppins is-size-5">
+                                        <span class="icon">
+                                            <i class="bi bi-chevron-up" x-show="arrowUp2"></i>
+                                            <i class="bi bi-chevron-down" x-show="arrowDown2"></i>
+                                        </span>&nbsp;&nbsp;<span class="is-hidden-widescreen">&nbsp;&nbsp;&nbsp;</span>
+                                        Engineering Drawing I
+                                    </h5>
+                                </header>
+                                <article class="card-content" x-show="contentCard2" x-transition style="padding: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-play-btn"></i>  What is Engineering Drawing?</p>
+                                    <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-file-text"></i>  Important tools for Engineering Drawing</p>
+                                </article>
+                                <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                <header class="card-header is-clickable" x-on:click="toggleCardContent3">
+                                    <h5 class="card-header-title poppins is-size-5">
+                                        <span class="icon">
+                                            <i class="bi bi-chevron-up" x-show="arrowUp3"></i>
+                                            <i class="bi bi-chevron-down" x-show="arrowDown3"></i>
+                                        </span>&nbsp;&nbsp;<span class="is-hidden-widescreen">&nbsp;&nbsp;&nbsp;</span>
+                                        Engineering Drawing II
+                                    </h5>
+                                </header>
+                                <article class="card-content" x-show="contentCard3" x-transition style="padding: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-play-btn"></i>  What is Engineering Drawing?</p>
+                                    <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-file-text"></i>  Important tools for Engineering Drawing</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
 
 <!-- Description -->
+                    <div class="columns">
+                        <div class="column is-12">
+                            <h6 class="title is-5 has-text-info-dark poppins"><strong>Description</strong></h6>
+                            <p class="subtitle is-6 has-text-justified poppins mt-2" style="line-height: 1.75 !important;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quia quis recusandae corrupti voluptates necessitatibus dignissimos reprehenderit vel tenetur omnis doloremque sapiente eveniet neque, vero incidunt eum laboriosam! Id expedita nisi asperiores laboriosam cum deleniti eos magni quos beatae totam? Vero cupiditate ab labore nulla saepe hic eligendi odit commodi mollitia pariatur maiores facilis nihil temporibus reiciendis magni fugit tenetur praesentium quia sapiente, alias illum eos asperiores? Placeat, assumenda illo?</p>
+                        </div>
+                    </div>
 
 <!-- QnA -->
+                    <div class="columns">
+                        <div class="column is-12">
+                            <h6 class="title is-5 has-text-info-dark poppins"><strong>Q&A</strong></h6>
+                            <div class="box">
+                                <article class="media">
+                                    <figure class="media-left">
+                                      <p class="image is-48x48">
+                                        <img class="is-rounded" src="https://images.unsplash.com/photo-1608494603682-913a9e8abee9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80">
+                                      </p>
+                                    </figure>
+                                    <div class="media-content">
+                                      <div class="content poppins">
+                                        <p>
+                                          <strong class="is-size-5">Kayli Eunice </strong>
+                                          <br>
+                                          <small class="subtitle is-7">March 12, 2020 &nbsp;|&nbsp; 4.38 PM</small>
+                                          <br><br>
+                                          Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+                                          <br>
+                                        </p>
+                                      </div>
+                                      <nav class="level is-mobile">
+                                          <div class="level-left"></div>
+                                          <div class="level-right">
+                                              <div class="level-item">
+                                                <p class="subtitle is-7 poppins is-clickable" x-on:click="toggleComment1">
+                                                    <i class="bi bi-chat-text"></i>&nbsp;&nbsp;<span x-text="countComment1"></span>&nbsp;Comments
+                                                </p>
+                                              </div>
+                                          </div>
+                                      </nav>
+                                      <div x-show="comment1" x-transition>
+                                        <article class="media my-4">
+                                          <figure class="media-left">
+                                            <p class="image is-48x48">
+                                              <img class="is-rounded" src="https://images.unsplash.com/photo-1601234699404-4867fa71f87f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80">
+                                            </p>
+                                          </figure>
+                                          <div class="media-content">
+                                            <div class="content poppins">
+                                              <p>
+                                                <strong class="is-size-5">Mike Jason </strong>
+                                                <br>
+                                                <small class="subtitle is-7">July 12, 2020 &nbsp;|&nbsp; 9.02 PM</small>
+                                                <br><br>
+                                                Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
+                                                <br>
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </article>
+                                        <div x-html="doneComment1"></div>
+                                        <article class="media my-6">
+                                            <figure class="media-left">
+                                              <p class="image is-64x64">
+                                                <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg">
+                                              </p>
+                                            </figure>
+                                            <div class="media-content">
+                                              <div class="field">
+                                                <p class="control">
+                                                  <textarea class="textarea has-fixed-size poppins" rows="5" placeholder="Add a comment..." x-model="userComment1"></textarea>
+                                                </p>
+                                              </div>
+                                              <nav class="level">
+                                                <div class="level-left">
+                                                  <div class="level-item">
+                                                    <a class="button is-rounded has-background-info-dark has-text-light poppins" x-on:click="commenting1">Submit</a>
+                                                  </div>
+                                                  <div class="level-item">
+                                                    <a class="button is-rounded poppins" x-on:click="clearComment1">Clear</a>
+                                                  </div>
+                                                </div>
+                                              </nav>
+                                            </div>
+                                          </article>
+                                        <h3 class="mt-4 title is-5 has-text-centered is-clickable" x-on:click="toggleComment1">
+                                            <i class="bi bi-chevron-up"></i>
+                                        </h3>
+                                      </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="box">
+                                <article class="media">
+                                    <figure class="media-left">
+                                      <p class="image is-48x48">
+                                        <img class="is-rounded" src="https://images.unsplash.com/photo-1601234699404-4867fa71f87f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80">
+                                      </p>
+                                    </figure>
+                                    <div class="media-content">
+                                      <div class="content poppins">
+                                        <p>
+                                          <strong class="is-size-5">Mike Jason </strong>
+                                          <br>
+                                          <small class="subtitle is-7">July 12, 2020 &nbsp;|&nbsp; 9.02 PM</small>
+                                          <br><br>
+                                          Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
+                                          <br>
+                                        </p>
+                                      </div>
+                                      <nav class="level is-mobile">
+                                            <div class="level-left"></div>
+                                            <div class="level-right">
+                                                <div class="level-item">
+                                                <p class="subtitle is-7 poppins is-clickable" x-on:click="toggleComment2">
+                                                    <i class="bi bi-chat-text"></i>&nbsp;&nbsp;1&nbsp;Comments
+                                                </p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                      <div x-show="comment2" x-transition>
+                                        <article class="media">
+                                            <figure class="media-left">
+                                              <p class="image is-48x48">
+                                                <img class="is-rounded" src="https://images.unsplash.com/photo-1608494603682-913a9e8abee9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80">
+                                              </p>
+                                            </figure>
+                                            <div class="media-content">
+                                              <div class="content poppins">
+                                                <p>
+                                                  <strong class="is-size-5">Kayli Eunice </strong>
+                                                  <br>
+                                                  <small class="subtitle is-7">March 12, 2020 &nbsp;|&nbsp; 4.38 PM</small>
+                                                  <br><br>
+                                                  Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+                                                  <br>
+                                                </p>
+                                              </div>
+                                            </div>
+                                        </article>
+                                        <h3 class="mt-4 title is-5 has-text-centered is-clickable" x-on:click="toggleComment2">
+                                            <i class="bi bi-chevron-up"></i>
+                                        </h3>
+                                      </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                <div class="column is-12-touch is-one-third-desktop is-one-quaters-widescreen">hello
-<!-- Table of contents -->
+                <div class="column is-one-third-desktop is-3-widescreen is-hidden-touch">
+<!-- Table of contents, for desktop only -->
+                    <div class="columns">
+                        <div class="column is-12">
+                            <div class="card mb-4">
+                                <header class="card-title">
+                                    <div class="card-header-title" style="display: block !important;">
+                                        <h5 class="poppins is-size-5 has-text-centered"><strong>Table of contents</strong></h5>
+                                    </div>
+                                </header>
+                                <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                <header class="card-header is-clickable" x-on:click="toggleCardContent1">
+                                    <h5 class="card-header-title poppins is-size-5">
+                                        <span class="icon">
+                                            <i class="bi bi-chevron-up" x-show="arrowUp1"></i>
+                                            <i class="bi bi-chevron-down" x-show="arrowDown1"></i>
+                                        </span>&nbsp;&nbsp;<span class="is-hidden-widescreen">&nbsp;&nbsp;&nbsp;</span>
+                                        Introduction
+                                    </h5>
+                                </header>
+                                <article class="card-content is-shadow" x-show="contentCard1" x-transition style="padding: 0% !important;">
+                                    <p class="poppins has-background-info-light px-5 py-4"><i class="bi bi-play-btn"></i>  What is Engineering Drawing?</p>
+                                    <p class="poppins px-5 py-4"><i class="bi bi-file-text"></i>  Important tools for Engineering Drawing</p>
+                                </article>
+                                <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                <header class="card-header is-clickable" x-on:click="toggleCardContent2">
+                                    <h5 class="card-header-title poppins is-size-5">
+                                        <span class="icon">
+                                            <i class="bi bi-chevron-up" x-show="arrowUp2"></i>
+                                            <i class="bi bi-chevron-down" x-show="arrowDown2"></i>
+                                        </span>&nbsp;&nbsp;<span class="is-hidden-widescreen">&nbsp;&nbsp;&nbsp;</span>
+                                        Engineering Drawing I
+                                    </h5>
+                                </header>
+                                <article class="card-content" x-show="contentCard2" x-transition style="padding: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-play-btn"></i>  What is Engineering Drawing?</p>
+                                    <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-file-text"></i>  Important tools for Engineering Drawing</p>
+                                </article>
+                                <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                <header class="card-header is-clickable" x-on:click="toggleCardContent3">
+                                    <h5 class="card-header-title poppins is-size-5">
+                                        <span class="icon">
+                                            <i class="bi bi-chevron-up" x-show="arrowUp3"></i>
+                                            <i class="bi bi-chevron-down" x-show="arrowDown3"></i>
+                                        </span>&nbsp;&nbsp;<span class="is-hidden-widescreen">&nbsp;&nbsp;&nbsp;</span>
+                                        Engineering Drawing II
+                                    </h5>
+                                </header>
+                                <article class="card-content" x-show="contentCard3" x-transition style="padding: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-play-btn"></i>  What is Engineering Drawing?</p>
+                                    <hr style="background-color: hsl(235, 235, 235) !important; margin: 0% !important;">
+                                    <p class="poppins px-5 py-4"><i class="bi bi-file-text"></i>  Important tools for Engineering Drawing</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -219,6 +529,8 @@
 
     <script src="../src/lib/aos.min.js"></script>
     <script src="../src/lib/loading.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js" integrity="sha512-jGh38w63cHRzfBHtyKgEMMkJswUFXDA3YXrDjaE8ptzxV5DDkLDUDjtGUy5tmDkOXHWsItKfFjocaEtj1WuVnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../src/scripts/courses.js"></script>
 </body>
 </html>

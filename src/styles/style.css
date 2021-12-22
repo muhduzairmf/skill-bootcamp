@@ -287,9 +287,9 @@ input.searchBox.poppins {
 
 #heroTimeline {
     background-image: url('../svg/bg-header-timeline.svg');
-    background-position: center;
+    background-position:top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
 }
 
 .noBgColor {
@@ -454,4 +454,54 @@ input.searchBox.poppins {
 
 .chooseAcc:hover {
     background: #f5f5f5;
+}
+
+.bi-facebook {
+    padding: 5px 9px 5px 9px;
+    margin-right: 4px !important;
+    font-size: 20px;
+    width: 24px !important;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: #3b5998;
+    color: white;
+}
+
+.bi-twitter {
+    padding: 5px 9px 5px 9px;
+    margin-right: 4px !important;
+    margin-left: 4px !important;
+    font-size: 20px;
+    width: 24px !important;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: #1DA1F2;
+    color: white;
+}
+
+.bi-instagram {
+    padding: 5px 9px 5px 9px;
+    margin-right: 4px !important;
+    margin-left: 4px !important;
+    font-size: 20px;
+    width: 24px !important;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: linear-gradient(45DEG, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.bi-youtube {
+    padding: 5px 9px 5px 9px;
+    margin-left: 4px !important;
+    font-size: 20px;
+    width: 24px !important;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: red;
+    color: white;
 }

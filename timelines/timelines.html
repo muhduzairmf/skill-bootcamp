@@ -26,7 +26,7 @@
         <nav class="navbar py-2">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="../">
+                    <a class="navbar-item mr-4" href="../">
                         <img src="../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
                     </a>
                     <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
@@ -35,9 +35,9 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="navbar-menu" id="navMenu">
+                <div class="navbar-menu is-hidden-touch">
                     <div class="navbar-start">
-                        <div class="navbar-item ml-4-desktop">
+                        <div class="navbar-item ml-4">
                             <br class="is-hidden-desktop">
                             <div class="field has-addons" style="margin-bottom: 0rem !important;">
                                 <div class="control is-expanded">
@@ -78,10 +78,10 @@
                                     <a href="../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       COURSES
                                     </a>
-                                      <a href="../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                    <a href="../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       QUIZZES
                                     </a>
-                                      <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                    <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                       DASHBOARD
                                     </a>
                                   </div>
@@ -113,6 +113,58 @@
                             </div>
                         </div>
                         <div class="navbar-item has-dropdown is-hidden-desktop">
+                            <div class="navbar-dropdown">
+                                <hr style="background-color: hsl(0, 0%, 96%) !important;">
+                                <p href="#" class="navbar-item has-text-light poppins py-2 my-2">
+                                    <span class="image is-32x32 mb-2">
+                                        <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
+                                    </span>
+                                  Tim Carlton<br>
+                                  STUDENT
+                                </p>
+                                <div class="navbar-item">
+                                    <button class="button activeBtn is-rounded "><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-menu is-hidden-desktop" id="navMenu" style="
+                padding: 0% !important; 
+                background-image: url('../src/svg/bg-header-timeline.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
+                    <div class="navbar-start">
+                        <div class="navbar-item ml-4-desktop">
+                            <br class="is-hidden-desktop">
+                            <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                                <div class="control is-expanded">
+                                  <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                                </div>
+                                <div class="control">
+                                    <a class="button searchBox searchBtn poppins">
+                                        <i class="bi bi-search"></i>
+                                    </a>
+                                  </div>
+                            </div>
+                            <br">
+                        </div>
+                    </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <a href="#" class="button is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></a>
+                        </div>
+                        <div class="navbar-item">
+                            <a href="../courses/browse-courses.html" class="button has-background-info-dark is-rounded noBgColor notActive"><p class="has-text-light poppins">COURSES</p></a>
+                        </div>
+                        <div class="navbar-item">
+                            <a href="../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded noBgColor notActive"><p class="has-text-light poppins">QUIZZES</p></a>
+                        </div>
+                        <div  class="navbar-item">
+                            <a href="../dashboard/dashboard.html" class="button has-background-info-dark is-rounded noBgColor notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
+                        </div>
+                        <div class="navbar-item has-dropdown">
                             <div class="navbar-dropdown">
                                 <hr style="background-color: hsl(0, 0%, 96%) !important;">
                                 <p href="#" class="navbar-item has-text-light poppins py-2 my-2">
