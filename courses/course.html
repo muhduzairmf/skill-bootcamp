@@ -132,10 +132,8 @@
     <section class="section has-background-light">
         <div class="container">
             <div class="columns">
-                <div>
-                    <column class="is-12">
-                        <a href="preview.html" class="has-text-dark"><p class="poppins pb-4">&nbsp;<i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Course preview</p></a>
-                    </column>
+                <div class="column is-12">
+                    <a href="preview.html" class="has-text-dark"><p class="poppins pb-4">&nbsp;<i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Course preview</p></a>
                 </div>
             </div>
             <div class="columns is-hidden-touch">
@@ -305,57 +303,59 @@
                                               </div>
                                           </div>
                                       </nav>
-                                      <div x-show="comment1" x-transition>
-                                        <article class="media my-4">
-                                          <figure class="media-left">
-                                            <p class="image is-48x48">
-                                              <img class="is-rounded" src="https://images.unsplash.com/photo-1601234699404-4867fa71f87f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80">
-                                            </p>
-                                          </figure>
-                                          <div class="media-content">
-                                            <div class="content poppins">
-                                              <p>
-                                                <strong class="is-size-5">Mike Jason </strong>
-                                                <br>
-                                                <small class="subtitle is-7">July 12, 2020 &nbsp;|&nbsp; 9.02 PM</small>
-                                                <br><br>
-                                                Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
-                                                <br>
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </article>
-                                        <div x-html="doneComment1"></div>
-                                        <article class="media my-6">
-                                            <figure class="media-left">
-                                              <p class="image is-64x64">
-                                                <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg">
-                                              </p>
-                                            </figure>
-                                            <div class="media-content">
-                                              <div class="field">
-                                                <p class="control">
-                                                  <textarea class="textarea has-fixed-size poppins" rows="5" placeholder="Add a comment..." x-model="userComment1"></textarea>
-                                                </p>
-                                              </div>
-                                              <nav class="level">
-                                                <div class="level-left">
-                                                  <div class="level-item">
-                                                    <a class="button is-rounded has-background-info-dark has-text-light poppins" x-on:click="commenting1">Submit</a>
-                                                  </div>
-                                                  <div class="level-item">
-                                                    <a class="button is-rounded poppins" x-on:click="clearComment1">Clear</a>
-                                                  </div>
-                                                </div>
-                                              </nav>
-                                            </div>
-                                          </article>
-                                        <h3 class="mt-4 title is-5 has-text-centered is-clickable" x-on:click="toggleComment1">
-                                            <i class="bi bi-chevron-up"></i>
-                                        </h3>
-                                      </div>
                                     </div>
                                 </article>
+                                <div x-show="comment1" x-transition>
+                                    <hr style="background-color: hsl(235, 235, 235)">
+                                    <article class="media my-4">
+                                      <figure class="media-left">
+                                        <p class="image is-48x48">
+                                          <img class="is-rounded" src="https://images.unsplash.com/photo-1601234699404-4867fa71f87f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80">
+                                        </p>
+                                      </figure>
+                                      <div class="media-content">
+                                        <div class="content poppins">
+                                          <p>
+                                            <strong class="is-size-5">Mike Jason </strong>
+                                            <br>
+                                            <small class="subtitle is-7">July 12, 2020 &nbsp;|&nbsp; 9.02 PM</small>
+                                            <br><br>
+                                            Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi eu lorem cursus ullamcorper sit amet nec massa.
+                                            <br>
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </article>
+                                    <div x-html="doneComment1"></div>
+                                    <hr style="background-color: hsl(235, 235, 235)">
+                                    <article class="media my-6">
+                                        <figure class="media-left">
+                                          <p class="image is-64x64">
+                                            <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg">
+                                          </p>
+                                        </figure>
+                                        <div class="media-content">
+                                          <div class="field">
+                                            <p class="control">
+                                              <textarea class="textarea has-fixed-size poppins" rows="5" placeholder="Add a comment..." x-model="userComment1"></textarea>
+                                            </p>
+                                          </div>
+                                          <nav class="level">
+                                            <div class="level-left">
+                                              <div class="level-item">
+                                                <a class="button is-rounded has-background-info-dark has-text-light poppins" x-on:click="commenting1">Submit</a>
+                                              </div>
+                                              <div class="level-item">
+                                                <a class="button is-rounded poppins" x-on:click="clearComment1">Clear</a>
+                                              </div>
+                                            </div>
+                                          </nav>
+                                        </div>
+                                      </article>
+                                    <h3 class="mt-4 title is-5 has-text-centered is-clickable" x-on:click="toggleComment1">
+                                        <i class="bi bi-chevron-up"></i>
+                                    </h3>
+                                </div>
                             </div>
                             <div class="box">
                                 <article class="media">

@@ -47,9 +47,6 @@ document.addEventListener('alpine:init', () => {
             this.arrowUp3 = ! this.arrowUp3;
             this.arrowDown3 = ! this.arrowDown3;
         },
-        toggleCourseContent() {
-            document.getElementById('courseContent').classList.toggle('is-active');
-        },
         comment1: false,
         comment2: false,
         toggleComment1() {
@@ -67,8 +64,9 @@ document.addEventListener('alpine:init', () => {
         commenting1() {
             this.countComment1++;
             var datenow = dayjs().format('MMMM D[,] YYYY');
-            var timenow = dayjs().format('h[:]m A');
+            var timenow = dayjs().format('h[:]mm A');
             this.doneComment1 += `
+                <hr style="background-color: hsl(235, 235, 235)">
                 <article class="media my-6">
                     <figure class="media-left">
                         <p class="image is-48x48">

@@ -132,10 +132,8 @@
     <section class="section has-background-light">
         <div class="container">
             <div class="columns">
-                <div>
-                    <column class="is-12">
-                        <a href="browse-courses.html" class="has-text-dark"><p class="poppins pb-4">&nbsp;<i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Browse courses</p></a>
-                    </column>
+                <div class="column is-12">
+                    <a href="browse-courses.html" class="has-text-dark"><p class="poppins pb-4">&nbsp;<i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Browse courses</p></a>
                 </div>
             </div>
             <div class="columns is-hidden-touch">
@@ -148,7 +146,6 @@
                 <div class="column">
                     <div>
                         <span class="title is-size-3 poppins mr-4">Engineering Drawing and CAD</span>
-                        <span class="is-pulled-right poppins is-clickable" x-on:click="toggleCourseContent">Preview <i class="bi bi-card-text" ></i></span>
                     </div>
                 </div>
             </div>
@@ -237,6 +234,44 @@
                         </div>
                     </div>
 
+<!-- Preview card, for tablet and mobile only -->
+                    <div class="columns is-hidden-desktop mb-4">
+                        <div class="column is-12">
+                            <div class="box">
+                                <h4 class="title is-size-4 has-text-centered poppins">Engineering Drawing and CAD</h4>
+                                <div class="columns is-mobile is-centered">
+                                    <div class="column is-one-fifths">
+                                        <figure class="image is-16by9">
+                                            <img src="https://images.unsplash.com/photo-1610650394144-a778795cf585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="columns is-mobile is-centered">
+                                    <div class="column is-8">
+                                        <div class="has-text-centered mb-2">
+                                            <a href="course.html" class="button has-background-info-dark has-text-light poppins is-rounded is-expanded ">Join Now</a>
+                                        </div>
+                                        <div class="has-text-centered mt-2">
+                                            <a href="" class="button has-text-info-dark poppins is-rounded is-expanded is-underlined " style="border: 0px solid white;">Enroll Later</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns is-mobile">
+                                    <div class="column is-12 is-10-widescreen">
+                                        <div class="content poppins">
+                                            <h6>Overview of this course:</h6>
+                                            <ul>
+                                                <li>6 hours on demand video.</li>
+                                                <li>3 articles</li>
+                                                <li>1 quizzes</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 <!-- Reviews -->
                     <div class="columns is-mobile">
                         <div class="column is-12">
@@ -260,8 +295,10 @@
                                         </p>
                                       </div>
                                     </div>
-                                  </article><hr style="background-color: hsl(235, 235, 235) !important;">
-                                  <article class="media">
+                                  </article>
+                            </div>
+                            <div class="box">
+                                <article class="media">
                                     <figure class="media-left">
                                       <p class="image is-48x48">
                                         <img class="is-rounded" src="https://images.unsplash.com/photo-1601234699404-4867fa71f87f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=865&q=80">
@@ -322,48 +359,6 @@
             </div>
         </div><br>
     </section>
-
-<!-- Preview card modal, for tablet and mobile -->
-    <div class="modal is-clipped" id="courseContent">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <div class="section">
-                <div class="box">
-                    <h4 class="title is-size-4 has-text-centered poppins">Engineering Drawing and CAD</h4>
-                    <div class="columns is-mobile is-centered">
-                        <div class="column is-one-fifths">
-                            <figure class="image is-16by9">
-                                <img src="https://images.unsplash.com/photo-1610650394144-a778795cf585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile is-centered">
-                        <div class="column is-8">
-                            <div class="has-text-centered mb-2">
-                                <a href="course.html" class="button has-background-info-dark has-text-light poppins is-rounded is-expanded ">Join Now</a>
-                            </div>
-                            <div class="has-text-centered mt-2">
-                                <a href="" class="button has-text-info-dark poppins is-rounded is-expanded is-underlined " style="border: 0px solid white;">Enroll Later</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-12 is-10-widescreen">
-                            <div class="content poppins">
-                                <h6>Overview of this course:</h6>
-                                <ul>
-                                    <li>6 hours on demand video.</li>
-                                    <li>3 articles</li>
-                                    <li>1 quizzes</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" x-on:click="toggleCourseContent"></button>
-    </div>
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">

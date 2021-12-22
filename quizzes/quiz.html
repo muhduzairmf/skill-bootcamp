@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
     <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
-    <title>Document</title>
+    <title>Skill Bootcamp | Quiz</title>
 </head>
 <body x-data="main">
 
+<!-- Loading -->
+<div class="modal is-active is-clipped" id="loading">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <!-- Navbar -->
-    <nav class="navbar py-2">
+    <!-- Navbar -->
+    <nav class="navbar has-background-info-dark py-2">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item mr-4" href="../">
@@ -23,18 +33,18 @@
                     <span></span>
                 </div>
             </div>
-            <div class="navbar-menu has-background-grey-dark" id="navMenu">
+            <div class="navbar-menu has-background-info-dark" id="navMenu">
                 <div class="navbar-start">
                     <div class="navbar-item ml-4">
                         <br class="is-hidden-desktop">
                         <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                            <div class="control is-expanded">
+                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                            </div>
                             <div class="control">
                                 <a class="button searchBox searchBtn poppins">
                                     <i class="bi bi-search"></i>
                                 </a>
-                            </div>
-                            <div class="control is-expanded">
-                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
                             </div>
                         </div>
                         <br class="is-hidden-desktop">
@@ -42,34 +52,34 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                        <a href="../timelines/timelines.html" class="button has-background-info-dark is-rounded notActive "><p class="has-text-light poppins">HOME</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                        <a href="../courses/browse-courses.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                        <a href="#" class="button is-rounded activeBtn"><p class="has-text-light poppins">QUIZZES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                        <a href="../dashboard/dashboard.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                     </div>
                     <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                            <button class="button has-background-grey-dark is-rounded notActive">
+                            <button class="button has-background-info-dark is-rounded notActive">
                                 <span class="has-text-light poppins">MENU</span>
                                 <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                            <div id="dropCont1" class="dropdown-content has-background-grey-dark">
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                            <div id="dropCont1" class="dropdown-content has-background-info-dark">
+                                <a href="../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 COURSES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="#" class="dropdown-item has-text-light poppins activeBtn py-4 my-3">
                                 QUIZZES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 DASHBOARD
                                 </a>
                             </div>
@@ -79,13 +89,13 @@
                     <div class="navbar-item is-hidden-touch">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                                <button class="button has-background-grey-dark is-rounded notActive">
+                                <button class="button has-background-info-dark is-rounded notActive">
                                     <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
                                     <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                                 </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                                <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                <div id="dropCont1" class="dropdown-content has-background-info-dark">
                                 <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
                                     <span class="image is-32x32 mb-2">
                                         <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
@@ -93,7 +103,7 @@
                                     Tim Carlton<br>
                                     STUDENT
                                 </p>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2" x-on:click="logout">
+                                <a href="#" class="dropdown-item has-text-light poppins activeBtn py-2 my-2" x-on:click="logout">
                                     Log out
                                 </a>
                                 </div>
@@ -111,7 +121,7 @@
                             STUDENT
                             </p>
                             <div class="navbar-item">
-                                <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                <button class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
                             </div>
                         </div>
                     </div>
@@ -120,13 +130,165 @@
         </div>
     </nav>
 
-<!-- Quiz title -->
-
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column is-10">
+                    <a href="preview.html" class="has-text-dark"><p class="poppins pb-4">&nbsp;<i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Quiz preview</p></a>
+                </div>
+            </div>
+            <div class="columns is-multiline is-vcentered">
+                <div class="column is-1"></div>
+                <div class="column is-5">
+<!-- Header -->
+                    <h4 class="title is-size-3 poppins">How to speak English like a pro</h4>
+                </div>
+                <div class="column is-5">
 <!-- Countdown timer -->
+                    <div class="box has-background-info-dark px-6">
+                        <p class="subtitle is-6 has-text-light has-text-centered poppins" id="countdown">
+                            Time Remaining
+                            <span id="countdownH"></span>&nbsp;hour(s)
+                            <span id="countdownM"></span>&nbsp;minute(s)
+                            <span id="countdownS"></span>&nbsp;seconds
+                        </p>
+                    </div>
+                </div>
+            </div>
 
 <!-- Quiz section -->
-
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column is-10">
+                    <div class="content poppins">
+                        <p>1.&nbsp;What color are apples?</p>
+                        <div class="control">
+                            <label class="radio">
+                              <input type="radio" name="answer1" value="A">
+                              Red
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer1" value="B">
+                              Grey
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer1" value="C">
+                              Transparent
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer1" value="D">
+                              White
+                            </label>
+                        </div><br>
+                        <p>2.&nbsp;Where the first case of COVID-19 recorded in the world?</p>
+                        <div class="control">
+                            <label class="radio">
+                              <input type="radio" name="answer2" value="A">
+                              Tokyo
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer2" value="B">
+                              Wuhan
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer2" value="C">
+                              Helsinki
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer2" value="D">
+                              Moscow
+                            </label>
+                        </div><br>
+                        <p>3.&nbsp;What is the capital city of Malaysia?</p>
+                        <div class="control">
+                            <label class="radio">
+                              <input type="radio" name="answer3" value="A">
+                              Klang
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer3" value="B">
+                              Johor Bahru
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer3" value="C">
+                              Kuala Lumpur
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer3" value="D">
+                              Pulau Pinang
+                            </label>
+                        </div><br>
+                        <p>4.&nbsp;What is the most popular operating system for server?</p>
+                        <div class="control">
+                            <label class="radio">
+                              <input type="radio" name="answer4" value="A">
+                              Windows XP
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer4" value="B">
+                              Android 10
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer4" value="C">
+                              Mac OS BigSur
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer4" value="D">
+                              Ubuntu
+                            </label>
+                        </div><br>
+                        <p>5.&nbsp;What is the correct way to prevent your computer from being hacked?</p>
+                        <div class="control">
+                            <label class="radio">
+                              <input type="radio" name="answer5" value="A">
+                              Do not install pirated software from untrusted sources
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer5" value="B">
+                              Use public WIFI to make online banking transaction
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer5" value="C">
+                              Share your email and password to someone else
+                            </label>
+                            <br>
+                            <label class="radio">
+                              <input type="radio" name="answer5" value="D">
+                              Always use '12345' as a password
+                            </label>
+                        </div><br>
+                    </div>
 <!-- Mark -->
+                    <button id="submitQuiz" class="button has-background-info-dark has-text-light poppins" onclick="viewMarks()">Submit</button>
+                    <hr style="background-color: rgb(126, 126, 126);">
+                    <div class="columns">
+                        <div class="column is-3">
+                            <div class="box" style="background-color: #dbdbdb !important;">
+                                <p class="subtitle is-6 poppins">TOTAL MARKS: <span id="marks"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">
@@ -183,6 +345,8 @@
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <script src="../src/lib/loading.min.js"></script>
+    <script src="../src/lib/easytimer.min.js"></script>
     <script src="../src/scripts/quizzes.js"></script>
 </body>
 </html>
