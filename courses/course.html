@@ -330,7 +330,7 @@
                                     <hr style="background-color: hsl(235, 235, 235)">
                                     <article class="media my-6">
                                         <figure class="media-left">
-                                          <p class="image is-64x64">
+                                          <p class="image is-48x48">
                                             <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg">
                                           </p>
                                         </figure>
@@ -385,32 +385,33 @@
                                                 </div>
                                             </div>
                                         </nav>
-                                      <div x-show="comment2" x-transition>
-                                        <article class="media">
-                                            <figure class="media-left">
-                                              <p class="image is-48x48">
-                                                <img class="is-rounded" src="https://images.unsplash.com/photo-1608494603682-913a9e8abee9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80">
-                                              </p>
-                                            </figure>
-                                            <div class="media-content">
-                                              <div class="content poppins">
-                                                <p>
-                                                  <strong class="is-size-5">Kayli Eunice </strong>
-                                                  <br>
-                                                  <small class="subtitle is-7">March 12, 2020 &nbsp;|&nbsp; 4.38 PM</small>
-                                                  <br><br>
-                                                  Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
-                                                  <br>
-                                                </p>
-                                              </div>
-                                            </div>
-                                        </article>
-                                        <h3 class="mt-4 title is-5 has-text-centered is-clickable" x-on:click="toggleComment2">
-                                            <i class="bi bi-chevron-up"></i>
-                                        </h3>
-                                      </div>
                                     </div>
                                 </article>
+                                <div x-show="comment2" x-transition>
+                                    <hr style="background-color: hsl(235, 235, 235)">
+                                    <article class="media">
+                                        <figure class="media-left">
+                                          <p class="image is-48x48">
+                                            <img class="is-rounded" src="https://images.unsplash.com/photo-1608494603682-913a9e8abee9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=854&q=80">
+                                          </p>
+                                        </figure>
+                                        <div class="media-content">
+                                          <div class="content poppins">
+                                            <p>
+                                              <strong class="is-size-5">Kayli Eunice </strong>
+                                              <br>
+                                              <small class="subtitle is-7">March 12, 2020 &nbsp;|&nbsp; 4.38 PM</small>
+                                              <br><br>
+                                              Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet magna vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+                                              <br>
+                                            </p>
+                                          </div>
+                                        </div>
+                                    </article>
+                                    <h3 class="mt-4 title is-5 has-text-centered is-clickable" x-on:click="toggleComment2">
+                                        <i class="bi bi-chevron-up"></i>
+                                    </h3>
+                                  </div>
                             </div>
                         </div>
                     </div>

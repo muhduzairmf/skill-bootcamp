@@ -4,6 +4,15 @@ if (localStorage.getItem("isAuthorized") != "true") {
     //window.location.replace('../../');
 }
 
+if (localStorage.getItem("fullname_teacher") === null) {
+    localStorage.setItem("fullname_teacher", "Tim Carlton");
+    localStorage.setItem("username_teacher", "timcarlton");
+    localStorage.setItem("email_teacher", "timcarlton.dev@gmail.com");
+    localStorage.setItem("phoneNum_teacher", "60123456789");
+    localStorage.setItem("location_teacher", "Kuala Lumpur, Malaysia");
+    localStorage.setItem("aboutme_teacher", "I am highly organized. I always take notes, and I use a series of tools to help myself stay on top of deadlines. I like to keep a clean workspace and create a logical filing method so I\'m always able to find what I need. I find this increases efficiency and helps the rest of the team stay on track, too. In my last role, I created a new filing process that increased departmental efficiency 25%.");
+}
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('main', () => ({
         displayMenu() {
@@ -57,6 +66,24 @@ document.addEventListener('alpine:init', () => {
             } else {
                 this.warnCaps3 = false;
             }
+        },
+        fullname: localStorage.getItem("fullname_teacher"),
+        username: localStorage.getItem("username_teacher"),
+        email: localStorage.getItem("email_teacher"),
+        phoneNum: parseInt(localStorage.getItem("phoneNum_teacher")),
+        location: localStorage.getItem("location_teacher"),
+        aboutme: localStorage.getItem("aboutme_teacher"),
+        changePersonalDetail() {
+            localStorage.setItem("fullname_teacher", this.fullname);
+            localStorage.setItem("username_teacher", this.username);
+            localStorage.setItem("email_teacher", this.email);
+            localStorage.setItem("phoneNum_teacher", this.phoneNum.toString());
+            localStorage.setItem("location_teacher", this.location);
+            localStorage.setItem("aboutme_teacher", this.aboutme);
+            window.location.href = 'dashboard.html';
+        },
+        cancelPersonalDetail() {
+            window.location.href = 'dashboard.html';
         },
     }));
 });

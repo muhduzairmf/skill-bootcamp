@@ -64,7 +64,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Username</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="text" placeholder="👤">
+                                            <input class="input poppins inputGlass" type="text" placeholder="👤" required>
                                         </div>
                                     </div>
                                </div>
@@ -72,7 +72,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Email</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="email" placeholder="📧">
+                                            <input class="input poppins inputGlass" type="email" placeholder="📧" required>
                                         </div>
                                     </div>
                                </div>
@@ -82,7 +82,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Password</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="password" autocomplete="new-password" placeholder="🔑" x-model="newPass" x-on:keyup="detectCaps1">
+                                            <input class="input poppins inputGlass" type="password" autocomplete="new-password" placeholder="🔑" x-model="newPass" x-on:keyup="detectCaps1" required>
                                         </div>
                                         <div x-show="warnCaps1">
                                             <p class="subtitle is-7 poppins mt-2" style="color: orange;">Caps Lock is on</p>
@@ -93,7 +93,7 @@
                                     <div class="field">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Confirm Password</p></label>
                                         <div class="control">
-                                            <input class="input poppins inputGlass" type="password" autocomplete="new-password" placeholder="🔐" x-model="confirmPass" x-on:input="matchPass" x-on:keyup="detectCaps2">
+                                            <input class="input poppins inputGlass" type="password" autocomplete="new-password" placeholder="🔐" x-model="confirmPass" x-on:input="matchPass" x-on:keyup="detectCaps2" required>
                                         </div>
                                         <div x-show="notMatch">
                                             <p class="subtitle is-7 has-text-danger poppins mt-2">Your password is not match!</p>
@@ -334,14 +334,16 @@
                         <hr><br>
                     </div>
                     <br><br>
-                    <div class="columns">
-                        <div class="column is-12">
-                            <span>
+                    <div class="level is-mobile">
+                        <div class="level-left">
+                            <div class="level-item">
                                 <a class="has-text-info is-pulled-left poppins" x-on:click="closeThirdStepPath2">Cancel</a>
-                            </span>
-                            <span class="is-pulled-right">
-                                <a class="button is-info poppins">Confirm</a>
-                            </span>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <button class="button is-info poppins" x-on:click="submitSignup">Confirm</button>
+                            </div>
                         </div>
                     </div>
                 </div>

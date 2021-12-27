@@ -163,13 +163,111 @@
 <!-- Edit personal detail -->
                 <div class="column is-8-tablet is-9-widescreen">
                     <div class="box">
-                        <div class="container-fluid">
-                            <div class="columns mx-2 mt-1">
-                                <div class="column is-12">
-                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Personal detail</span></p>
+                        <form x-on:submit.prevent="changePersonalDetail">
+                            <div class="container-fluid">
+                                <div class="columns mx-2 mt-2">
+                                    <div class="column is-12">
+                                        <p><span class="title is-size-4-desktop is-size-5-touch poppins">Personal detail</span></p>
+                                    </div>
+                                </div>
+                                <div class="columns is-multiline" style="margin-bottom: 0px !important;">
+                                    <div class="column is-6 is-12-touch">
+                                        <div class="content">
+                                            <p><strong>
+                                                <ul>
+                                                    <li class="poppins">Full name</li>
+                                                </ul>
+                                            </strong></p>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input class="input is-rounded poppins" type="text" x-model="fullname">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column is-6 is-12-touch">
+                                        <div class="content">
+                                            <p><strong>
+                                                <ul>
+                                                    <li class="poppins">Username</li>
+                                                </ul>
+                                            </strong></p>
+                                            <div class="field">
+                                                <div class="control"><input type="text" class="input is-rounded poppins" x-model="username"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns is-multiline" style="margin-bottom: 0px !important;">
+                                    <div class="column is-6 is-12-touch">
+                                        <div class="content">
+                                            <p><strong>
+                                                <ul>
+                                                    <li class="poppins">Email</li>
+                                                </ul>
+                                            </strong></p>
+                                            <div class="field">
+                                                <div class="control"><input type="email" class="input is-rounded poppins" x-model="email"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column is-6 is-12-touch">
+                                        <div class="content">
+                                            <p><strong>
+                                                <ul>
+                                                    <li class="poppins">Phone Number</li>
+                                                </ul>
+                                            </strong></p>
+                                            <div class="field">
+                                                <div class="control"><input type="number" maxlength="12" class="input is-rounded poppins" x-model="phoneNum"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns" style="margin-bottom: 0px !important;">
+                                    <div class="column is-12">
+                                        <div class="content">
+                                            <p><strong>
+                                                <ul>
+                                                    <li class="poppins">Location</li>
+                                                </ul>
+                                            </strong></p>
+                                            <div class="field">
+                                                <div class="control"><input type="text" class="input is-rounded poppins" x-model="location"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns" style="margin-bottom: 0px !important;">
+                                    <div class="column is-12">
+                                        <div class="content">
+                                            <p><strong>
+                                                <ul>
+                                                    <li class="poppins">About me</li>
+                                                </ul>
+                                            </strong></p>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <textarea class="textarea poppins" placeholder="" x-model="aboutme"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field is-grouped is-grouped-right mr-2">
+                                    <p class="control">
+                                      <a class="button is-white poppins is-rounded" style="border: 1px solid #7a7a7a !important;" x-on:click="cancelPersonalDetail">
+                                        Cancel
+                                      </a>
+                                    </p>
+                                    <p class="control">
+                                      <button class="button is-info poppins is-rounded" type="submit">
+                                        Save changes
+                                      </button>
+                                    </p>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,31 @@ if (localStorage.getItem("isAuthorized") != "true") {
     //window.location.replace('../../');
 }
 
+document.addEventListener('alpine:init', () => {
+    Alpine.data('main', () => ({
+        displayMenu() {
+            document.querySelector('#navMenu').classList.toggle('is-active');
+            document.querySelector('#burgerBtn').classList.toggle('is-active');
+        },
+        goTimelines() {
+            window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+            //window.location.href = '../../timelines/timelines.html';
+        },
+        logout() {
+            localStorage.setItem("isAuthorized", "false");
+
+            window.location.href = '../../skill-bootcamp/index.html';
+            //window.location.href = '../../index.html';
+        },
+        toggleSearchFilterModal() {
+            document.querySelector('#searchFilterModal').classList.toggle('is-active');
+        },
+        closeTimesup() {
+            document.querySelector('#modalTimesup').classList.toggle('is-active');
+        }
+    }));
+});
+
 var answers = ['', '', '', '', ''];
 var isClicked = false;
 
@@ -101,49 +126,32 @@ function viewMarks() {
 }
 
 const submitBtn = document.querySelector('#submitQuiz');
-submitBtn.addEventListener("click", viewMarks());
+if (submitBtn != null) {
+    submitBtn.addEventListener("click", viewMarks());
+}
 
 var timer = new easytimer.Timer();
-timer.start({ countdown: true, startValues: { seconds: 30 } });
+if (timer != undefined) {
+    timer.start({ countdown: true, startValues: { seconds: 30 } });
 
-document.getElementById('countdownH').innerHTML = timer.getTimeValues().hours;
-document.getElementById('countdownM').innerHTML = timer.getTimeValues().minutes;
-document.getElementById('countdownS').innerHTML = timer.getTimeValues().seconds;
-
-timer.addEventListener('secondsUpdated', function (event) {
     document.getElementById('countdownH').innerHTML = timer.getTimeValues().hours;
     document.getElementById('countdownM').innerHTML = timer.getTimeValues().minutes;
     document.getElementById('countdownS').innerHTML = timer.getTimeValues().seconds;
-});
 
-timer.addEventListener('targetAchieved', function (event) {
-    document.getElementById('countdown').innerHTML = 'Time\'s Up!';
-    var allRadio = document.querySelectorAll('input[type=radio]');
-    allRadio.forEach(radio => {
-        radio.disabled = true;
+    timer.addEventListener('secondsUpdated', function (event) {
+        document.getElementById('countdownH').innerHTML = timer.getTimeValues().hours;
+        document.getElementById('countdownM').innerHTML = timer.getTimeValues().minutes;
+        document.getElementById('countdownS').innerHTML = timer.getTimeValues().seconds;
     });
-    document.getElementById('submitQuiz').disabled = true;
-    viewMarks();
-})
 
-document.addEventListener('alpine:init', () => {
-    Alpine.data('main', () => ({
-        displayMenu() {
-            document.querySelector('#navMenu').classList.toggle('is-active');
-            document.querySelector('#burgerBtn').classList.toggle('is-active');
-        },
-        goTimelines() {
-            window.location.href = '../../skill-bootcamp/timelines/timelines.html';
-            //window.location.href = '../../timelines/timelines.html';
-        },
-        logout() {
-            localStorage.setItem("isAuthorized", "false");
-
-            window.location.href = '../../skill-bootcamp/index.html';
-            //window.location.href = '../../index.html';
-        },
-        toggleSearchFilterModal() {
-            document.querySelector('#searchFilterModal').classList.toggle('is-active');
-        },
-    }));
-});
+    timer.addEventListener('targetAchieved', function (event) {
+        document.getElementById('countdown').innerHTML = 'Time\'s Up!';
+        var allRadio = document.querySelectorAll('input[type=radio]');
+        allRadio.forEach(radio => {
+            radio.disabled = true;
+        });
+        document.getElementById('submitQuiz').disabled = true;
+        document.querySelector('#modalTimesup').classList.toggle('is-active');
+        viewMarks();
+    })
+}
