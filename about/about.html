@@ -11,30 +11,30 @@
 <body x-data="main">
 
 <!-- Navbar and header -->
-    <nav class="navbar py-2">
+    <nav class="navbar py-2 has-background-info-dark">
         <div class="container">
             <div class="navbar-brand">
-                <div class="navbar-item mr-4">
-                    <h3 class="is-size-3"><a href="../index.html">🎓</a></h3>
-                </div>
+                <a class="navbar-item mr-4" href="#">
+                    <img src="../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
+                </a>
                 <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <div class="navbar-menu has-background-grey-dark" id="navMenu">
+            <div class="navbar-menu has-background-info-dark" id="navMenu">
                 <div class="navbar-start">
-                    <div class="navbar-item ml-4-desktop">
+                    <div class="navbar-item ml-4">
                         <br class="is-hidden-desktop">
                         <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                            <div class="control is-expanded">
+                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                            </div>
                             <div class="control">
                                 <a class="button searchBox searchBtn poppins">
                                     <i class="bi bi-search"></i>
                                 </a>
-                            </div>
-                            <div class="control is-expanded">
-                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
                             </div>
                         </div>
                         <br class="is-hidden-desktop">
@@ -42,34 +42,34 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <button class="button has-background-black is-rounded activeBtn"><p class="has-text-light poppins">HOME</p></button>
+                        <a href="../timelines/timelines.html" class="button  has-background-info-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="goTimelines">HOME</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></button>
+                        <a href="../courses/browse-courses.html" class="button  has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></button>
+                        <a href="../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></button>
+                        <a href="../dashboard/dashboard.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">DASHBOARD</p></a>
                     </div>
                     <div class="navbar-item  is-hidden-touch is-hidden-widescreen">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                            <button class="button has-background-grey-dark is-rounded notActive">
+                            <button class="button has-background-info-dark is-rounded notActive">
                                 <span class="has-text-light poppins">MENU</span>
                                 <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                            <div id="dropCont1" class="dropdown-content has-background-grey-dark">
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                            <div id="dropCont1" class="dropdown-content has-background-info-dark">
+                                <a href="../courses/browse-courses.html" class="dropdown-item has-text-light poppins has-background-link-dark notActive py-4 my-3">
                                 COURSES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 QUIZZES
                                 </a>
-                                <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../dashboard/dashboard.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 DASHBOARD
                                 </a>
                             </div>
@@ -79,13 +79,13 @@
                     <div class="navbar-item is-hidden-touch">
                         <div class="dropdown is-right is-hoverable">
                             <div class="dropdown-trigger">
-                                <button class="button has-background-grey-dark is-rounded notActive">
+                                <button class="button has-background-info-dark is-rounded notActive">
                                     <span class="has-text-light poppins is-size-4-desktop is-size-3-touch"><i class="bi bi-person-circle"></i></span>
                                     <span class="icon is-small has-text-light"><i class="bi bi-chevron-down"></i></span>
                                 </button>
                             </div>
                             <div class="dropdown-menu" role="menu">
-                                <div id="dropCont1" class="dropdown-content has-background-grey-dark">
+                                <div id="dropCont1" class="dropdown-content has-background-info-dark">
                                 <p href="#" class="dropdown-item has-text-light poppins notActive py-2 my-2">
                                     <span class="image is-32x32 mb-2">
                                         <img class="is-rounded" src="https://randomuser.me/api/portraits/men/40.jpg" alt="">
@@ -111,7 +111,7 @@
                             STUDENT
                             </p>
                             <div class="navbar-item">
-                                <button class="button has-background-grey-dark is-rounded notActive"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
+                                <button class="button is-rounded activeBtn"><p class="has-text-light poppins" x-on:click="logout">Log out</p></button>
                             </div>
                         </div>
                     </div>
@@ -119,6 +119,94 @@
             </div>
         </div>
     </nav>
+
+<!-- About user card -->
+    <section class="section has-background-light">
+        <div class="container">
+            <h2 class="title is-size-3-desktop is-size-4-touch has-text-centered has-text-dark poppins"><strong>About user</strong></h2>
+            <div class="columns is-centered">
+                <div class="column is-12-touch is-8-desktop is-three-fifths-widescreen">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="columns is-centered is-mobile">
+                                <div class="column is-8-touch is-6-desktop is-4-widescreen">
+                                    <figure class="image is-square">
+                                        <img src="https://images.pexels.com/photos/757316/pexels-photo-757316.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="is-rounded">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline" style="margin-bottom: 0px !important;">
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Full name</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            Dr. Peter Drury
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Username</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            peter_drury
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-multiline" style="margin-bottom: 0px !important;">
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Email</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            peterdrury@google.io
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-12-touch">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">Location</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5">
+                                            Glasgow, Scotland
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns" style="margin-bottom: 0px !important;">
+                                <div class="column is-12">
+                                    <div class="content">
+                                        <p><strong>
+                                            <ul>
+                                                <li class="poppins">About me</li>
+                                            </ul>
+                                        </strong></p>
+                                        <p class="poppins mx-5 has-text-justified">
+                                            "Everyone has inside them a piece of good news. The good news is you don't know how great you can be! How much you can love! What you can accomplish! And what your potential is." — Anne Frank
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!-- Footer -->
     <section class="section has-background-grey-dark">

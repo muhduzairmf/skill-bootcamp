@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../src/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../src/styles/style.css">
-    <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
-    <title>Skill Bootcamp | Add Quizzes</title>
+    <link rel="shortcut icon" href="../../../src/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../src/styles/style.css">
+    <script src="../../../src/lib/alpine.min.js" defer></script>
+    <title>Skill Bootcamp | Create quiz</title>
 </head>
 <body x-data="main">
-    
+
 <!-- Navbar -->
     <nav class="navbar has-background-info-dark py-2">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item mr-4" href="../../">
-                    <img src="../../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
+                <a class="navbar-item mr-4" href="../../../">
+                    <img src="../../../src/img/logo.png" style="max-height: max-content !important; width: 163.3px !important; height: 49.2px !important;">
                 </a>
                 <div id="burgerBtn" class="navbar-burger has-text-light" x-on:click="displayMenu">
                     <span></span>
@@ -43,13 +43,13 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <a href="../../timelines/timelines.html" class="button has-background-info-dark is-rounded notActive "><p class="has-text-light poppins">HOME</p></a>
+                        <a href="../../../timelines/timelines.html" class="button has-background-info-dark is-rounded notActive "><p class="has-text-light poppins">HOME</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <a href="../../courses/browse-courses.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
+                        <a href="../../../courses/browse-courses.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">COURSES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
-                        <a href="../../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
+                        <a href="../../../quizzes/browse-quizzes.html" class="button has-background-info-dark is-rounded notActive"><p class="has-text-light poppins">QUIZZES</p></a>
                     </div>
                     <div class="navbar-item is-hidden-desktop-only">
                         <a href="#" class="button is-rounded activeBtn"><p class="has-text-light poppins">DASHBOARD</p></a>
@@ -64,10 +64,10 @@
                             </div>
                             <div class="dropdown-menu" role="menu">
                             <div id="dropCont1" class="dropdown-content has-background-info-dark">
-                                <a href="../../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
+                                <a href="../../../courses/browse-courses.html" class="dropdown-item has-text-light poppins notActive py-4 my-3">
                                 COURSES
                                 </a>
-                                <a href="../../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins activeBtn py-4 my-3">
+                                <a href="../../../quizzes/browse-quizzes.html" class="dropdown-item has-text-light poppins activeBtn py-4 my-3">
                                 QUIZZES
                                 </a>
                                 <a href="#" class="dropdown-item has-text-light poppins notActive py-4 my-3">
@@ -142,16 +142,16 @@
                         <p class="subtitle is-size-5-desktop is-size-6-touch has-text-centered has-text-dark poppins mb-5"><strong>Tim Carlton</strong></p>
                         <div class="mb-3"></div>
                         <div>
-                            <a href="dashboard.html" class="button is-outlined notactive-setting poppins has-text-left">
+                            <a href="../dashboard.html" class="button is-outlined notactive-setting poppins has-text-left">
                                 <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-person-video3"></i>&nbsp;&nbsp;&nbsp;Personal detail
                             </a>
-                            <a href="add-courses.html" class="button is-outlined notactive-setting poppins has-text-left">
+                            <a href="../add-courses.html" class="button is-outlined notactive-setting poppins has-text-left">
                                 <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-journal-bookmark"></i>&nbsp;&nbsp;&nbsp;Add courses
                             </a>
-                            <a href="add-quizzes.html" class="button is-outlined active-setting poppins has-text-left">
+                            <a href="../add-quizzes.html" class="button is-outlined active-setting poppins has-text-left">
                                 <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-card-checklist"></i>&nbsp;&nbsp;&nbsp;Add quizzes
                             </a>
-                            <a href="change.html" class="button is-outlined notactive-setting poppins has-text-left">
+                            <a href="../change.html" class="button is-outlined notactive-setting poppins has-text-left">
                                 <span class="is-hidden-tablet-only">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<i class="bi bi-lock"></i>&nbsp;&nbsp;&nbsp;Change Password
                             </a>
                             <a href="#" class="button is-outlined notactive-setting poppins has-text-left" x-on:click="logout">
@@ -164,85 +164,7 @@
                 <div class="column is-8-tablet is-9-widescreen">
                     <div class="box">
                         <div class="container-fluid">
-                            <div class="columns mx-2 mt-1">
-                                <div class="column is-12">
-                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Add quizzes</span></p>
-                                </div>
-                            </div>
-                            <div class="mx-4 p-3" style="border: 1px solid #b5b5b5; border-radius: 5px;">
-                                <div class="columns is-multiline is-vcentered">
-                                    <div class="column is-10-desktop is-12-touch">
-                                        <p class="subtitle is-size-6 has-text-grey poppins">
-                                            Go to the quiz creation page
-                                        </p>
-                                    </div>
-                                    <div class="column is-2-desktop is-12-touch">
-                                        <a href="./create/create-quiz.html" class="button poppins is-pulled-right is-hidden-touch seeMore"><i class="bi bi-plus-square"></i>&nbsp; Add your quiz </a>
-                                        <a href="./create/create-quiz.html" class="button poppins is-hidden-desktop seeMore"><i class="bi bi-plus-square"></i>&nbsp; Add your quiz </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="columns mx-2 mt-5">
-                                <div class="column is-12">
-                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">My quizzes</span></p>
-                                </div>
-                            </div>
-                            <div class="columns is-multiline">
-                                <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                                    <div class="card is-clickable shadowObjBox standard-card-setting3">
-                                        <div class="card-image">
-                                            <figure class="image is-16by9">
-                                                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
-                                            </figure>
-                                        </div>
-                                        <div class="card-content" style="padding: 18px !important;">
-                                            <p class="poppins"><small>Art & Design</small></p>
-                                            <h4 class="poppins subtitle is-5 mb-1"><strong>Basics in Photography</strong></h4>
-                                            <p class="poppins mb-4" style="font-size: 12px !important;">
-                                                <span class="is-pulled-left">Duration: 30 Minutes</span>
-                                                <br class="is-hidden-mobile is-hidden-desktop">
-                                                <span class="is-pulled-right">20 Questions</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                                    <div class="card is-clickable shadowObjBox standard-card-setting3">
-                                        <div class="card-image">
-                                            <figure class="image is-16by9">
-                                                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
-                                            </figure>
-                                        </div>
-                                        <div class="card-content" style="padding: 18px !important;">
-                                            <p class="poppins"><small>Art & Design</small></p>
-                                            <h4 class="poppins subtitle is-5 mb-1"><strong>Basics in Photography</strong></h4>
-                                            <p class="poppins mb-4" style="font-size: 12px !important;">
-                                                <span class="is-pulled-left">Duration: 30 Minutes</span>
-                                                <br class="is-hidden-mobile is-hidden-desktop">
-                                                <span class="is-pulled-right">20 Questions</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column is-6-tablet is-4-widescreen is-12-mobile">
-                                    <div class="card is-clickable shadowObjBox standard-card-setting3">
-                                        <div class="card-image">
-                                            <figure class="image is-16by9">
-                                                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
-                                            </figure>
-                                        </div>
-                                        <div class="card-content" style="padding: 18px !important;">
-                                            <p class="poppins"><small>Art & Design</small></p>
-                                            <h4 class="poppins subtitle is-5 mb-1"><strong>Basics in Photography</strong></h4>
-                                            <p class="poppins mb-4" style="font-size: 12px !important;">
-                                                <span class="is-pulled-left">Duration: 30 Minutes</span>
-                                                <br class="is-hidden-mobile is-hidden-desktop">
-                                                <span class="is-pulled-right">20 Questions</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div><br><br>
                     </div>
                 </div>
@@ -303,8 +225,7 @@
         </footer>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
-    <script src="../../src/scripts/lecturerDashboard.js"></script>
+    
+    <script src="../../../src/scripts/createQuiz.js"></script>
 </body>
 </html>
