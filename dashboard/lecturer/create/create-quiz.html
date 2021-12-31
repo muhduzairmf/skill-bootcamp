@@ -123,7 +123,7 @@
 
     <section class="section has-background-info-light">
 <!-- Header -->
-        <div class="container">
+        <div class="container" id="header">
             <h2 class="title is-size-3-desktop is-size-4-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins"><strong>Dashboard</strong></h2>
             <p class="subtitle is-size-5-desktop is-size-6-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins">Lecturer's Dashboard</p><br>
         </div>
@@ -161,11 +161,192 @@
                     </div>
                 </div>
 <!-- Add quizzes -->
-                <div class="column is-8-tablet is-9-widescreen">
+                <div class="column is-8-tablet is-9-widescreen" id="success">
                     <div class="box">
-                        <div class="container-fluid">
-                            
-                        </div><br><br>
+                        <div class="container-fluid" x-show="createQuiz">
+                            <div class="columns mx-2 mt-1">
+                                <div class="column is-12">
+                                    <p><span class="title is-size-4-desktop is-size-5-touch poppins">Add quizzes</span></p>
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2 mt-1">
+                                <div class="column is-3">
+                                    <p class="title is-size-6 poppins">Quiz Title</p>
+                                </div>
+                                <div class="column is-9">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input type="text" class="input poppins" maxlength="30" placeholder="Enter a title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-3">
+                                    <p class="title is-size-6 poppins">Category</p>
+                                </div>
+                                <div class="column is-9">
+                                    <div class="select">
+                                        <select class="poppins">
+                                          <option class="poppins">Select a category</option>
+                                          <option class="poppins">Information Techonology</option>
+                                          <option class="poppins">Art & Design</option>
+                                          <option class="poppins">History</option>
+                                          <option class="poppins">Philosophy</option>
+                                          <option class="poppins">Mathematics</option>
+                                          <option class="poppins">Engineering</option>
+                                          <option class="poppins">Literature & Language</option>
+                                          <option class="poppins">Religion Study</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-3">
+                                    <p class="title is-size-6 poppins">Duration</p>
+                                </div>
+                                <div class="column is-9">
+                                    <div class="columns is-vcentered is-mobile">
+                                        <div class="column is-3-touch is-3-desktop is-2-widescreen">
+                                            <div class="select">
+                                                <select name="" id="" class="poppins">
+                                                    <template x-for="i in hours">
+                                                        <option class="poppins" x-text="i"></option>
+                                                    </template>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="column is-2">
+                                            <p class="poppins">hours</p>
+                                        </div>
+                                        <div class="column is-3-touch is-3-desktop is-2-widescreen">
+                                            <div class="select">
+                                                <select name="" id="" class="poppins">
+                                                    <template x-for="i in minutes">
+                                                        <option class="poppins" x-text="i"></option>
+                                                    </template>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="column is-2">
+                                            <p class="poppins">minutes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns mx-2">
+                                <div class="column is-3">
+                                    <p class="title is-size-6 poppins">Thumbnail Image</p>
+                                </div>
+                                <div class="column is-9">
+                                    <div id="file-js" class="file is-normal is-boxed has-name">
+                                        <label class="file-label">
+                                          <input class="file-input" type="file" name="thumbnail" id="image_input">
+                                          <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="bi bi-upload"></i>
+                                            </span>
+                                            <span class="file-label poppins">
+                                              Choose an image
+                                            </span>
+                                          </span>
+                                        </label>
+                                      </div>
+                                      <figure id="image_section" class="image mt-2 is-16by9" style="display: none;">
+                                          <img id="display_image" src="" alt="">
+                                      </figure>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-3">
+                                    <p class="title is-size-6 poppins">Question 1</p>
+                                </div>
+                                <div class="column is-9">
+                                    <input type="text" class="input poppins" placeholder="Enter a question">
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-2"></div>
+                                <div class="column is-1">
+                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                </div>
+                                <div class="column is-9">
+                                    <input type="text" class="input poppins">
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-2"></div>
+                                <div class="column is-1">
+                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                </div>
+                                <div class="column is-9">
+                                    <input type="text" class="input poppins">
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-2"></div>
+                                <div class="column is-1">
+                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                </div>
+                                <div class="column is-9">
+                                    <input type="text" class="input poppins">
+                                </div>
+                            </div>
+                            <div class="columns is-vcentered mx-2">
+                                <div class="column is-2"></div>
+                                <div class="column is-1">
+                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                </div>
+                                <div class="column is-9">
+                                    <input type="text" class="input poppins">
+                                </div>
+                            </div>
+                            <div x-html="question"></div>
+                            <div class="level mt-4">
+                                <div class="level-item">
+                                    <button class="button is-small is-rounded has-background-grey-light has-text-black poppins" x-on:click="addQuestion">+ Add question</button>
+                                </div>
+                            </div>
+                            <div class="field is-grouped is-grouped-right mr-2">
+                                <p class="control">
+                                  <a class="button is-white poppins is-rounded" style="border: 1px solid #7a7a7a !important;" href="../add-quizzes.html">
+                                    Cancel
+                                  </a>
+                                </p>
+                                <p class="control">
+                                  <a href="#success" class="button is-info poppins is-rounded" x-on:click="publishQuiz">
+                                    Publish
+                                  </a>
+                                </p>
+                            </div>
+                            <br><br>
+                        </div>
+                        <div class="container-fluid" x-show="showSuccess">
+                            <div class="mx-4 p-3" style="border: 1px solid #b5b5b5; border-radius: 5px;">
+                                <div class="columns is-vcentered">
+                                    <div class="column is-12">
+                                        <p class="subtitle is-5 has-text-grey has-text-centered poppins">Your quizz is successfully created</p>
+                                    </div>
+                                </div>
+                                <div class="columns is-centered">
+                                    <div class="column is-4">
+                                        <figure class="image is-square">
+                                            <img src="../../../src/svg/success-create.svg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered">
+                                    <div class="column is-12">
+                                        <div class="level">
+                                            <div class="level-item">
+                                                <a href="../add-quizzes.html" class="button has-background-info dark has-text-light poppins">Back to Add Quizz section</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
