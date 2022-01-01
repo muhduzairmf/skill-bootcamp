@@ -51,7 +51,7 @@
                             <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
                             </div>
                             <div class="control">
-                                <a class="button searchBox searchBtn poppins">
+                                <a class="button searchBox searchBtn poppins" href="../search/results.html">
                                     <i class="bi bi-search"></i>
                                 </a>
                             </div>
@@ -237,22 +237,43 @@
                                 </div>
                                 <div class="column is-9">
                                     <p class="poppins mb-2">You must enter at least 3 overview of this course like duration and number of video, article or quiz available.</p>
-                                    <div class="field">
-                                        <div class="control">
-                                            <input type="text" class="input poppins" maxlength="30" >
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11">
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" class="input poppins" maxlength="30" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-1">
+
                                         </div>
                                     </div>
-                                    <div class="field">
-                                        <div class="control">
-                                            <input type="text" class="input poppins" maxlength="30" >
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11">
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" class="input poppins" maxlength="30" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-1">
+
                                         </div>
                                     </div>
-                                    <div class="field">
-                                        <div class="control">
-                                            <input type="text" class="input poppins" maxlength="30" >
+                                    <div class="columns is-mobile">
+                                        <div class="column is-11">
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input type="text" class="input poppins" maxlength="30" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-1">
+                                            
                                         </div>
                                     </div>
-                                    <div x-html="overviewForm"></div>
+                                    <div id="overviewForm"></div>
                                     <p class="poppins has-text-info-dark has-text-right is-underlined is-clickable" x-on:click="addOverview"><small >Add more</small></p>
                                 </div>
                             </div>
@@ -309,174 +330,183 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Video</small> &nbsp;</div>
-                            <div class="columns is-vcentered mx-2 mt-1">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Video Title</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="field">
-                                        <div class="control">
-                                            <input type="text" class="input poppins" maxlength="30" placeholder="Enter a course title">
+                            <div id="videocontent">
+                                <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Video</small> &nbsp;</div>
+                                <div class="columns is-vcentered mx-2 mt-1">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Video Title</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input type="text" class="input poppins" maxlength="30" placeholder="Enter a course title">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="columns mx-2">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Description</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="field">
-                                        <div class="control">
-                                            <textarea class="textarea poppins" placeholder="Enter a description of the course"></textarea>
+                                <div class="columns mx-2">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Description</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field">
+                                            <div class="control">
+                                                <textarea class="textarea poppins" placeholder="Enter a description of the course"></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="columns mx-2">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Video</p>
+                                <div class="columns mx-2">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Video</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="file is-normal is-boxed has-name">
+                                            <label class="file-label">
+                                              <input class="file-input" type="file" name="thumbnail">
+                                              <span class="file-cta">
+                                                <span class="file-icon">
+                                                    <i class="bi bi-upload"></i>
+                                                </span>
+                                                <span class="file-label poppins">
+                                                  Choose a video
+                                                </span>
+                                              </span>
+                                            </label>
+                                        </div>
+                                        <figure class="image mt-2 is-16by9" style="display: none;">
+                                            <img src="" alt="">
+                                        </figure>
+                                    </div>
                                 </div>
-                                <div class="column is-9">
-                                    <div class="file is-normal is-boxed has-name">
-                                        <label class="file-label">
-                                          <input class="file-input" type="file" name="thumbnail">
-                                          <span class="file-cta">
-                                            <span class="file-icon">
-                                                <i class="bi bi-upload"></i>
+                                <p class="has-text-right has-text-grey-dark poppins is-underlined is-clickable mx-4 my-3 mb-4" x-on:click="removeVideoContent"><small>Remove content</small></p>
+                            </div>
+                            <div id="articlecontent">
+                                <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Article</small> &nbsp;</div>
+                                <div class="columns is-vcentered mx-2 mt-1">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Article Title</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input type="text" class="input poppins" maxlength="30" placeholder="Enter a article title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns mx-2">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Description</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field">
+                                            <div class="control">
+                                                <textarea class="textarea poppins" placeholder="Enter a description of the article"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns mx-2">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Article</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="file is-normal is-boxed has-name">
+                                            <label class="file-label">
+                                            <input class="file-input" type="file" name="thumbnail">
+                                            <span class="file-cta">
+                                                <span class="file-icon">
+                                                    <i class="bi bi-upload"></i>
+                                                </span>
+                                                <span class="file-label poppins">
+                                                Choose an article in PDF
+                                                </span>
                                             </span>
-                                            <span class="file-label poppins">
-                                              Choose a video
-                                            </span>
-                                          </span>
-                                        </label>
-                                    </div>
-                                    <figure class="image mt-2 is-16by9" style="display: none;">
-                                        <img src="" alt="">
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Article</small> &nbsp;</div>
-                            <div class="columns is-vcentered mx-2 mt-1">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Article Title</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="field">
-                                        <div class="control">
-                                            <input type="text" class="input poppins" maxlength="30" placeholder="Enter a article title">
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
+                                <p class="has-text-right has-text-grey-dark poppins is-underlined is-clickable mx-4 my-3 mb-4" x-on:click="removeArticleContent"><small>Remove content</small></p>
                             </div>
-                            <div class="columns mx-2">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Description</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="field">
-                                        <div class="control">
-                                            <textarea class="textarea poppins" placeholder="Enter a description of the article"></textarea>
+                            <div id="quizcontent">
+                                <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Quiz</small> &nbsp;</div>
+                                <div class="columns is-vcentered mx-2 mt-1">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Quiz Title</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <div class="field">
+                                            <div class="control">
+                                                <input type="text" class="input poppins" maxlength="30" placeholder="Enter a quiz title">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="columns mx-2">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Article</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="file is-normal is-boxed has-name">
-                                        <label class="file-label">
-                                          <input class="file-input" type="file" name="thumbnail">
-                                          <span class="file-cta">
-                                            <span class="file-icon">
-                                                <i class="bi bi-upload"></i>
-                                            </span>
-                                            <span class="file-label poppins">
-                                              Choose a article in PDF
-                                            </span>
-                                          </span>
-                                        </label>
+                                <div class="columns mx-2">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Description</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Quiz</small> &nbsp;</div>
-                            <div class="columns is-vcentered mx-2 mt-1">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Quiz Title</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="field">
-                                        <div class="control">
-                                            <input type="text" class="input poppins" maxlength="30" placeholder="Enter a quiz title">
+                                    <div class="column is-9">
+                                        <div class="field">
+                                            <div class="control">
+                                                <textarea class="textarea poppins" placeholder="Enter a description of the quiz"></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="columns mx-2">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Description</p>
-                                </div>
-                                <div class="column is-9">
-                                    <div class="field">
-                                        <div class="control">
-                                            <textarea class="textarea poppins" placeholder="Enter a description of the quiz"></textarea>
-                                        </div>
+                                <div class="columns is-vcentered mx-2">
+                                    <div class="column is-3">
+                                        <p class="title is-size-6 poppins">Question 1</p>
+                                    </div>
+                                    <div class="column is-9">
+                                        <input type="text" class="input poppins" placeholder="Enter a question">
                                     </div>
                                 </div>
+                                <div class="columns is-vcentered mx-2">
+                                    <div class="column is-2"></div>
+                                    <div class="column is-1">
+                                        <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                    </div>
+                                    <div class="column is-9">
+                                        <input type="text" class="input poppins">
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered mx-2">
+                                    <div class="column is-2"></div>
+                                    <div class="column is-1">
+                                        <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                    </div>
+                                    <div class="column is-9">
+                                        <input type="text" class="input poppins">
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered mx-2">
+                                    <div class="column is-2"></div>
+                                    <div class="column is-1">
+                                        <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                    </div>
+                                    <div class="column is-9">
+                                        <input type="text" class="input poppins">
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered mx-2">
+                                    <div class="column is-2"></div>
+                                    <div class="column is-1">
+                                        <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
+                                    </div>
+                                    <div class="column is-9">
+                                        <input type="text" class="input poppins">
+                                    </div>
+                                </div>
+                                <div class="level mt-4">
+                                    <div class="level-item">
+                                        <button class="button is-small is-rounded has-background-grey-light has-text-black poppins">+ Add question</button>
+                                    </div>
+                                </div>
+                                <p class="has-text-right has-text-grey-dark poppins is-underlined is-clickable mx-4 my-3 mb-4" x-on:click="removeQuizContent"><small>Remove content</small></p>
                             </div>
-                            <div class="columns is-vcentered mx-2">
-                                <div class="column is-3">
-                                    <p class="title is-size-6 poppins">Question 1</p>
-                                </div>
-                                <div class="column is-9">
-                                    <input type="text" class="input poppins" placeholder="Enter a question">
-                                </div>
-                            </div>
-                            <div class="columns is-vcentered mx-2">
-                                <div class="column is-2"></div>
-                                <div class="column is-1">
-                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
-                                </div>
-                                <div class="column is-9">
-                                    <input type="text" class="input poppins">
-                                </div>
-                            </div>
-                            <div class="columns is-vcentered mx-2">
-                                <div class="column is-2"></div>
-                                <div class="column is-1">
-                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
-                                </div>
-                                <div class="column is-9">
-                                    <input type="text" class="input poppins">
-                                </div>
-                            </div>
-                            <div class="columns is-vcentered mx-2">
-                                <div class="column is-2"></div>
-                                <div class="column is-1">
-                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
-                                </div>
-                                <div class="column is-9">
-                                    <input type="text" class="input poppins">
-                                </div>
-                            </div>
-                            <div class="columns is-vcentered mx-2">
-                                <div class="column is-2"></div>
-                                <div class="column is-1">
-                                    <input type="radio" style="height: 18px !important; width: 18px !important;" name="answer" id="">
-                                </div>
-                                <div class="column is-9">
-                                    <input type="text" class="input poppins">
-                                </div>
-                            </div>
-                            <div class="level mt-4">
-                                <div class="level-item">
-                                    <button class="button is-small is-rounded has-background-grey-light has-text-black poppins">+ Add question</button>
-                                </div>
-                            </div>
-                            <div id="add-chapter" x-html="chapter"></div>
+                            <div id="add-chapter" x-html="chapter"></div><br>
                             <div class="field is-grouped is-grouped-right mr-2">
                                 <p class="control">
                                   <a class="button is-white poppins is-rounded" style="border: 1px solid #7a7a7a !important;" href="../add-courses.html">
@@ -578,7 +608,11 @@
         </footer>
     </section>
 
-    
+    <script>
+        window.onbeforeunload = function () {
+            return '';
+        }
+    </script>
     <script src="../../../src/scripts/createCourse.js"></script>
 </body>
 </html>

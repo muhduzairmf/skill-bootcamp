@@ -33,7 +33,7 @@
                             <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
                             </div>
                             <div class="control">
-                                <a class="button searchBox searchBtn poppins">
+                                <a class="button searchBox searchBtn poppins" href="../search/results.html">
                                     <i class="bi bi-search"></i>
                                 </a>
                             </div>
@@ -206,8 +206,8 @@
                                     <p class="title is-size-6 poppins">Duration</p>
                                 </div>
                                 <div class="column is-9">
-                                    <div class="columns is-vcentered is-mobile">
-                                        <div class="column is-3-touch is-3-desktop is-2-widescreen">
+                                    <div class="columns is-vcentered is-multiline">
+                                        <div class="column is-6-tablet is-3-desktop is-2-widescreen">
                                             <div class="select">
                                                 <select name="" id="" class="poppins">
                                                     <template x-for="i in hours">
@@ -216,10 +216,10 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="column is-2">
+                                        <div class="column is-6-tablet is-2-desktop">
                                             <p class="poppins">hours</p>
                                         </div>
-                                        <div class="column is-3-touch is-3-desktop is-2-widescreen">
+                                        <div class="column is-6-tablet is-3-desktop is-2-widescreen">
                                             <div class="select">
                                                 <select name="" id="" class="poppins">
                                                     <template x-for="i in minutes">
@@ -228,7 +228,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="column is-2">
+                                        <div class="column is-6-tablet is-2-desktop">
                                             <p class="poppins">minutes</p>
                                         </div>
                                     </div>
@@ -406,7 +406,11 @@
         </footer>
     </section>
 
-    
+    <script>
+        window.onbeforeunload = function () {
+            return '';
+        }
+    </script>
     <script src="../../../src/scripts/createQuiz.js"></script>
 </body>
 </html>

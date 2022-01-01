@@ -13,6 +13,7 @@ input_image.addEventListener("change", function() {
 });
 
 var countControl = 1;
+var counter = 1;
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('main', () => ({
@@ -30,15 +31,38 @@ document.addEventListener('alpine:init', () => {
             window.location.href = '../../skill-bootcamp/index.html';
             //window.location.href = '../../index.html';
         },
-        overviewForm: '',
         addOverview() {
-            this.overviewForm += `
-            <div class="field">
-                <div class="control">
-                    <input type="text" class="input poppins" maxlength="30" >
+            var overviewForm = `
+            <div id="added" class="columns is-vcentered is-mobile" x-data="{ 
+                added: true,
+                remove() {
+                    document.getElementById('overviewForm').lastElementChild.remove();
+                }
+            }">
+            <div class="column is-11">
+                <div class="field">
+                    <div class="control is-expanded">
+                        <input type="text" class="input poppins" maxlength="30" >
+                    </div>
+                    
                 </div>
             </div>
+            <div class="column is-1">
+                <p class="is-clickable" x-on:click="remove"><i class="bi bi-x-lg"></i></p>
+            </div>
+            </div>
             `;
+            document.getElementById('overviewForm').innerHTML += overviewForm;
+            counter++;
+        },
+        removeVideoContent() {
+            document.getElementById('videocontent').style.display = "none";
+        },
+        removeArticleContent() {
+            document.getElementById('articlecontent').style.display = "none";
+        },
+        removeQuizContent() {
+            document.getElementById('quizcontent').style.display = "none";
         },
         chapter: '',
         addChapter() {
@@ -106,6 +130,7 @@ document.addEventListener('alpine:init', () => {
                     </figure>
                 </div>
             </div>
+            <p class="has-text-right has-text-grey-dark poppins is-underlined is-clickable mx-4 my-3 mb-4"><small>Remove content</small></p>
             <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Article</small> &nbsp;</div>
             <div class="columns is-vcentered mx-2 mt-1">
                 <div class="column is-3">
@@ -151,6 +176,7 @@ document.addEventListener('alpine:init', () => {
                     </div>
                 </div>
             </div>
+            <p class="has-text-right has-text-grey-dark poppins is-underlined is-clickable mx-4 my-3 mb-4"><small>Remove content</small></p>
             <div class="chapter-divider poppins mb-5" style="margin-left: 100px; margin-right: 100px;">&nbsp; <small>Quiz</small> &nbsp;</div>
             <div class="columns is-vcentered mx-2 mt-1">
                 <div class="column is-3">
@@ -225,6 +251,7 @@ document.addEventListener('alpine:init', () => {
                     <button class="button is-small is-rounded has-background-grey-light has-text-black poppins">+ Add question</button>
                 </div>
             </div>
+            <p class="has-text-right has-text-grey-dark poppins is-underlined is-clickable mx-4 my-3 mb-4"><small>Remove content</small></p>
             `;
         },
         createCourse: true,

@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../src/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../src/styles/style.css">
     <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
-    <title>Skill Bootcamp | About User</title>
+    <title>Skill Bootcamp | Search results</title>
 </head>
 <body x-data="main">
 
@@ -129,7 +129,7 @@
         </div>
     </nav>
 
-<!-- About user card -->
+<!-- Search result -->
     <section class="section has-background-light">
         <div class="container">
             <div class="columns">
@@ -137,82 +137,64 @@
                     <a onclick="history.back()" class="has-text-dark"><p class="poppins pb-4">&nbsp;<i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Back</p></a>
                 </div>
             </div>
-            <h2 class="title is-size-3-desktop is-size-4-touch has-text-centered has-text-dark poppins"><strong>About user</strong></h2>
-            <div class="columns is-centered">
-                <div class="column is-12-touch is-8-desktop is-three-fifths-widescreen">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="columns is-centered is-mobile">
-                                <div class="column is-8-touch is-6-desktop is-4-widescreen">
-                                    <figure class="image is-square">
-                                        <img src="https://images.pexels.com/photos/757316/pexels-photo-757316.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="is-rounded">
-                                    </figure>
-                                </div>
+            <h2 class="title is-size-3-desktop is-size-4-touch has-text-dark poppins"><strong>Search result(s)</strong></h2>
+            <div class="columns is-multiline">
+                <div class="column is-12">
+                    <div class="box px-4">
+                        <div class="columns is-mobile is-vcentered">
+                            <div class="column is-3">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.unsplash.com/photo-1610650394144-a778795cf585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="placeholder image">
+                                </figure>
                             </div>
-                            <div class="columns is-multiline" style="margin-bottom: 0px !important;">
-                                <div class="column is-6 is-12-touch">
-                                    <div class="content">
-                                        <p><strong>
-                                            <ul>
-                                                <li class="poppins">Full name</li>
-                                            </ul>
-                                        </strong></p>
-                                        <p class="poppins mx-5">
-                                            Dr. Peter Drury
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="column is-6 is-12-touch">
-                                    <div class="content">
-                                        <p><strong>
-                                            <ul>
-                                                <li class="poppins">Username</li>
-                                            </ul>
-                                        </strong></p>
-                                        <p class="poppins mx-5">
-                                            peter_drury
-                                        </p>
+                            <div class="column is-9">
+                                <div class="content poppins">
+                                    <h5>Course</h5>
+                                    <p>Engineering Drawing and CAD &nbsp;&nbsp;|&nbsp;&nbsp; Dr. Peter Drury</p>
+                                    <div class="tags">
+                                        <span class="tag is-link"><a href="#video" style="color: white !important;">Video</a></span>
+                                        <span class="tag is-success"><a href="#article" style="color: white !important;">Article</a></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="columns is-multiline" style="margin-bottom: 0px !important;">
-                                <div class="column is-6 is-12-touch">
-                                    <div class="content">
-                                        <p><strong>
-                                            <ul>
-                                                <li class="poppins">Email</li>
-                                            </ul>
-                                        </strong></p>
-                                        <p class="poppins mx-5">
-                                            peterdrury@google.io
-                                        </p>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <div class="box px-4">
+                        <div class="columns is-mobile is-vcentered">
+                            <div class="column is-3">
+                                <figure class="image is-16by9">
+                                    <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1876&q=80" alt="placeholder image">
+                                </figure>
+                            </div>
+                            <div class="column is-9">
+                                <div class="content poppins">
+                                    <h5>Quiz</h5>
+                                    <p>Mechanical Engineering Concepts &nbsp;&nbsp;|&nbsp;&nbsp; Dr. Peter Drury</p>
+                                    <p>1 hour</p>
                                 </div>
-                                <div class="column is-6 is-12-touch">
-                                    <div class="content">
-                                        <p><strong>
-                                            <ul>
-                                                <li class="poppins">Location</li>
-                                            </ul>
-                                        </strong></p>
-                                        <p class="poppins mx-5">
-                                            Glasgow, Scotland
-                                        </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <div class="box px-4">
+                        <div class="columns is-mobile is-vcentered">
+                            <div class="column is-3">
+                                <div class="level">
+                                    <div class="level-item">
+                                        <figure class="image is-128x128">
+                                            <img src="https://images.pexels.com/photos/757316/pexels-photo-757316.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="is-rounded">
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
-                            <div class="columns" style="margin-bottom: 0px !important;">
-                                <div class="column is-12">
-                                    <div class="content">
-                                        <p><strong>
-                                            <ul>
-                                                <li class="poppins">About me</li>
-                                            </ul>
-                                        </strong></p>
-                                        <p class="poppins mx-5 has-text-justified">
-                                            "Everyone has inside them a piece of good news. The good news is you don't know how great you can be! How much you can love! What you can accomplish! And what your potential is." — Anne Frank
-                                        </p>
-                                    </div>
+                            <div class="column is-9">
+                                <div class="content poppins">
+                                    <h5>Lecturer</h5>
+                                <p>Dr. Peter Drury</p>
+                                <p><small>"Everyone has inside them a piece of good news. The good news is you don't know how great you can be! How much you can love! What you can accomplish! And what your potential is." — Anne Frank</small></p>
                                 </div>
                             </div>
                         </div>
