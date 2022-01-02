@@ -4,6 +4,10 @@ if (localStorage.getItem("isAuthorized") != "true") {
     //window.location.replace('../../');
 }
 
+if (localStorage.getItem("sort") === null) {
+    localStorage.setItem("sort", "Newest");
+}
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('main', () => ({
         displayMenu() {
@@ -22,6 +26,15 @@ document.addEventListener('alpine:init', () => {
         },
         toggleSearchFilterModal() {
             document.querySelector('#searchFilterModal').classList.toggle('is-active');
+        },
+        sort: localStorage.getItem("sort"),
+        sortPopular() {
+            localStorage.setItem("sort", "Most Views");
+            window.location.reload();
+        },
+        sortNewest() {
+            localStorage.setItem("sort", "Newest");
+            window.location.reload();
         },
         closeTimesup() {
             document.querySelector('#modalTimesup').classList.toggle('is-active');

@@ -36,16 +36,18 @@
                 <div class="navbar-start">
                     <div class="navbar-item ml-4">
                         <br class="is-hidden-desktop">
-                        <div class="field has-addons" style="margin-bottom: 0rem !important;">
-                            <div class="control is-expanded">
-                            <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                        <form action="../search/results.html">
+                            <div class="field has-addons" style="margin-bottom: 0rem !important;">
+                                <div class="control is-expanded">
+                                <input class="input searchBox poppins padMega has-text-dark" type="text" placeholder="Search anything"><span title="Search anything"></span>
+                                </div>
+                                <div class="control">
+                                    <button type="submit" class="button searchBox searchBtn poppins">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="control">
-                                <a class="button searchBox searchBtn poppins" href="../search/results.html">
-                                    <i class="bi bi-search"></i>
-                                </a>
-                            </div>
-                        </div>
+                        </form>
                         <br class="is-hidden-desktop">
                     </div>
                 </div>
@@ -142,7 +144,7 @@
                             <div class="dropdown is-hoverable is-pulled-right is-hidden-touch">
                                 <div class="dropdown-trigger">
                                   <button class="button poppins seeMore">
-                                    <span>Sort by: &nbsp;<strong>Newest</strong></span>
+                                    <span>Sort by: &nbsp;<strong x-text="sort"></strong></span>
                                     <span class="icon is-small">
                                         <i class="bi bi-chevron-down"></i>
                                     </span>
@@ -150,10 +152,10 @@
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                   <div class="dropdown-content has-background-info-dark">
-                                    <a href="#newest" class="dropdown-item poppins seeMore">
+                                    <a href="#newest" class="dropdown-item poppins seeMore" x-on:click="sortNewest">
                                       Newest
                                     </a>
-                                    <a href="#mostviews" class="dropdown-item poppins seeMore">
+                                    <a href="#mostviews" class="dropdown-item poppins seeMore" x-on:click="sortPopular">
                                       Most views
                                     </a>
                                   </div>
@@ -166,7 +168,7 @@
                         <div class="dropdown is-hoverable">
                             <div class="dropdown-trigger">
                               <button class="button poppins seeMore">
-                                <span>Sort by: &nbsp;<strong>Newest</strong></span>
+                                <span>Sort by: &nbsp;<strong x-text="sort"></strong></span>
                                 <span class="icon is-small">
                                     <i class="bi bi-chevron-down"></i>
                                 </span>
@@ -174,10 +176,10 @@
                             </div>
                             <div class="dropdown-menu" id="dropdown-menu" role="menu">
                               <div class="dropdown-content has-background-grey-dark">
-                                <a href="#newest" class="dropdown-item poppins seeMore">
+                                <a href="#newest" class="dropdown-item poppins seeMore" x-on:click="sortNewest">
                                   Newest
                                 </a>
-                                <a href="#mostviews" class="dropdown-item poppins seeMore">
+                                <a href="#mostviews" class="dropdown-item poppins seeMore" x-on:click="sortPopular">
                                   Most views
                                 </a>
                               </div>
@@ -426,15 +428,15 @@
                         <div class="column is-12">
                             <div class="box">
                                 <p class="has-text-centered poppins mb-2"><strong>Search courses</strong></p>
-                                <form>
+                                <form id="formDs1" action="browse-courses.html">
                                     <div class="field has-addons">
                                         <div class="control">
                                           <input class="input poppins" type="text" placeholder="">
                                         </div>
                                         <div class="control">
-                                          <a class="button has-background-info-dark has-text-light">
+                                          <button type="submit" class="button has-background-info-dark has-text-light">
                                             <i class="bi bi-search"></i>
-                                          </a>
+                                          </button>
                                         </div>
                                       </div>
                                 </form>
@@ -445,7 +447,8 @@
                     <div class="columns">
                         <div class="column is-12">
                             <div class="box">
-                                <p class="has-text-centered poppins mb-2"><strong>Categories</strong></p>
+                                <form id="formDs2" action="browse-courses.html">
+                                    <p class="has-text-centered poppins mb-2"><strong>Categories</strong></p>
                                 <div class="columns is-centered poppins">
                                     <div class="column is-12" style="padding-bottom: 2px !important;">
                                         <label class="checkbox ml-4">
@@ -563,8 +566,9 @@
                                     </div>
                                 </div>
                                 <div class="has-text-centered">
-                                    <button class="button has-background-info-dark has-text-light poppins is-rounded is-expanded">Apply filter</button>
+                                    <button type="submit" class="button has-background-info-dark has-text-light poppins is-rounded is-expanded">Apply filter</button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -580,139 +584,141 @@
             <div class="section">
                 <div class="box"><br>
                     <p class="has-text-centered poppins mb-2"><strong>Search courses</strong></p>
-                    <form>
+                    <form id="formMb1" action="browse-courses.html">
                         <div class="field has-addons">
                             <div class="control is-expanded">
                               <input class="input poppins" type="text" placeholder="">
                             </div>
                             <div class="control">
-                              <a class="button has-background-info-dark has-text-light">
+                              <button type="submit" class="button has-background-info-dark has-text-light">
                                 <i class="bi bi-search"></i>
-                              </a>
+                              </button>
                             </div>
                           </div>
                     </form><br>
                     <hr class="has-background-grey-lighter"><br>
-                    <p class="has-text-centered poppins mb-2"><strong>Categories</strong></p>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Information Technology
-                            </label>
+                    <form id="formMb2" action="browse-courses.html">
+                        <p class="has-text-centered poppins mb-2"><strong>Categories</strong></p>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Information Technology
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Art & Design
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Art & Design
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; History
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; History
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Philosophy
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Philosophy
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Mathematics
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Mathematics
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Engineering
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Engineering
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Literature & Language
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Literature & Language
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Religion Study
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Religion Study
+                                </label>
+                            </div>
+                        </div><br>
+                        <hr class="has-background-grey-lighter"><br>
+                        <p class="has-text-centered poppins mb-2"><strong>Contents</strong></p>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Video
+                                </label>
+                            </div>
                         </div>
-                    </div><br>
-                    <hr class="has-background-grey-lighter"><br>
-                    <p class="has-text-centered poppins mb-2"><strong>Contents</strong></p>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Video
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Article
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Article
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Quiz
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Quiz
-                            </label>
+                        <hr class="has-background-grey-lighter"><br>
+                        <p class="has-text-centered poppins mb-2"><strong>Difficulty</strong></p>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Beginner
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <hr class="has-background-grey-lighter"><br>
-                    <p class="has-text-centered poppins mb-2"><strong>Difficulty</strong></p>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Beginner
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12" style="padding-bottom: 2px !important;">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Intermediate
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12" style="padding-bottom: 2px !important;">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Intermediate
-                            </label>
+                        <div class="columns is-centered poppins">
+                            <div class="column is-12">
+                                <label class="checkbox" style="margin-left: 10% !important">
+                                    <input type="checkbox" style="height: 15px !important; width: 15px !important;">
+                                    &nbsp; Expert
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="columns is-centered poppins">
-                        <div class="column is-12">
-                            <label class="checkbox" style="margin-left: 10% !important">
-                                <input type="checkbox" style="height: 15px !important; width: 15px !important;">
-                                &nbsp; Expert
-                            </label>
+                        <div class="has-text-centered">
+                            <button type="submit" class="button has-background-info-dark has-text-light poppins is-rounded is-expanded">Apply filter</button><br>
                         </div>
-                    </div>
-                    <div class="has-text-centered">
-                        <button class="button has-background-info-dark has-text-light poppins is-rounded is-expanded">Apply filter</button><br>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
