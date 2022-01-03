@@ -108,11 +108,11 @@
                                 <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark has-text-centered poppins">Register as</p></label>
                                 <div class="has-text-centered my-4">
                                     <label class="radio mr-4">
-                                        <input type="radio" name="typeOfUser" value="Student" style="width: 17px !important; height: 17px !important;">
+                                        <input id="typeOfUser1a" type="radio" name="typeOfUser" value="Student" style="width: 17px !important; height: 17px !important;" required>
                                         <span class="poppins">Student 👨‍🎓️</span>
                                     </label>
                                     <label class="radio ml-4">
-                                        <input type="radio" name="typeOfUser" value="Lecturer" style="width: 17px !important; height: 17px !important;">
+                                        <input id="typeOfUser1b" type="radio" name="typeOfUser" value="Lecturer" style="width: 17px !important; height: 17px !important;">
                                         <span class="poppins">Lecturer 👨‍🏫️</span>
                                     </label>
                                 </div>
@@ -250,19 +250,34 @@
                         <p class="poppins"><i class="bi bi-envelope-check"></i>&nbsp;&nbsp;Send security code to your Gmail account</p>
                         <hr><br>
                     </div>
-                    <br><br>
-                    <div class="level is-mobile">
-                        <div class="level-left">
-                            <div class="level-item">
-                                <a class="has-text-info is-pulled-left poppins" x-on:click="closeSecondStepPath1">Cancel</a>
+                    <form x-on:submit.prevent="submitSignup">
+                        <div class="field mb-5">
+                            <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark has-text-centered poppins">Register as</p></label>
+                            <div class="has-text-centered my-4">
+                                <label class="radio mr-4">
+                                    <input id="typeOfUser2a" type="radio" name="typeOfUser2" value="Student" style="width: 17px !important; height: 17px !important;" required>
+                                    <span class="poppins">Student 👨‍🎓️</span>
+                                </label>
+                                <label class="radio ml-4">
+                                    <input id="typeOfUser2b" type="radio" name="typeOfUser2" value="Lecturer" style="width: 17px !important; height: 17px !important;">
+                                    <span class="poppins">Lecturer 👨‍🏫️</span>
+                                </label>
                             </div>
                         </div>
-                        <div class="level-right">
-                            <div class="level-item">
-                                <button class="button is-info poppins" x-on:click="submitSignup">Confirm</button>
+                        <br><br>
+                        <div class="level is-mobile mb-4">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <a class="has-text-info is-pulled-left poppins" x-on:click="closeSecondStepPath1">Cancel</a>
+                                </div>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <button class="button is-info poppins" type="submit">Confirm</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -333,19 +348,31 @@
                         <p class="poppins"><i class="bi bi-envelope-check"></i>&nbsp;&nbsp;Send security code to your Gmail account</p>
                         <hr><br>
                     </div>
-                    <br><br>
-                    <div class="level is-mobile">
-                        <div class="level-left">
-                            <div class="level-item">
-                                <a class="has-text-info is-pulled-left poppins" x-on:click="closeThirdStepPath2">Cancel</a>
+                    <form x-on:submit.prevent="submitSignup">
+                        <div class="has-text-centered my-4">
+                            <label class="radio mr-4">
+                                <input id="typeOfUser3a" type="radio" name="typeOfUser3" value="Student" style="width: 17px !important; height: 17px !important;">
+                                <span class="poppins">Student 👨‍🎓️</span>
+                            </label>
+                            <label class="radio ml-4">
+                                <input id="typeOfUser3b" type="radio" name="typeOfUser3" value="Lecturer" style="width: 17px !important; height: 17px !important;" required>
+                                <span class="poppins">Lecturer 👨‍🏫️</span>
+                            </label>
+                        </div>
+                        <br><br>
+                        <div class="level is-mobile mb-4">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <a class="has-text-info is-pulled-left poppins" x-on:click="closeThirdStepPath2">Cancel</a>
+                                </div>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <button class="button is-info poppins" type="submit">Confirm</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="level-right">
-                            <div class="level-item">
-                                <button class="button is-info poppins" x-on:click="submitSignup">Confirm</button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 

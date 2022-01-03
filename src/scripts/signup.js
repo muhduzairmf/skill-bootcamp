@@ -8,8 +8,20 @@ document.addEventListener('alpine:init', () => {
             sessionStorage.setItem("isSignUp", "true");
             localStorage.setItem("isAuthorized", "true");
 
-            window.location.href = '../../skill-bootcamp/timelines/timelines.html';
-            //window.location.href = '../../timelines/timelines.html';
+            if (document.querySelector('input#typeOfUser1a').checked === true || document.querySelector('input#typeOfUser2a').checked === true || document.querySelector('input#typeOfUser3a').checked === true) {
+                localStorage.setItem("user", "student");
+                console.log(localStorage.getItem("user"));
+
+                //window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+                window.location.href = '../../timelines/timelines.html';
+            } else if (document.querySelector('input#typeOfUser1b').checked === true || document.querySelector('input#typeOfUser2b').checked === true || document.querySelector('input#typeOfUser3b').checked === true) {
+                localStorage.setItem("user", "lecturer");
+                console.log(localStorage.getItem("user"));
+
+                //window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+                window.location.href = '../timelines/timelines.html';
+            }
+
         },
         newPass: '',
         confirmPass: '',

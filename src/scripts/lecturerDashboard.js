@@ -4,6 +4,10 @@ if (localStorage.getItem("isAuthorized") != "true") {
     //window.location.replace('../../');
 }
 
+if (localStorage.getItem("user") === "student") {
+    window.location.replace('../../skill-bootcamp/dashboard/student/dashboard.html');
+}
+
 if (localStorage.getItem("fullname_teacher") === null) {
     localStorage.setItem("fullname_teacher", "Tim Carlton");
     localStorage.setItem("username_teacher", "timcarlton");

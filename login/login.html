@@ -48,6 +48,14 @@
 <!-- Login form -->
     <section class="section has-background-light">
         <div class="container my-6">
+            <article class="message is-danger" x-show="errorLogin">
+                <div class="message-header has-background-danger-light">
+                  <button class="delete" aria-label="delete" x-on:click="closeError"></button>
+                </div>
+                <div class="message-body has-background-danger-light">
+                  Login failed. The username or password is not correct.
+                </div>
+            </article>
             <div class="columns">
                 <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-widescreen is-offset-3-widescreen">
                     <div class="box glassBox">
@@ -58,7 +66,7 @@
                                     <div class="field mb-5">
                                         <label for="" class="label"><p class="subtitle is-size-5-desktop is-size-6-touch has-text-dark poppins">Username</p></label>
                                         <div class="control">
-                                            <input id="username" class="input poppins inputGlass" type="text" placeholder="👤">
+                                            <input id="username" class="input poppins inputGlass" type="text" placeholder="👤" required>
                                         </div>
                                     </div>
                                 </div>
