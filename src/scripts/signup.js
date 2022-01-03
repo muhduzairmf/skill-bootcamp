@@ -12,14 +12,14 @@ document.addEventListener('alpine:init', () => {
                 localStorage.setItem("user", "student");
                 console.log(localStorage.getItem("user"));
 
-                //window.location.href = '../../skill-bootcamp/timelines/timelines.html';
-                window.location.href = '../../timelines/timelines.html';
+                window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+                //window.location.href = '../../timelines/timelines.html';
             } else if (document.querySelector('input#typeOfUser1b').checked === true || document.querySelector('input#typeOfUser2b').checked === true || document.querySelector('input#typeOfUser3b').checked === true) {
                 localStorage.setItem("user", "lecturer");
                 console.log(localStorage.getItem("user"));
 
-                //window.location.href = '../../skill-bootcamp/timelines/timelines.html';
-                window.location.href = '../timelines/timelines.html';
+                window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+                //window.location.href = '../timelines/timelines.html';
             }
 
         },
