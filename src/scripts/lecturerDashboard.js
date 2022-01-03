@@ -71,6 +71,7 @@ document.addEventListener('alpine:init', () => {
                 this.warnCaps3 = false;
             }
         },
+        afterSave() {},
         fullname: localStorage.getItem("fullname_teacher"),
         username: localStorage.getItem("username_teacher"),
         email: localStorage.getItem("email_teacher"),
