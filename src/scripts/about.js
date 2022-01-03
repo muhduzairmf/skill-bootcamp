@@ -1,4 +1,12 @@
 
+if (localStorage.getItem("user") === "student") {
+    document.getElementById('whouser1').innerText = 'STUDENT';
+    document.getElementById('whouser2').innerText = 'STUDENT';
+} else if (localStorage.getItem("user") === "lecturer") {
+    document.getElementById('whouser1').innerText = 'LECTURER';
+    document.getElementById('whouser2').innerText = 'LECTURER';
+}
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('main', () => ({
         displayMenu() {
