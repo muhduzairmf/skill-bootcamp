@@ -15,12 +15,12 @@ document.addEventListener('alpine:init', () => {
             if (document.getElementById('username').value === 'student') {
                 localStorage.setItem("user", "student");
 
-                window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+                window.location.href = '/skill-bootcamp/timelines/timelines.html';
                 //window.location.href = '../../timelines/timelines.html';
             } else if (document.getElementById('username').value === 'lecturer') {
                 localStorage.setItem("user", "lecturer");
 
-                window.location.href = '../../skill-bootcamp/timelines/timelines.html';
+                window.location.href = '/skill-bootcamp/timelines/timelines.html';
                 //window.location.href = '../timelines/timelines.html';
             } else {
                 this.errorLogin = true;
