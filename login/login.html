@@ -50,10 +50,8 @@
         <div class="container my-6">
             <article class="message is-danger" x-show="errorLogin">
                 <div class="message-header has-background-danger-light">
-                  <button class="delete" aria-label="delete" x-on:click="closeError"></button>
-                </div>
-                <div class="message-body has-background-danger-light">
-                  Login failed. The username or password is not correct.
+                    <p class="has-text-dark">Login failed. The username or password is not correct.</p>
+                  <button class="delete is-pulled-right" aria-label="delete" x-on:click="closeError"></button>
                 </div>
             </article>
             <div class="columns">

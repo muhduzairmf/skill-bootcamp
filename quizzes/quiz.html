@@ -276,7 +276,7 @@
                         </div><br>
                     </div>
 <!-- Mark -->
-                    <button id="submitQuiz" class="button has-background-info-dark has-text-light poppins" onclick="viewMarks()">Submit</button>
+                    <button id="submitQuiz" class="button has-background-info-dark has-text-light poppins" onclick="submitQuiz()">Submit</button>
                     <hr style="background-color: rgb(126, 126, 126);" id="myMark">
                     <div class="columns">
                         <div class="column is-3">
@@ -303,6 +303,18 @@
             </div>
         </div>
         <button class="modal-close is-large" aria-label="close" x-on:click="closeTimesup"></button>
+    </div>
+
+    <div class="modal" id="modalSubmit">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="container is-fluid">
+                <div class="box">
+                    <h5 class="is-size-5 poppins has-text-centered my-6">You have submit the answers <a href="#myMark" x-on:click="closeSubmit">View my mark <i class="bi bi-arrow-right"></i></a></h5>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" x-on:click="closeSubmit"></button>
     </div>
 
 <!-- Footer -->

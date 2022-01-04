@@ -46,6 +46,9 @@ document.addEventListener('alpine:init', () => {
         },
         closeTimesup() {
             document.querySelector('#modalTimesup').classList.toggle('is-active');
+        },
+        closeSubmit() {
+            document.querySelector('#modalSubmit').classList.toggle('is-active');
         }
     }));
 });
@@ -175,4 +178,13 @@ if (timer != undefined) {
         document.querySelector('#modalTimesup').classList.toggle('is-active');
         viewMarks();
     })
+}
+
+function submitQuiz() {
+    var allRadio = document.querySelectorAll('input[type=radio]');
+    allRadio.forEach(radio => {
+        radio.disabled = true;
+    });
+    document.querySelector('#modalSubmit').classList.toggle('is-active');
+    viewMarks();
 }

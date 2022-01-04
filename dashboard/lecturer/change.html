@@ -128,6 +128,12 @@
         <div class="container">
             <h2 class="title is-size-3-desktop is-size-4-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins"><strong>Dashboard</strong></h2>
             <p class="subtitle is-size-5-desktop is-size-6-touch has-text-left-desktop has-text-centered-touch has-text-dark poppins">Lecturer's Dashboard</p><br>
+            <article class="message is-info" x-show="successChange" id="succesChange">
+                <div class="message-header has-background-info">
+                    <p class="has-text-light">Password has been changed.</p>
+                  <button class="delete is-pulled-right" aria-label="delete" x-on:click="closeSuccess"></button>
+                </div>
+            </article><br>
         </div>
         <div class="container mb-5">
             <div class="columns">
@@ -221,7 +227,7 @@
                                       </a>
                                     </p>
                                     <p class="control">
-                                      <button id="submitButton" class="button is-info poppins is-rounded">
+                                      <button type="button" id="submitButton" class="button is-info poppins is-rounded" x-on:click="afterSave">
                                         Save changes
                                       </button>
                                     </p>
@@ -287,11 +293,6 @@
         </footer>
     </section>
 
-    <script>
-        window.onbeforeunload = function () {
-            return '';
-        }
-    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
     <script src="../../src/scripts/lecturerDashboard.js"></script>
