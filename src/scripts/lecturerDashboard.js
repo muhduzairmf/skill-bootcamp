@@ -39,7 +39,7 @@ document.addEventListener('alpine:init', () => {
         },
         notMatch: false,
         matchPass() {
-            if (this.confirmPass != this.newPass) {
+            if (this.confirmPass != this.newPass || this.newPass != this.confirmPass || this.confirmPass === '') {
                 this.notMatch = true;
                 document.querySelector('#submitButton').disabled = true;
             } else if (this.newPass == this.confirmPass || this.confirmPass == this.newPass) {

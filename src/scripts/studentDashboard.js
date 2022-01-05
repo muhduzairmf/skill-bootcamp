@@ -38,7 +38,7 @@ document.addEventListener('alpine:init', () => {
         },
         notMatch: false,
         matchPass() {
-            if (this.confirmPass != this.newPass && this.confirmPass === '') {
+            if (this.confirmPass != this.newPass || this.newPass != this.confirmPass || this.confirmPass === '') {
                 this.notMatch = true;
                 document.querySelector('#submitButton').disabled = true;
             } else if (this.newPass == this.confirmPass || this.confirmPass == this.newPass) {
@@ -70,7 +70,14 @@ document.addEventListener('alpine:init', () => {
                 this.warnCaps3 = false;
             }
         },
-        afterSave() {},
+        successChange: false,
+        afterSave() {
+            this.clearForm();
+            this.successChange = ! this.successChange;
+        },
+        closeSuccess() {
+            this.successChange = ! this.successChange;
+        },
         fullname: localStorage.getItem("fullname_student"),
         username: localStorage.getItem("username_student"),
         email: localStorage.getItem("email_student"),
