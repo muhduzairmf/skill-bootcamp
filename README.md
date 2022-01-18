@@ -1,4 +1,11 @@
-# **Skill Bootcamp** 🎓
+# **Skill Bootcamp** 🎓     
+
+![Skill Bootcamp 1](banners/banner1.png)     
+
+![Skill Bootcamp 2](banners/banner2.png)      
+
+![Skill Bootcamp 3](banners/banner3.png)     
+
 Skill Bootcamp is a website for a student and lecturer to learn, explore and share about the courses that exists in university silibus. Student can learn and explore more to gain their skill and knowledge. Lecturer can also share their knowledge to the students through this website
 
 ## **Main Purpose**
